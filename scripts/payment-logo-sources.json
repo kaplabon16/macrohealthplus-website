@@ -1,0 +1,42 @@
+[
+  {
+    "title": "visa.svg",
+    "source": "simple-icons:siVisa",
+    "localPath": "/assets/payment-methods/web/visa.svg"
+  },
+  {
+    "title": "mastercard.svg",
+    "source": "simple-icons:siMastercard",
+    "localPath": "/assets/payment-methods/web/mastercard.svg"
+  },
+  {
+    "title": "american-express.svg",
+    "source": "simple-icons:siAmericanexpress",
+    "localPath": "/assets/payment-methods/web/american-express.svg"
+  },
+  {
+    "title": "bkash.svg",
+    "source": "https://static.cdnlogo.com/logos/b/47/bkash.svg",
+    "localPath": "/assets/payment-methods/web/bkash.svg"
+  },
+  {
+    "title": "nagad.svg",
+    "source": "https://logotyp.us/file/nagad.svg",
+    "localPath": "/assets/payment-methods/web/nagad.svg"
+  },
+  {
+    "title": "bank-asia.svg",
+    "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_of_Bank_Asia.svg",
+    "localPath": "/assets/payment-methods/web/bank-asia.svg"
+  },
+  {
+    "title": "dbbl.svg",
+    "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Dutch-bangla_bank_limited.svg",
+    "localPath": "/assets/payment-methods/web/dbbl.svg"
+  },
+  {
+    "title": "sslcommerz.png",
+    "source": "https://www.sslcommerz.com/wp-content/uploads/2021/11/logo.png",
+    "localPath": "/assets/payment-methods/web/sslcommerz.png"
+  }
+]

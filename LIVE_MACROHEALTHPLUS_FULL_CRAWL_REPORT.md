@@ -1,0 +1,467 @@
+# Live MacroHealthPlus Full Crawl Report
+
+Rendered crawl date: 2026-06-03. Browser: Playwright Chromium. Start URL: https://macrohealthplus.org/
+
+## Summary
+- Pages crawled: 43
+- Assets found/downloaded or mapped: 241
+- Failed pages: 0
+- Broken internal request links: 0
+- Console warnings/errors captured: 1391 (mostly live CSP warnings for blocked Vimeo/data URI images)
+
+## All Discovered URLs
+- https://macrohealthplus.org/ (from known route list)
+- https://macrohealthplus.org/pricing (from known route list)
+- https://macrohealthplus.org/great-doc (from known route list)
+- https://macrohealthplus.org/great-lab (from known route list)
+- https://macrohealthplus.org/great-pharma (from known route list)
+- https://macrohealthplus.org/telehealth (from known route list)
+- https://macrohealthplus.org/marketplace (from known route list)
+- https://macrohealthplus.org/e-pharmacy (from known route list)
+- https://macrohealthplus.org/lab-agent (from known route list)
+- https://macrohealthplus.org/client-login (from known route list)
+- https://macrohealthplus.org/request-demo (from known route list)
+- https://macrohealthplus.org/why-choose-us (from known route list)
+- https://macrohealthplus.org/news-and-views (from known route list)
+- https://macrohealthplus.org/help-centre (from known route list)
+- https://macrohealthplus.org/privacy (from known route list)
+- https://macrohealthplus.org/security (from known route list)
+- https://macrohealthplus.org/refund-return-policy (from known route list)
+- https://macrohealthplus.org/cookie-disclaimer (from known route list)
+- https://macrohealthplus.org/terms (from known route list)
+- https://macrohealthplus.org/general-practice (from known route list)
+- https://macrohealthplus.org/cardiologist (from known route list)
+- https://macrohealthplus.org/gastroenterologist (from known route list)
+- https://macrohealthplus.org/chest-physician (from known route list)
+- https://macrohealthplus.org/urologist (from known route list)
+- https://macrohealthplus.org/ent-specialist (from known route list)
+- https://macrohealthplus.org/ophthalmologist (from known route list)
+- https://macrohealthplus.org/dermatologist (from known route list)
+- https://macrohealthplus.org/psychiatrist-and-psychologist (from known route list)
+- https://macrohealthplus.org/rheumatologist (from known route list)
+- https://macrohealthplus.org/neurologist (from known route list)
+- https://macrohealthplus.org/orthopaedic-surgeon (from known route list)
+- https://macrohealthplus.org/neuro-surgeon (from known route list)
+- https://macrohealthplus.org/obstetrics-and-gynaecologist (from known route list)
+- https://macrohealthplus.org/paediatricians (from known route list)
+- https://macrohealthplus.org/general-surgeon (from known route list)
+- https://macrohealthplus.org/digi-patient (from https://macrohealthplus.org/)
+- https://macrohealthplus.org/e-commerce-medicine (from https://macrohealthplus.org/)
+- https://macrohealthplus.org/research-reports (from https://macrohealthplus.org/)
+- https://macrohealthplus.org/webinars (from https://macrohealthplus.org/)
+- https://macrohealthplus.org/who-we-are (from https://macrohealthplus.org/)
+- https://macrohealthplus.org/contact (from https://macrohealthplus.org/)
+- https://macrohealthplus.org/contact/privacy (from https://macrohealthplus.org/contact)
+- https://macrohealthplus.org/contact/terms (from https://macrohealthplus.org/contact)
+
+## Page Details
+- https://macrohealthplus.org/
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Practice Management Software | Business Consistency | Central Management | Efficient Operations | Health Eco-System | Health Eco-System | for Better Quality of Care | Solutions of MacroHealthPlus | MIMS integrated prescribing | Get Updated Drug  information in details. | Enrich the Clinical Experience with  MacroHealthPlus Software | Medical Practice Management Software | All Your Patient Data in One Place | Improving the Efficiency, Accuracy, and Cost-effectiveness | Our Partners
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 95; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/home.png
+- https://macrohealthplus.org/pricing
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Choose the perfect plan for you
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 91; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/pricing.png
+- https://macrohealthplus.org/great-doc
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: GreatDoc | GreatDoc | How GreatDoc Works? | Improve your workflow with GreatDoc | Enrich the Clinical Experience with  MacroHealthPlus Software | Key Features for GreatDoc | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 88; backgrounds: 0; SVG snippets: 1
+  - Screenshot: crawl-output/screenshots/great-doc.png
+- https://macrohealthplus.org/great-lab
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: GreatClinic | GreatClinic | How GreatClinic System Works? | Software Services | Pathology | Radiology | Keep your patients updated with Automated SMS & Report | Pathology Lab Management | QR coded lab reports | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 55; backgrounds: 0; SVG snippets: 1
+  - Screenshot: crawl-output/screenshots/great-lab.png
+- https://macrohealthplus.org/great-pharma
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Simplify Sales and Service | Stock Management | Expiry Management | Prescriptions | Rack Management | Re Order Management | Substitute Availability | Free Drug Helpline | 24x 7 Ordering | Digital Payment and Collection | Delivery | GreatPharma | GreatPharma | How GreatPharma System Works? | Digitise Your Pharmacy with GreatPharma | Generic Features for GreatPharma | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 50; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/great-pharma.png
+- https://macrohealthplus.org/telehealth
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: How it's Work ? | Telehealth | Telehealth | How Telehealth System Works? | Telemedicine with Video Consultations in your Virtual Practice | Patient Records Management with link  Telehealth | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 55; backgrounds: 0; SVG snippets: 5
+  - Screenshot: crawl-output/screenshots/telehealth.png
+- https://macrohealthplus.org/marketplace
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Marketplace | Marketplace | How Marketplace System Works? | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/marketplace.png
+- https://macrohealthplus.org/e-pharmacy
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Pages Not Found 404
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/e-pharmacy.png
+- https://macrohealthplus.org/lab-agent
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: LabAgent | LabAgent | How LabAgent System Works? | Lab at your Door Steps | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 44; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/lab-agent.png
+- https://macrohealthplus.org/client-login
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: Our Products
+  - H2/H3: (none exposed)
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 39; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/client-login.png
+- https://macrohealthplus.org/request-demo
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: (none exposed)
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/request-demo.png
+- https://macrohealthplus.org/why-choose-us
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Improve Your Workflow with MacroHealthPlus Practice Management Software | Data Safety and Security
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 33; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/why-choose-us.png
+- https://macrohealthplus.org/news-and-views
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: News & Views
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 33; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/news-and-views.png
+- https://macrohealthplus.org/help-centre
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Hi! How can we help you? | Ask us anything | What is Practice Management Software? | What are the main features of MacroHealthPlus? | Are all modules in MacroHealthPlus integrated? | Is the data secured? What are the steps taken on data security? | What should we do if we lose internet connection, can we update data offline? (Without Internet)? | What is the difference between a Doctor license ( with login) and without login? | Do I need to purchase all modules or can I start small and grow? | How can I get support after I purchase the software?
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 2
+  - Images: 37; backgrounds: 0; SVG snippets: 1
+  - Screenshot: crawl-output/screenshots/help-centre.png
+- https://macrohealthplus.org/privacy
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: Privacy Policy
+  - H2/H3: (none exposed)
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/privacy.png
+- https://macrohealthplus.org/security
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: Security Policy
+  - H2/H3: (none exposed)
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/security.png
+- https://macrohealthplus.org/refund-return-policy
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Refund & Return Policy | Issuance of Refunds
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/refund-return-policy.png
+- https://macrohealthplus.org/cookie-disclaimer
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Disclaimer | Disclaimer and Other Terms | Viruses | Third party websites | Cookies
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/cookie-disclaimer.png
+- https://macrohealthplus.org/terms
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: শর্তাবলী:
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/terms.png
+- https://macrohealthplus.org/general-practice
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Perfect Practice Management Software for General Practice Services | Looking for ideal software for your general practice? | A comprehensive medical and practice management software for general practitioners | General Practice | How General Practice System Works? | Key Features for General Practice Services | Patient Records Management | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 44; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/general-practice.png
+- https://macrohealthplus.org/cardiologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Fewer clicks | Simplified workflows | Customizable solutions | Cardiologist | How Cardiologist System Works? | Key Features for Cardiology | Pre-loaded forms and templates give providers time back | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/cardiologist.png
+- https://macrohealthplus.org/gastroenterologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Gastroenterologist | How Gastroenterologist System Works? | Key Features for Gastroenterology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/gastroenterologist.png
+- https://macrohealthplus.org/chest-physician
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Chest Physician | How Chest Physician System Works? | Key Features for Chest Physician | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/chest-physician.png
+- https://macrohealthplus.org/urologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Urologist | How Urologist System Works? | Key Features for Urology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/urologist.png
+- https://macrohealthplus.org/ent-specialist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Otolaryngologist (ENT Specialist) | How Otolaryngologist (ENT Specialist) System Works? | Key Features for Otolaryngology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/ent-specialist.png
+- https://macrohealthplus.org/ophthalmologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Ophthalmologist | How Ophthalmologist System Works? | Key Features for Ophthalmology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/ophthalmologist.png
+- https://macrohealthplus.org/dermatologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Dermatologist | How Dermatologist System Works? | Key Features for Dermatology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/dermatologist.png
+- https://macrohealthplus.org/psychiatrist-and-psychologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Psychiatrist and Psychologist | Built-In Psychological Questionnaires | How Psychiatrist and Psychologist System Works? | Key Features for Psychology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/psychiatrist-and-psychologist.png
+- https://macrohealthplus.org/rheumatologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Rheumatologist | How Rheumatologist System Works? | Key Features for Rheumatology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/rheumatologist.png
+- https://macrohealthplus.org/neurologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Neurologist | How Neurologist System Works? | Key Features for Neurology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/neurologist.png
+- https://macrohealthplus.org/orthopaedic-surgeon
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Orthopaedic Surgeon | How Orthopaedic Surgeon System Works? | Key Features for Orthopaedic Surgery | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/orthopaedic-surgeon.png
+- https://macrohealthplus.org/neuro-surgeon
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Neuro Surgeon | How Neuro Surgeon System Works? | Key Features for Neurology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/neuro-surgeon.png
+- https://macrohealthplus.org/obstetrics-and-gynaecologist
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Obstetrics and Gynaecologist | How Obstetrics & Gynaecologist System Works? | Key Features for Gynaecology | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/obstetrics-and-gynaecologist.png
+- https://macrohealthplus.org/paediatricians
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Pediatricians | How Pediatricians System Works? | Key Features for Paediatric | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 48; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/paediatricians.png
+- https://macrohealthplus.org/general-surgeon
+  - Discovered from: known route list
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: General-Surgeon | How General Surgeon System Works? | Key Features for General-Surgeon | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 49; backgrounds: 0; SVG snippets: 3
+  - Screenshot: crawl-output/screenshots/general-surgeon.png
+- https://macrohealthplus.org/digi-patient
+  - Discovered from: https://macrohealthplus.org/
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: DigiPatient | Manage your electronic health records, on your way. | How DigiPatient System Works? | DigiPateint | Key features for Electronic Health Records | Patient Records Management | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 58; backgrounds: 0; SVG snippets: 20
+  - Screenshot: crawl-output/screenshots/digi-patient.png
+- https://macrohealthplus.org/e-commerce-medicine
+  - Discovered from: https://macrohealthplus.org/
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: e-Pharmacy | e-Pharmacy | How Medicine e-Pharmacy System Works? | e-Pharmacy Website or Mobile App | Key Features of Medicine e-Pharmacy App | Main Strengths of Medicine e-Pharmacy App Solution | Specialty-Specific All-in-One Solution | 90% | 25% | 93%
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 61; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/e-commerce-medicine.png
+- https://macrohealthplus.org/research-reports
+  - Discovered from: https://macrohealthplus.org/
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Medical Education
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 33; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/research-reports.png
+- https://macrohealthplus.org/webinars
+  - Discovered from: https://macrohealthplus.org/
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Webinars
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/webinars.png
+- https://macrohealthplus.org/who-we-are
+  - Discovered from: https://macrohealthplus.org/
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Mission | Vision | Our Team Member | Our Advisory Member | Our Business Plan | Our Target Market | Our Business Goals
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 39; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/who-we-are.png
+- https://macrohealthplus.org/contact
+  - Discovered from: https://macrohealthplus.org/
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Bangladesh Office | Australia Office | Contact Us
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 1
+  - Images: 33; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/contact.png
+- https://macrohealthplus.org/contact/privacy
+  - Discovered from: https://macrohealthplus.org/contact
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Pages Not Found 404
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/contact-privacy.png
+- https://macrohealthplus.org/contact/terms
+  - Discovered from: https://macrohealthplus.org/contact
+  - Title: MacroHealthPlus
+  - H1: (none exposed)
+  - H2/H3: Pages Not Found 404
+  - CTAs/buttons: Home, Solutions, DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent, Specialities, General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon, Resources, Medical Education, News and Views, Help Centre, Webinars, Pricing, About Us, Who We Are
+  - Forms: 0
+  - Images: 32; backgrounds: 0; SVG snippets: 0
+  - Screenshot: crawl-output/screenshots/contact-terms.png
+
+## Header Items
+Home, Solutions, Specialities, Resources, Pricing, About Us, Contact Us, Request a Demo, Client Login.
+
+## Dropdown Items
+Solutions: DigiPatient, GreatDoc, GreatClinic, GreatPharma, Telehealth, e-Pharmacy, Marketplace, LabAgent. Specialities: General Practice, Cardiologist, Chest Physician, Gastroenterologist, Neurologist, Urologist, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Psychiatrist and Psychologist, Neuro-surgeon, Obstetrics and Gynaecologist, Paediatricians, Orthopaedic Surgeon, General Surgeon.
+
+## Footer Items and Contact Data
+Email: info@macrohealthplus.org. Bangladesh phone: +880-1855-777766. Head Office phone: +61-299-431072. Head Office: 9 Westbrook Avenue Wahroonga, NSW 2076, Australia. Bangladesh Office: House # 35, Road # East Rampura, Dhaka, Bangladesh. TIN Number - 540449482882. Copyright: © 2026 MacroHealthPlus. All Rights Reserved. Legal links: Terms & Conditions, Privacy Policy, Security, Refund & Return Policy, Cookie Disclaimer.
+
+## Pricing
+Exact pricing was extracted from the rendered page and live bundle. See PRICING_MIGRATION_REPORT.md.
+
+## Assets / Images / Backgrounds / SVGs
+See ASSET_MIGRATION_REPORT.md and src/data/assets.ts for every mapped asset.
+
+## Forms
+Request Demo form fields implemented: solution, first name, last name, email, contact number, message, agreement checkbox, request demo button.
+
+## Broken Links, Missing Images, Console Errors
+- Broken internal links from Playwright network monitor: 0
+- Failed pages: 0
+- Live console warnings/errors: 1391; recurring CSP issues on the current live site were captured but do not affect the rebuilt local build.

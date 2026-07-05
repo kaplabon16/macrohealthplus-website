@@ -1,0 +1,15 @@
+export const routes = {
+  home: '/',
+  pricing: '/pricing',
+  helpCentre: '/help-centre',
+  news: '/news-and-views',
+  newsAndViews: '/news-and-views',
+  contact: '/contact',
+  requestDemo: '/request-demo',
+  clientLogin: '/client-login',
+  terms: '/terms',
+  privacy: '/privacy',
+  security: '/security',
+  refundReturnPolicy: '/refund-return-policy',
+  cookieDisclaimer: '/cookie-disclaimer',
+} as const;
