@@ -1,10 +1,8 @@
 import { routes } from '../utils/routes';
 import { products } from './products';
-import { specialties } from './specialties';
 
 export const navigation = [
   { label: 'Solutions', href: routes.home, children: products.map((product) => ({ label: product.title, href: product.route })) },
-  { label: 'Specialities', href: '/general-practice', children: specialties.map((specialty) => ({ label: specialty.title, href: specialty.route })) },
   { label: 'Resources', href: routes.news, children: [
     { label: 'News and Views', href: routes.news },
     { label: 'Help Centre', href: routes.helpCentre },

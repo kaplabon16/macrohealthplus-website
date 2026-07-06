@@ -6,7 +6,7 @@ export default function Partners() {
     <Section
       eyebrow="Our Partners"
       title="Our Partners"
-      intro="Simplify the clinical operations in the most effective way with the Health Management Software."
+      intro="Healthcare organizations use MacroHealthPlus to bring clinical operations, diagnostics, pharmacy workflows, and patient services into a more connected digital environment."
     >
       <ClientLogoMarquee />
     </Section>

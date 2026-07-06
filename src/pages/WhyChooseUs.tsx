@@ -3,33 +3,33 @@ import Section from '../components/layout/Section';
 import { setPageMeta } from '../utils/seo';
 
 const workflowPoints = [
-  'International standard integrated medical software to direct communication between patient-doctor in a secure platform',
-  'Electronic Health Record system with minimal data entry.',
-  'Incorporating World Class MIMS Drug database to protect doctors from error in a very busy practice.',
-  'Automatically alert doctors/health professionals about life saving Drug interactions, Drug-Disease interactions, Drug-Allergy Interactions, Drug-Lactation alert, Drug-Pregnancy alert, Drug- Duplicate alert during preparing prescriptions.',
-  'Advanced and effective patient screening facilities from booking to billing',
-  'Including immunisation records from birth to end of life. Various Clinical resources for the clinicians.',
-  'Any doctor can advise any patient remotely from anywhere in the world without the need for any paper or pencil just using a mobile phone.',
-  'Various Patient education material first time in Bengali language',
-  'Doctor’s Education from the Australian Clinician to enrich personalised education about Current international practice.',
+  'Integrated healthcare software that connects patient and doctor communication inside a secure digital environment.',
+  'Electronic health records designed to reduce repeated data entry and keep clinical information accessible when it matters.',
+  'MIMS drug information support to help clinicians review safety considerations during a busy prescribing workflow.',
+  'Prescription alerts for drug interactions, allergies, pregnancy, lactation, duplication, and relevant clinical risk factors.',
+  'Patient screening and operational workflows that connect booking, consultation, billing, reporting, and follow-up.',
+  'Clinical records that can support lifelong patient history, immunisation information, and practical resources for care teams.',
+  'Remote consultation tools that allow doctors to advise patients from anywhere using secure digital access.',
+  'Patient education resources designed to improve understanding and support better healthcare decisions.',
+  'Clinical learning resources that help professionals stay informed about current international practice.',
 ];
 
 const securityPoints = [
   {
     title: 'Cloud Integration',
-    text: 'Protects from online security threats All communication is protected with 256 bit secure encryption and 24 hours data backup',
+    text: 'Cloud-ready architecture helps protect communication, improve availability, and support disciplined backup practices.',
   },
   {
     title: 'Permitted Browser Feature',
-    text: 'With this feature you can limit software usage for your employees to your user computers',
+    text: 'Restrict system access to approved environments so teams can reduce unauthorized usage and improve operational control.',
   },
   {
     title: 'Manage User Permission',
-    text: 'All users such as Doctor, Nurse and Allied Health professional are assigned permissions to limit their access to data',
+    text: 'Assign role-based permissions for doctors, nurses, allied health professionals, and administrators so users access only the data they need.',
   },
   {
     title: 'Continuous Data Protection',
-    text: 'All documents are stored with safety and security of google server or customised according to owner’s requirements. Database server and webserver are fully compliant with Global certification.',
+    text: 'Store documents and operational data with structured protection, secure server practices, and deployment options that can be aligned with owner requirements.',
   },
 ];
 
@@ -40,14 +40,14 @@ export default function WhyChooseUs() {
 
   return (
     <>
-      <Section className="pt-36" title="Improve Your Workflow with MacroHealthPlus Practice Management Software">
+      <Section className="pt-36" title="Why Healthcare Teams Choose MacroHealthPlus">
         <ul className="max-w-4xl space-y-4 text-sm leading-7 text-slate-300">
           {workflowPoints.map((point) => (
             <li className="border-t border-white/10 pt-4" key={point}>{point}</li>
           ))}
         </ul>
       </Section>
-      <Section title="Data Safety and Security">
+      <Section title="Security, Control, and Data Confidence">
         <div className="max-w-4xl space-y-8">
           {securityPoints.map((point) => (
             <section key={point.title}>

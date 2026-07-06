@@ -8,7 +8,7 @@ import { setPageMeta } from '../utils/seo';
 
 export default function Contact() {
   useEffect(() => {
-    setPageMeta('Contact', 'Contact MacroHealthPlus to request a demo or discuss healthcare software workflows.');
+    setPageMeta('Contact', 'Contact MacroHealthPlus to discuss healthcare software, product demos, implementation, and support.');
   }, []);
 
   return (
@@ -16,8 +16,8 @@ export default function Contact() {
       <Section
         className="pt-36"
         eyebrow="Contact"
-        title="Contact Us"
-        intro="Contact MacroHealthPlus for product questions, demo requests, and office information."
+        title="Let’s Talk About Your Healthcare Workflow"
+        intro="Reach the MacroHealthPlus team for product questions, demo requests, implementation discussions, and office information."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {[

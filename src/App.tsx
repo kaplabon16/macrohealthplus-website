@@ -10,14 +10,12 @@ import About from './pages/About';
 import Pricing from './pages/Pricing';
 import ProductDetail from './pages/ProductDetail';
 import RequestDemo from './pages/RequestDemo';
-import SpecialtyDetail from './pages/SpecialtyDetail';
 import Terms from './pages/Terms';
 import LegalDetail from './pages/LegalDetail';
 import ClientLogin from './pages/ClientLogin';
 import ResourceTitlePage from './pages/ResourceTitlePage';
 import WhyChooseUs from './pages/WhyChooseUs';
 import { products } from './data/products';
-import { specialties } from './data/specialties';
 import { routes } from './utils/routes';
 
 export default function App() {
@@ -32,7 +30,6 @@ export default function App() {
         <Route path={routes.requestDemo} element={<RequestDemo />} />
         <Route path={routes.clientLogin} element={<ClientLogin />} />
         {products.map((product) => <Route key={product.route} path={product.route} element={<ProductDetail />} />)}
-        {specialties.map((specialty) => <Route key={specialty.route} path={specialty.route} element={<SpecialtyDetail />} />)}
         <Route path={routes.privacy} element={<LegalDetail />} />
         <Route path={routes.security} element={<LegalDetail />} />
         <Route path={routes.refundReturnPolicy} element={<LegalDetail />} />

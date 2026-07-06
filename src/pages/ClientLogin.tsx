@@ -14,19 +14,19 @@ const products = [
 
 export default function ClientLogin() {
   useEffect(() => {
-    setPageMeta('Our Products', 'MacroHealthPlus product login options.');
+    setPageMeta('Product Login', 'Access MacroHealthPlus product portals for doctors, clinics, pharmacies, external labs, and marketplace teams.');
   }, []);
 
   return (
     <Section
       className="pt-36"
-      title="Our Products"
-      intro="Simplify the clinical operations in the most effective way with the Health Management Software."
+      title="Product Portals"
+      intro="Access the secure product portals connected to MacroHealthPlus workflows for doctors, clinics, pharmacies, labs, SaaS users, e-pharmacy, and marketplace operations."
     >
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
           <a
-            className="glass group rounded-[1.5rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-accent-primary/60 hover:shadow-glow"
+            className="soft-card group rounded-[1.5rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-accent-primary/60 hover:shadow-glow"
             href={product.href}
             key={product.title}
           >

@@ -1,5 +1,6 @@
 import Footer from './Footer';
 import Header from './Header';
+import AmbientBackground from '../ui/AmbientBackground';
 
 type PageShellProps = {
   children: React.ReactNode;
@@ -7,7 +8,8 @@ type PageShellProps = {
 
 export default function PageShell({ children }: PageShellProps) {
   return (
-    <div className="min-h-screen overflow-hidden bg-black text-slate-50">
+    <div className="relative min-h-screen overflow-hidden bg-black text-slate-50">
+      <AmbientBackground />
       <Header />
       <main>{children}</main>
       <Footer />

@@ -8,7 +8,7 @@ export default function RequestDemo() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    setPageMeta('Request Demo', 'Request a MacroHealthPlus demo for healthcare management software solutions.');
+    setPageMeta('Request Demo', 'Request a guided MacroHealthPlus demo for healthcare management software solutions.');
   }, []);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -17,12 +17,12 @@ export default function RequestDemo() {
   }
 
   return (
-    <Section className="pt-36" eyebrow="Request a Demo" title="Get your Free DEMO Today!" intro={`Call us at ${contactInfo.bangladeshPhone} or send a demo request with the solution you want to review.`}>
+    <Section className="pt-36" eyebrow="Request a Demo" title="See MacroHealthPlus in Action" intro={`Call us at ${contactInfo.bangladeshPhone} or send a request so our team can walk you through the right solution for your workflow.`}>
       <div className="grid gap-6 lg:grid-cols-[1fr_0.75fr]">
         <GlassCard>
           {submitted ? (
             <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-5 text-sm text-emerald-100">
-              Thanks for your interest in MacroHealthPlus.
+              Thanks for your interest in MacroHealthPlus. Our team will review your request and follow up with the right product guidance.
             </div>
           ) : null}
           <form className="mt-2 grid gap-4" onSubmit={handleSubmit}>
@@ -44,7 +44,7 @@ export default function RequestDemo() {
           </form>
         </GlassCard>
         <GlassCard>
-          <h2 className="text-xl font-semibold text-white">Contact Us</h2>
+          <h2 className="text-xl font-semibold text-white">Speak With Our Team</h2>
           <div className="mt-5 space-y-3 text-sm leading-6 text-slate-300">
             <p>{contactInfo.email}</p>
             <p>{contactInfo.bangladeshPhone}</p>

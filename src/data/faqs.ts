@@ -1,14 +1,14 @@
 export const faqs = [
   {
-    question: 'Is MacroHealthPlus ready for different facility types?',
-    answer: 'The platform is designed as a modular foundation for doctors, clinics, diagnostics, pharmacies, hospitals, telehealth teams, and administrators.',
+    question: 'Which healthcare teams can use MacroHealthPlus?',
+    answer: 'MacroHealthPlus is built as a modular platform for doctors, clinics, diagnostic labs, pharmacies, telehealth teams, healthcare administrators, and connected patient workflows.',
   },
   {
-    question: 'Can content and modules be adjusted later?',
-    answer: 'MacroHealthPlus modules are designed for connected healthcare workflows across clinical, diagnostic, pharmacy, billing, and reporting needs.',
+    question: 'Can the platform support different operational workflows?',
+    answer: 'Yes. The product suite is structured around connected modules, so clinical, diagnostic, pharmacy, billing, reporting, and communication workflows can be aligned with the needs of each organization.',
   },
   {
-    question: 'Are prices published on this site?',
-    answer: 'Pricing is listed for GreatPharma, GreatDoc, and GreatClinic packages. Enterprise and premium needs can be discussed with MacroHealthPlus.',
+    question: 'How does pricing work?',
+    answer: 'Published pricing is available for selected GreatPharma, GreatDoc, and GreatClinic packages. Premium or larger operational requirements can be discussed with the MacroHealthPlus team.',
   },
 ];

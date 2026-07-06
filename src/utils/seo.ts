@@ -1,4 +1,6 @@
 export function setPageMeta(title: string, description: string) {
+  const siteUrl = (import.meta.env.VITE_PUBLIC_SITE_URL || 'https://macrohealthplus.org').replace(/\/$/, '');
+
   document.title = `${title} | MacroHealthPlus`;
   const meta = document.querySelector('meta[name="description"]');
   if (meta) {
@@ -22,5 +24,5 @@ export function setPageMeta(title: string, description: string) {
     canonical.setAttribute('rel', 'canonical');
     document.head.appendChild(canonical);
   }
-  canonical.setAttribute('href', `https://macrohealthplus.org${window.location.pathname}`);
+  canonical.setAttribute('href', `${siteUrl}${window.location.pathname}`);
 }

@@ -1,4 +1,4 @@
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navigation } from '../../data/navigation';
@@ -9,34 +9,51 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    return window.localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+  });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      setActiveDropdown(null);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
+
   const activeItem = activeDropdown !== null ? navigation[activeDropdown] : null;
   const activeChildren = activeItem && 'children' in activeItem ? activeItem.children : null;
 
   return (
-    <header className="fixed left-0 right-0 top-4 z-50 px-4" onMouseLeave={() => setActiveDropdown(null)}>
+    <header className="fixed left-0 right-0 top-4 z-50 px-4">
+      <div className="mx-auto max-w-7xl" onMouseLeave={() => setActiveDropdown(null)} onPointerLeave={() => setActiveDropdown(null)}>
       <nav className={`glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition duration-500 ${scrolled ? 'py-2 shadow-glow' : 'py-3'}`}>
         <NavLink className="flex items-center gap-3" to={routes.home} onClick={() => setIsOpen(false)}>
-          <img className={`${scrolled ? 'h-8 w-8' : 'h-9 w-9'} rounded-full object-contain transition-all`} src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png" alt="MacroHealthPlus logo" />
-          <span className={`text-sm font-semibold text-white transition-all ${scrolled ? 'tracking-normal text-slate-100' : ''}`}>MacroHealthPlus</span>
+          <span className={`${scrolled ? 'h-9 w-9' : 'h-11 w-11'} relative block shrink-0 overflow-hidden rounded-full transition-all`} aria-hidden="true">
+            <img
+              className="absolute left-0 top-1/2 h-full max-w-none -translate-y-1/2 object-contain"
+              src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png"
+              alt=""
+            />
+          </span>
+          <span className="text-sm font-semibold text-[#69B128] transition-all">MacroHealthPlus</span>
         </NavLink>
 
         <div className="hidden items-center gap-1 xl:flex">
           {navigation.map((item, index) => (
             <div className="relative" key={item.href} onMouseEnter={() => setActiveDropdown('children' in item && item.children ? index : null)}>
               <NavLink
-                className={({ isActive }) =>
-                  `flex items-center gap-1 rounded-full px-3 py-2 text-sm transition ${
-                    isActive || activeDropdown === index ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/8 hover:text-white'
-                  }`
-                }
+                className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm transition ${
+                  activeDropdown === index ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/8 hover:text-white'
+                }`}
                 to={item.href}
               >
                 {item.label}
@@ -47,6 +64,14 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-2 xl:flex">
+          <button
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white transition hover:bg-white hover:text-slate-950"
+            type="button"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={() => setTheme((value) => (value === 'dark' ? 'light' : 'dark'))}
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+          </button>
           <Button href={routes.requestDemo} variant="primary">Request a Demo</Button>
           <Button href={routes.clientLogin} variant="secondary">Client Login</Button>
         </div>
@@ -61,6 +86,8 @@ export default function Header() {
       </nav>
 
       <div
+        onMouseLeave={() => setActiveDropdown(null)}
+        onPointerLeave={() => setActiveDropdown(null)}
         className={`pointer-events-none mx-auto hidden max-w-7xl pt-3 transition duration-300 ease-out xl:block ${
           activeChildren ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
         }`}
@@ -111,12 +138,21 @@ export default function Header() {
               ) : null}
             </div>
           ))}
+          <button
+            className="mx-4 my-3 flex h-11 w-[calc(100%-2rem)] items-center justify-center gap-2 rounded-full border border-white/15 bg-black/40 text-sm font-semibold text-white transition hover:bg-white hover:text-slate-950"
+            type="button"
+            onClick={() => setTheme((value) => (value === 'dark' ? 'light' : 'dark'))}
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+          </button>
           <div className="flex flex-col gap-3 px-4 py-3 sm:flex-row">
             <Button href={routes.requestDemo} icon>Request a Demo</Button>
             <Button href={routes.clientLogin} variant="secondary">Client Login</Button>
           </div>
         </div>
       ) : null}
+      </div>
     </header>
   );
 }

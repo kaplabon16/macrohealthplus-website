@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-8 border-b border-white/10 py-8 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-8 border-b border-white/10 py-8 sm:grid-cols-2 md:grid-cols-3">
           {footerGroups.map((group) => (
             <div key={group.title}>
               <h2 className="font-semibold text-white">{group.title}</h2>

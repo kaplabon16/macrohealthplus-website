@@ -1,15 +1,10 @@
 import { routes } from '../utils/routes';
 import { products } from './products';
-import { specialties } from './specialties';
 
 export const footerGroups = [
   {
     title: 'Solutions',
     links: products.map((product) => ({ label: product.title, href: product.route })),
-  },
-  {
-    title: 'Specialities',
-    links: specialties.slice(0, 8).map((specialty) => ({ label: specialty.title, href: specialty.route })),
   },
   {
     title: 'Support',

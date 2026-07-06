@@ -4,16 +4,16 @@ import GlassCard from '../components/ui/GlassCard';
 import { setPageMeta } from '../utils/seo';
 
 const businessPlan = [
-  'We produce International Standard Medical Software for Clinical use by the Doctors, Nurses, and Allied Health professionals.',
-  'We integrate the public health care system to personal care and develop software for general people.',
-  'Connecting people and health care professionals through electronic platforms.',
-  'Educate Medical professionals and the general public through electronic media.',
+  'Build international-standard healthcare software for doctors, nurses, allied health professionals, clinics, diagnostics, pharmacies, and administrators.',
+  'Connect clinical practice, public health needs, and personal healthcare access through secure digital platforms.',
+  'Create practical electronic channels that help patients and healthcare professionals communicate more efficiently.',
+  'Support medical education and patient awareness through accessible digital resources and healthcare information.',
 ];
 
 const targetMarket = [
-  'Doctor, Nurses, Allied health professionals, Health administrator, Clinics, Private and Public Hospital in Bangladesh.',
-  'General People of Bangladesh in large as users.',
-  'Later stage similar groups in other parts of the world.',
+  'Doctors, nurses, allied health professionals, administrators, clinics, diagnostics, pharmacies, and hospitals in Bangladesh.',
+  'Patients and general healthcare users who need more organized access to care and health information.',
+  'Healthcare teams in international markets that need affordable, secure, and connected practice management software.',
 ];
 
 export default function About() {
@@ -23,21 +23,21 @@ export default function About() {
 
   return (
     <>
-      <Section className="pt-36" eyebrow="About Us" title="Who We Are">
+      <Section className="pt-36" eyebrow="About Us" title="A Healthcare Software Company Built Around Clinical Reality">
         <div className="grid gap-4 md:grid-cols-2">
           <GlassCard>
             <h2 className="text-xl font-semibold text-white">Mission</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-300">We are the “clinical standard” partner of your low-cost medical care in Bangladesh.</p>
+            <p className="mt-4 text-sm leading-7 text-slate-300">To make reliable, clinical-standard healthcare software accessible for practices and organizations that want better care delivery at a sustainable cost.</p>
           </GlassCard>
           <GlassCard>
             <h2 className="text-xl font-semibold text-white">Vision</h2>
             <p className="mt-4 text-sm leading-7 text-slate-300">
-              Error free highest quality of medical care through world class computer programs, guide the clinician now and in future with Artificial Intelligence (AI) and deliver it with an affordable low cost.
+              To support safer, smarter, and more efficient healthcare through world-class digital systems that guide clinicians today and prepare organizations for the future of AI-assisted care.
             </p>
           </GlassCard>
         </div>
       </Section>
-      <Section title="Our Team Member">
+      <Section title="Leadership Team">
         <div className="grid gap-4 md:grid-cols-2">
           {[
             ['Dr. Aminur Rahman', 'Managing Director & CEO'],
@@ -50,7 +50,7 @@ export default function About() {
           ))}
         </div>
       </Section>
-      <Section title="Our Advisory Member">
+      <Section title="Advisory Members">
         <div className="grid gap-4 md:grid-cols-2">
           {[
             ['Nick Ebbeck', 'Advisor'],
@@ -63,12 +63,12 @@ export default function About() {
           ))}
         </div>
       </Section>
-      <Section title="Our Business Plan">
+      <Section title="Our Direction">
         <ul className="grid gap-3 text-sm leading-7 text-slate-300 md:grid-cols-2">
           {businessPlan.map((item) => <li className="border-t border-slate-200 pt-3" key={item}>{item}</li>)}
         </ul>
       </Section>
-      <Section title="Our Target Market">
+      <Section title="Who We Serve">
         <ul className="grid gap-3 text-sm leading-7 text-slate-300 md:grid-cols-3">
           {targetMarket.map((item) => <li className="border-t border-slate-200 pt-3" key={item}>{item}</li>)}
         </ul>
