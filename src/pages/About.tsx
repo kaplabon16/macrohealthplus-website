@@ -55,7 +55,7 @@ function TeamRoster({ members }: { members: TeamMember[] }) {
       className="grid gap-x-8 gap-y-12 sm:grid-cols-2"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.08 }}
+      viewport={{ once: true, amount: 0.01 }}
       variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
     >
       {members.map((member) => (
@@ -89,13 +89,13 @@ export default function About() {
 
   return (
     <>
-      <Section className="pt-36" eyebrow="About MacroHealthPlus" title="Healthcare technology grounded in the realities of care delivery" intro="MacroHealthPlus develops practical digital systems for the people responsible for consultations, diagnostics, medicine services, administration, and patient continuity. Our work is shaped by the belief that better software should make complex healthcare operations easier to understand and run.">
+      <Section className="pt-28 md:pt-36" eyebrow="About MacroHealthPlus" title="Healthcare technology grounded in the realities of care delivery" intro="MacroHealthPlus develops practical digital systems for the people responsible for consultations, diagnostics, medicine services, administration, and patient continuity. Our work is shaped by the belief that better software should make complex healthcare operations easier to understand and run.">
         <div className="space-y-8">
           <motion.article
             className="grid items-center gap-6 border-y border-green-400/30 bg-gradient-to-r from-green-500/15 via-green-500/5 to-transparent px-5 py-8 md:grid-cols-[minmax(180px,0.7fr)_minmax(100px,0.35fr)_minmax(0,1.25fr)] md:px-8"
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.01 }}
             transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
           >
             <div>
@@ -115,7 +115,7 @@ export default function About() {
             className="grid items-center gap-6 border-y border-teal-400/30 bg-gradient-to-l from-teal-500/15 via-teal-500/5 to-transparent px-5 py-8 md:grid-cols-[minmax(0,1.25fr)_minmax(100px,0.35fr)_minmax(180px,0.7fr)] md:px-8"
             initial={{ opacity: 0, x: 18 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.01 }}
             transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="md:order-3 md:text-right">

@@ -33,9 +33,9 @@ export default function Header() {
   const activeChildren = activeItem && 'children' in activeItem ? activeItem.children : null;
 
   return (
-    <header className="fixed left-0 right-0 top-4 z-50 px-4">
+    <header className="fixed left-0 right-0 top-2 z-50 px-2 sm:top-4 sm:px-4">
       <div className="mx-auto max-w-7xl" onMouseLeave={() => setActiveDropdown(null)} onPointerLeave={() => setActiveDropdown(null)}>
-      <nav className={`glass nav-glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition duration-[250ms] ${scrolled ? 'py-2 shadow-glow' : 'py-3'}`}>
+      <nav className={`glass nav-glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
         <NavLink className="flex items-center gap-3" to={routes.home} onClick={() => setIsOpen(false)}>
           <span className={`${scrolled ? 'h-9 w-9' : 'h-11 w-11'} relative block shrink-0 overflow-hidden rounded-full transition-all`} aria-hidden="true">
             <img
@@ -44,7 +44,7 @@ export default function Header() {
               alt=""
             />
           </span>
-          <span className="text-sm font-semibold text-[#69B128] transition-all">MacroHealthPlus</span>
+          <span className="text-xs font-semibold text-[#69B128] transition-all sm:text-sm">MacroHealthPlus</span>
         </NavLink>
 
         <div className="hidden items-center gap-1 xl:flex">

@@ -21,7 +21,7 @@ export default function ClientLogin() {
 
   return (
     <Section
-      className="pt-36"
+      className="pt-28 md:pt-36"
       title="Product Portals"
       intro="Continue to the dedicated workspace for your MacroHealthPlus product. Each portal opens the operational environment used by its corresponding clinical, diagnostic, pharmacy, laboratory, or commerce service."
     >
@@ -29,7 +29,7 @@ export default function ClientLogin() {
         className="grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.08 }}
+        viewport={{ once: true, amount: 0.01 }}
         variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
       >
         {products.map((product) => (

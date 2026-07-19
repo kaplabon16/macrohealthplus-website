@@ -10,7 +10,7 @@ export default function HelpCentre() {
 
   return (
     <Section
-      className="pt-36"
+      className="pt-28 md:pt-36"
       eyebrow="Help Centre"
       title="Answers before you take the next step"
       intro="Review common questions about product fit, implementation, pricing, access, and support. For requirements specific to your organization, contact the MacroHealthPlus team for a focused discussion."

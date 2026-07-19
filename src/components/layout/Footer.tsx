@@ -5,7 +5,7 @@ import { routes } from '../../utils/routes';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black px-6 py-10 text-[13px] text-slate-400">
+    <footer className="border-t border-white/10 bg-black px-4 py-8 text-[13px] text-slate-400 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-6xl">
         <div className="border-b border-slate-300/70 pb-6">
           <Link className="inline-flex items-center gap-2" to={routes.home}>
@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-8 border-b border-white/10 py-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-6 border-b border-white/10 py-6 sm:grid-cols-2 sm:gap-8 sm:py-8 md:grid-cols-3">
           {footerGroups.map((group) => (
             <div key={group.title}>
               <h2 className="font-semibold text-white">{group.title}</h2>

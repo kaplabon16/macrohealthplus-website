@@ -5,7 +5,7 @@ export default function Hero() {
   const shouldReduceMotion = false;
 
   return (
-    <section className="hero-section relative min-h-[92svh] overflow-hidden px-6 pb-14 pt-36">
+    <section className="hero-section relative min-h-[88svh] overflow-hidden px-4 pb-9 pt-28 sm:min-h-[92svh] sm:px-6 sm:pb-14 sm:pt-36">
       <motion.div
         className="absolute inset-0"
         role="img"
@@ -32,9 +32,9 @@ export default function Hero() {
       <div className="hero-contrast-overlay absolute inset-0" aria-hidden="true" />
       <div className="hero-depth-overlay absolute inset-0" aria-hidden="true" />
 
-      <div className="relative mx-auto flex min-h-[calc(92svh-12.5rem)] max-w-7xl items-end md:items-center">
+      <div className="relative mx-auto flex min-h-[calc(88svh-9.25rem)] max-w-7xl items-end sm:min-h-[calc(92svh-12.5rem)] md:items-center">
         <motion.div
-          className="hero-copy-panel w-full max-w-4xl px-6 py-8 md:px-10 md:py-10"
+          className="hero-copy-panel w-full max-w-4xl px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10"
           initial={{ opacity: 0, y: 36, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
@@ -48,7 +48,7 @@ export default function Hero() {
             Healthcare Management Software
           </motion.p>
           <motion.h1
-            className="hero-title mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl md:text-8xl"
+            className="hero-title mt-4 max-w-4xl text-4xl font-semibold leading-[1] sm:mt-5 sm:text-6xl sm:leading-[0.95] md:text-8xl"
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
@@ -56,7 +56,7 @@ export default function Hero() {
             Take Healthcare Operations Further
           </motion.h1>
           <RevealWords
-            className="hero-intro mt-7 max-w-2xl text-base leading-8 md:text-xl"
+            className="hero-intro mt-5 max-w-2xl text-[15px] leading-6 sm:mt-7 sm:text-base sm:leading-8 md:text-xl"
             text="From the first appointment to the final report, MacroHealthPlus gives care teams a clearer way to coordinate clinical records, diagnostics, pharmacy operations, billing, and patient follow-up."
           />
         </motion.div>

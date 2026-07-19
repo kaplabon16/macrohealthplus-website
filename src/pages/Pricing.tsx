@@ -15,7 +15,7 @@ export default function Pricing() {
   return (
     <>
       <Section
-        className="pt-36"
+        className="pt-28 md:pt-36"
         eyebrow="Pricing"
         title="Plans matched to the way you operate"
         intro="Compare the published packages for GreatPharma, GreatDoc, and GreatClinic. All listed prices are in BDT; premium plans are scoped with the MacroHealthPlus team around your organization’s requirements."
@@ -26,7 +26,7 @@ export default function Pricing() {
               key={category.tabTitle}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.05 }}
+              viewport={{ once: true, amount: 0.01 }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="pricing-category-rail mb-2 flex items-center justify-between gap-4 border-y border-white/15 py-5">
@@ -40,7 +40,7 @@ export default function Pricing() {
                 className="pricing-plan-grid grid lg:grid-cols-3"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.05 }}
+                viewport={{ once: true, amount: 0.01 }}
                 variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
               >
                 {category.items.map((plan) => (

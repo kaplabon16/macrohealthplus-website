@@ -10,7 +10,7 @@ export default function FinalCTA() {
         className="relative flex flex-col items-start justify-between gap-5 border-y border-white/15 py-8 md:flex-row md:items-center md:py-10"
         initial={{ opacity: 0, y: 28, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.12 }}
+        viewport={{ once: true, amount: 0.01 }}
         transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="absolute left-0 top-0 h-0.5 w-24 bg-gradient-to-r from-green-400 to-cyan-300" aria-hidden="true" />

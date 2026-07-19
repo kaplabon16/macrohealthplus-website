@@ -21,7 +21,7 @@ export default function WorkflowSection() {
           className="grid gap-5 md:grid-cols-3"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.01 }}
           variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
         >
           {items.map((item) => (
@@ -39,7 +39,7 @@ export default function WorkflowSection() {
             className="mt-5 flex flex-wrap gap-3"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.01 }}
             variants={{ visible: { transition: { staggerChildren: 0.02 } } }}
           >
             {ecosystem.map((item) => (

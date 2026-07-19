@@ -12,7 +12,7 @@ export default function Contact() {
 
   return (
     <Section
-        className="pt-36"
+        className="pt-28 md:pt-36"
         eyebrow="Contact"
         title="Start a practical conversation about your operation"
         intro="Contact MacroHealthPlus to discuss product fit, implementation requirements, pricing, or support. Share the services you run and the challenges you want to solve so our team can respond with relevant guidance."

@@ -41,12 +41,12 @@ export default function WhyChooseUs() {
 
   return (
     <>
-      <Section className="pt-36" eyebrow="Why MacroHealthPlus" title="Technology that respects how healthcare work actually happens" intro="The platform is designed to strengthen continuity between people, records, services, and decisions without forcing every role into the same interface.">
+      <Section className="pt-28 md:pt-36" eyebrow="Why MacroHealthPlus" title="Technology that respects how healthcare work actually happens" intro="The platform is designed to strengthen continuity between people, records, services, and decisions without forcing every role into the same interface.">
         <motion.ul
           className="max-w-4xl space-y-4 text-sm leading-7 text-slate-300"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
+          viewport={{ once: true, amount: 0.01 }}
           variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
         >
           {workflowPoints.map((point) => (

@@ -20,7 +20,7 @@ export default function PlatformOverview() {
         className="grid gap-3 text-sm leading-7 text-slate-300 md:grid-cols-2"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.01 }}
         variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
       >
         {points.map((point) => (

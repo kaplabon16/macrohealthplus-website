@@ -17,11 +17,11 @@ type ProductPageTemplateProps = {
 export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, features, story = [] }: ProductPageTemplateProps) {
   return (
     <>
-      <Section className="pt-36" eyebrow="MacroHealthPlus Solution" title={title} intro={subtitle}>
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.9fr]">
+      <Section className="pt-28 md:pt-36" eyebrow="MacroHealthPlus Solution" title={title} intro={subtitle}>
+        <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[1fr_0.9fr]">
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
-            <p className="text-lg leading-8 text-slate-200">{description}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <p className="text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">{description}</p>
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
               <Button href="/request-demo" icon>Request a Demo</Button>
               <Button href="/pricing" variant="secondary" icon>View Pricing</Button>
             </div>
@@ -36,10 +36,10 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
       {story.length ? (
         <Section eyebrow="Product Experience" title={`See ${title} at work`} intro={`Explore the interfaces behind ${title} and how information moves through its core day-to-day responsibilities.`}>
           <motion.div
-            className="space-y-12"
+            className="space-y-8 sm:space-y-12"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.18 }}
+            viewport={{ once: true, amount: 0.01 }}
             variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
           >
             {story.map((item, index) => (
@@ -65,11 +65,11 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
           className="feature-list-grid grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-3"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.01 }}
           variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
         >
           {features.map((feature) => (
-            <motion.div className="group border-b border-white/15 px-1 py-6 sm:px-5" key={feature} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
+            <motion.div className="group border-b border-white/15 px-1 py-5 sm:px-5 sm:py-6" key={feature} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
               <CheckCircle className="h-5 w-5 text-emerald-300" aria-hidden="true" />
               <p className="mt-4 text-sm font-semibold leading-6 text-white transition duration-200 group-hover:text-green-300">{feature}</p>
             </motion.div>

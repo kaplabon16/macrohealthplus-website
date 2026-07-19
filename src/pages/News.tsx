@@ -11,7 +11,7 @@ export default function News() {
 
   return (
     <Section
-      className="pt-36"
+      className="pt-28 md:pt-36"
       eyebrow="News"
       title="News & Views"
       intro="Product developments and company updates from MacroHealthPlus."
@@ -24,7 +24,7 @@ export default function News() {
             key={item.id}
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.06 }}
+            viewport={{ once: true, amount: 0.01 }}
             transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="grid border-y border-white/15 lg:grid-cols-[1.25fr_0.75fr]">

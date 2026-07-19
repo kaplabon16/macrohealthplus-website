@@ -12,7 +12,7 @@ export default function ResourceTitlePage({ title }: ResourceTitlePageProps) {
   }, [title]);
 
   return (
-    <Section className="pt-36" title={title}>
+    <Section className="pt-28 md:pt-36" title={title}>
       <div className="h-8" />
     </Section>
   );

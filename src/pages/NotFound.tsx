@@ -11,7 +11,7 @@ export default function NotFound() {
   }, []);
 
   return (
-    <Section className="pt-36">
+    <Section className="pt-28 md:pt-36">
       <GlassCard className="max-w-2xl">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">404</p>
         <h1 className="mt-4 text-4xl font-semibold text-white">Page not found.</h1>

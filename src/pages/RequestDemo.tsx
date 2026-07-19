@@ -17,7 +17,7 @@ export default function RequestDemo() {
   }
 
   return (
-    <Section className="pt-36" eyebrow="Guided Product Demo" title="See the workflows that matter to your team" intro={`Tell us which services you operate and what you want to improve. A MacroHealthPlus specialist will tailor the conversation around your requirements. You can also call ${contactInfo.bangladeshPhone}.`}>
+    <Section className="pt-28 md:pt-36" eyebrow="Guided Product Demo" title="See the workflows that matter to your team" intro={`Tell us which services you operate and what you want to improve. A MacroHealthPlus specialist will tailor the conversation around your requirements. You can also call ${contactInfo.bangladeshPhone}.`}>
       <div className="grid gap-6 lg:grid-cols-[1fr_0.75fr]">
         <GlassCard>
           {submitted ? (
