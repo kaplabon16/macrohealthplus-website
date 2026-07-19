@@ -5,7 +5,7 @@ export default function Hero() {
   const shouldReduceMotion = false;
 
   return (
-    <section className="hero-section relative min-h-[88svh] overflow-hidden px-4 pb-9 pt-28 sm:min-h-[92svh] sm:px-6 sm:pb-14 sm:pt-36">
+    <section className="hero-section relative min-h-[82svh] overflow-hidden px-4 pb-9 pt-28 sm:min-h-[92svh] sm:px-6 sm:pb-14 sm:pt-36">
       <motion.div
         className="absolute inset-0"
         role="img"
@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="hero-contrast-overlay absolute inset-0" aria-hidden="true" />
       <div className="hero-depth-overlay absolute inset-0" aria-hidden="true" />
 
-      <div className="relative mx-auto flex min-h-[calc(88svh-9.25rem)] max-w-7xl items-end sm:min-h-[calc(92svh-12.5rem)] md:items-center">
+      <div className="relative mx-auto flex min-h-[calc(82svh-9.25rem)] max-w-7xl items-end pb-6 sm:min-h-[calc(92svh-12.5rem)] sm:pb-0 md:items-center">
         <motion.div
           className="hero-copy-panel w-full max-w-4xl px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10"
           initial={{ opacity: 0, y: 36, filter: 'blur(10px)' }}
