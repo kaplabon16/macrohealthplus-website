@@ -221,22 +221,26 @@ export default function Header() {
               ) : null}
             </div>
           ))}
-          <div className="mx-4 my-3 grid grid-cols-3 gap-1 rounded-2xl border border-white/15 bg-black/30 p-1" aria-label="Color theme">
-            {themeOptions.map((option) => {
-              const Icon = option.icon;
-              return (
-                <button
-                  className={`flex min-w-0 flex-col items-center gap-1 rounded-xl px-2 py-2 text-xs font-semibold transition ${theme === option.value ? 'bg-white/10 text-green-300' : 'text-slate-300 hover:bg-white/10 hover:text-white'}`}
-                  key={option.value}
-                  type="button"
-                  aria-pressed={theme === option.value}
-                  onClick={() => setTheme(option.value)}
-                >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                  {option.label}
-                </button>
-              );
-            })}
+          <div className="mobile-theme-row mx-4 my-3 flex items-center justify-between gap-3 border-y border-white/10 py-2.5">
+            <span className="text-xs font-semibold text-slate-300">Appearance</span>
+            <div className="mobile-theme-picker grid grid-cols-3 gap-1 p-1" aria-label="Color theme">
+              {themeOptions.map((option) => {
+                const Icon = option.icon;
+                return (
+                  <button
+                    className={`mobile-theme-option flex h-9 w-9 items-center justify-center rounded-xl transition ${theme === option.value ? 'mobile-theme-option-active' : ''}`}
+                    key={option.value}
+                    type="button"
+                    aria-label={`${option.label} theme`}
+                    aria-pressed={theme === option.value}
+                    title={option.label}
+                    onClick={() => setTheme(option.value)}
+                  >
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                );
+              })}
+            </div>
           </div>
           <div className="flex flex-col gap-3 px-4 py-3 sm:flex-row">
             <Button href={routes.requestDemo} icon>Request a Demo</Button>
