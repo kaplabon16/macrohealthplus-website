@@ -1,23 +1,57 @@
-import { ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ChevronDown, Menu, Monitor, Moon, Sun, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navigation } from '../../data/navigation';
 import { routes } from '../../utils/routes';
 import Button from '../ui/Button';
 
+type ThemePreference = 'system' | 'light' | 'dark';
+
+const themeOptions = [
+  { value: 'system' as const, label: 'System', icon: Monitor },
+  { value: 'light' as const, label: 'Light', icon: Sun },
+  { value: 'dark' as const, label: 'Dark', icon: Moon },
+];
+
 export default function Header() {
+  const themeMenuCloseTimer = useRef<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    if (typeof window === 'undefined') return 'dark';
-    return window.localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+  const [theme, setTheme] = useState<ThemePreference>(() => {
+    if (typeof window === 'undefined') return 'system';
+    const savedTheme = window.localStorage.getItem('theme');
+    return savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'system';
   });
+
+  const cancelThemeMenuClose = () => {
+    if (themeMenuCloseTimer.current !== null) {
+      window.clearTimeout(themeMenuCloseTimer.current);
+      themeMenuCloseTimer.current = null;
+    }
+  };
+
+  const openThemeMenu = () => {
+    cancelThemeMenuClose();
+    setIsThemeMenuOpen(true);
+  };
+
+  const scheduleThemeMenuClose = () => {
+    cancelThemeMenuClose();
+    themeMenuCloseTimer.current = window.setTimeout(() => {
+      setIsThemeMenuOpen(false);
+      themeMenuCloseTimer.current = null;
+    }, 240);
+  };
+
+  useEffect(() => () => cancelThemeMenuClose(), []);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
       setActiveDropdown(null);
+      setIsThemeMenuOpen(false);
     };
     onScroll();
     window.addEventListener('scroll', onScroll);
@@ -25,8 +59,19 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const applyTheme = () => {
+      document.documentElement.dataset.theme = theme === 'system'
+        ? (systemTheme.matches ? 'dark' : 'light')
+        : theme;
+    };
+
+    applyTheme();
     window.localStorage.setItem('theme', theme);
+
+    if (theme !== 'system') return;
+    systemTheme.addEventListener('change', applyTheme);
+    return () => systemTheme.removeEventListener('change', applyTheme);
   }, [theme]);
 
   const activeItem = activeDropdown !== null ? navigation[activeDropdown] : null;
@@ -64,14 +109,52 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-2 xl:flex">
-          <button
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white transition hover:bg-white hover:text-slate-950"
-            type="button"
-            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            onClick={() => setTheme((value) => (value === 'dark' ? 'light' : 'dark'))}
+          <div
+            className="relative"
+            onPointerEnter={openThemeMenu}
+            onPointerLeave={scheduleThemeMenuClose}
+            onFocus={openThemeMenu}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) scheduleThemeMenuClose();
+            }}
           >
-            {theme === 'dark' ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
-          </button>
+            <button
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white transition hover:bg-white hover:text-slate-950"
+              type="button"
+              aria-label="Choose color theme"
+              aria-expanded={isThemeMenuOpen}
+              onClick={() => {
+                cancelThemeMenuClose();
+                setIsThemeMenuOpen((value) => !value);
+              }}
+            >
+              {theme === 'system' ? <Monitor className="h-4 w-4" aria-hidden="true" /> : theme === 'light' ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+            </button>
+            {isThemeMenuOpen ? (
+              <div className="absolute right-0 top-full w-36 pt-2">
+                <div className="glass nav-glass rounded-2xl p-1.5">
+                  {themeOptions.map((option) => {
+                    const Icon = option.icon;
+                    return (
+                      <button
+                        className={`nav-dropdown-link flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-sm transition ${theme === option.value ? 'bg-white/10 text-green-300' : 'text-slate-200 hover:bg-white/10 hover:text-white'}`}
+                        key={option.value}
+                        type="button"
+                        aria-pressed={theme === option.value}
+                        onClick={() => {
+                          setTheme(option.value);
+                          setIsThemeMenuOpen(false);
+                        }}
+                      >
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : null}
+          </div>
           <Button href={routes.requestDemo} variant="primary">Request a Demo</Button>
           <Button href={routes.clientLogin} variant="secondary">Client Login</Button>
         </div>
@@ -138,14 +221,23 @@ export default function Header() {
               ) : null}
             </div>
           ))}
-          <button
-            className="mx-4 my-3 flex h-11 w-[calc(100%-2rem)] items-center justify-center gap-2 rounded-full border border-white/15 bg-black/40 text-sm font-semibold text-white transition hover:bg-white hover:text-slate-950"
-            type="button"
-            onClick={() => setTheme((value) => (value === 'dark' ? 'light' : 'dark'))}
-          >
-            {theme === 'dark' ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
-            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-          </button>
+          <div className="mx-4 my-3 grid grid-cols-3 gap-1 rounded-2xl border border-white/15 bg-black/30 p-1" aria-label="Color theme">
+            {themeOptions.map((option) => {
+              const Icon = option.icon;
+              return (
+                <button
+                  className={`flex min-w-0 flex-col items-center gap-1 rounded-xl px-2 py-2 text-xs font-semibold transition ${theme === option.value ? 'bg-white/10 text-green-300' : 'text-slate-300 hover:bg-white/10 hover:text-white'}`}
+                  key={option.value}
+                  type="button"
+                  aria-pressed={theme === option.value}
+                  onClick={() => setTheme(option.value)}
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
           <div className="flex flex-col gap-3 px-4 py-3 sm:flex-row">
             <Button href={routes.requestDemo} icon>Request a Demo</Button>
             <Button href={routes.clientLogin} variant="secondary">Client Login</Button>
