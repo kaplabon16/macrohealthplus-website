@@ -17,12 +17,12 @@ export default function RequestDemo() {
   }
 
   return (
-    <Section className="pt-36" eyebrow="Request a Demo" title="See MacroHealthPlus in Action" intro={`Call us at ${contactInfo.bangladeshPhone} or send a request so our team can walk you through the right solution for your workflow.`}>
+    <Section className="pt-36" eyebrow="Guided Product Demo" title="See the workflows that matter to your team" intro={`Tell us which services you operate and what you want to improve. A MacroHealthPlus specialist will tailor the conversation around your requirements. You can also call ${contactInfo.bangladeshPhone}.`}>
       <div className="grid gap-6 lg:grid-cols-[1fr_0.75fr]">
         <GlassCard>
           {submitted ? (
             <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-5 text-sm text-emerald-100">
-              Thanks for your interest in MacroHealthPlus. Our team will review your request and follow up with the right product guidance.
+              Thank you. Our team will review your organization, selected solution, and message before following up with a relevant product conversation.
             </div>
           ) : null}
           <form className="mt-2 grid gap-4" onSubmit={handleSubmit}>
@@ -44,7 +44,8 @@ export default function RequestDemo() {
           </form>
         </GlassCard>
         <GlassCard>
-          <h2 className="text-xl font-semibold text-white">Speak With Our Team</h2>
+          <h2 className="text-xl font-semibold text-white">Prefer to speak directly?</h2>
+          <p className="mt-3 text-sm leading-6 text-slate-300">Use the details below for product questions, implementation discussions, or office enquiries.</p>
           <div className="mt-5 space-y-3 text-sm leading-6 text-slate-300">
             <p>{contactInfo.email}</p>
             <p>{contactInfo.bangladeshPhone}</p>

@@ -6,13 +6,15 @@ type AnimatedSectionProps = {
 };
 
 export default function AnimatedSection({ children, className = '' }: AnimatedSectionProps) {
+  const shouldReduceMotion = false;
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 36 }}
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.08 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.85, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

@@ -1,13 +1,13 @@
 export const mimsPartnerFeatures = [
   {
-    title: 'MIMS integrated prescribing',
-    description: 'MIMS integration notifies drug-to-drug, drug-to-allergy, and drug-to-pregnancy interactions, to help make better decisions.',
+    title: 'MIMS guidance within the prescribing workflow',
+    description: 'Surface drug-to-drug, drug-to-allergy, and drug-to-pregnancy interaction guidance where clinicians prepare prescriptions, supporting a more informed safety review during consultation.',
     imagePath: '/assets/macrohealthplus/homepage/homepage-mims_integrate_img.eee627e4f5eb6b202b82.png',
     altText: 'MIMS integrated prescribing interface',
   },
   {
-    title: 'Get Updated Drug information in details.',
-    description: 'Get an international standard and updated version of drug Information from MIMS every month.',
+    title: 'Current medicine information in clinical context',
+    description: 'Give clinicians access to internationally recognized MIMS medicine information, with regularly updated reference content available alongside the patient and prescription workflow.',
     imagePath: '/assets/macrohealthplus/homepage/homepage-mims_img.7409047c8a2d9cfc18df.png',
     altText: 'MIMS drug information graphic',
   },

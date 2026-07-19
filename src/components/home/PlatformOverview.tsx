@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 
 const points = [
-  'Manage individual practices, clinics, diagnostic workflows, and pharmacy operations from connected digital modules.',
-  'Support safer prescribing decisions with MIMS-enabled drug information and interaction guidance.',
-  'Capture clinical notes, orders, prescriptions, billing, and follow-up actions with less administrative effort.',
-  'Keep patient data, reminders, recalls, reports, and communication history organized in one secure system.',
-  'Turn daily operational data into management reports for clinical, financial, and business decisions.',
-  'Protect healthcare data with secure access controls, cloud-ready architecture, and disciplined permission management.',
+  'Configure the platform around an independent practice, a multi-service clinic, a diagnostic network, a pharmacy, or a hospital operation.',
+  'Bring MIMS medicine information and interaction guidance closer to the moment a clinician prepares a prescription.',
+  'Carry patient context from booking into consultation, investigation, billing, reporting, and follow-up without rebuilding the record at every desk.',
+  'Organize reminders, recalls, documents, results, and communication history around one consistent patient identity.',
+  'Translate routine service activity into operational and financial reports that leaders can review and act on.',
+  'Define access by role and responsibility so clinical, administrative, and management users see the information required for their work.',
 ];
 
 export default function PlatformOverview() {
   return (
     <Section
-      title="A Connected Operating System for Healthcare"
-      intro="MacroHealthPlus brings core healthcare operations into one intelligent software environment, from appointments and clinical records to diagnostics, pharmacy, telehealth, reporting, and business management."
+      title="One operational foundation, shaped around your organization"
+      intro="MacroHealthPlus replaces fragmented handoffs with a shared digital foundation. Teams can work within focused modules while patient, service, and business information remains available across the wider organization."
     >
       <motion.ul
         className="grid gap-3 text-sm leading-7 text-slate-300 md:grid-cols-2"
@@ -25,7 +25,7 @@ export default function PlatformOverview() {
       >
         {points.map((point) => (
           <motion.li
-            className="border-t border-white/10 pt-3 transition duration-300 hover:border-green-300/60 hover:text-white"
+            className="border-t border-white/10 pt-3 transition duration-200 hover:border-green-300/60 hover:text-white"
             key={point}
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}
           >

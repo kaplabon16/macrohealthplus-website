@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-4">
       <div className="mx-auto max-w-7xl" onMouseLeave={() => setActiveDropdown(null)} onPointerLeave={() => setActiveDropdown(null)}>
-      <nav className={`glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition duration-500 ${scrolled ? 'py-2 shadow-glow' : 'py-3'}`}>
+      <nav className={`glass nav-glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition duration-[250ms] ${scrolled ? 'py-2 shadow-glow' : 'py-3'}`}>
         <NavLink className="flex items-center gap-3" to={routes.home} onClick={() => setIsOpen(false)}>
           <span className={`${scrolled ? 'h-9 w-9' : 'h-11 w-11'} relative block shrink-0 overflow-hidden rounded-full transition-all`} aria-hidden="true">
             <img
@@ -51,7 +51,7 @@ export default function Header() {
           {navigation.map((item, index) => (
             <div className="relative" key={item.href} onMouseEnter={() => setActiveDropdown('children' in item && item.children ? index : null)}>
               <NavLink
-                className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm transition ${
+                className={`desktop-nav-link relative flex items-center gap-1 rounded-full px-3 py-2 text-sm transition ${
                   activeDropdown === index ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/8 hover:text-white'
                 }`}
                 to={item.href}
@@ -93,7 +93,7 @@ export default function Header() {
         }`}
       >
         {activeChildren ? (
-          <div className="glass pointer-events-auto overflow-hidden rounded-[2rem] px-8 py-7">
+          <div className="glass nav-glass pointer-events-auto overflow-hidden rounded-[2rem] px-8 py-7">
             <div className="mb-5 flex items-end justify-between gap-6">
               <div>
                 <h2 className="text-2xl font-semibold text-white">{activeItem?.label}</h2>
@@ -103,7 +103,7 @@ export default function Header() {
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
               {activeChildren.map((child) => (
                 <NavLink
-                  className="group rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition duration-200 hover:bg-white hover:text-slate-950"
+                  className="nav-dropdown-link group rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition duration-200 hover:bg-white hover:text-slate-950"
                   key={child.href}
                   to={child.href}
                   onClick={() => setActiveDropdown(null)}
@@ -117,11 +117,11 @@ export default function Header() {
       </div>
 
       {isOpen ? (
-        <div className="glass mx-auto mt-3 max-h-[calc(100vh-6rem)] max-w-7xl overflow-y-auto rounded-3xl p-3 xl:hidden">
+        <div className="glass nav-glass mx-auto mt-3 max-h-[calc(100vh-6rem)] max-w-7xl overflow-y-auto rounded-3xl p-3 xl:hidden">
           {navigation.map((item) => (
             <div key={item.href}>
               <NavLink
-                className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-100 hover:bg-white/8"
+                className="nav-mobile-link block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-100 hover:bg-white/8"
                 to={item.href}
                 onClick={() => setIsOpen(false)}
               >
@@ -130,7 +130,7 @@ export default function Header() {
               {'children' in item && item.children ? (
                 <div className="grid gap-1 pl-4">
                   {item.children.map((child) => (
-                    <NavLink className="rounded-2xl px-4 py-2 text-sm text-slate-300 hover:bg-white/8" key={child.href} to={child.href} onClick={() => setIsOpen(false)}>
+                    <NavLink className="nav-mobile-link rounded-2xl px-4 py-2 text-sm text-slate-300 hover:bg-white/8" key={child.href} to={child.href} onClick={() => setIsOpen(false)}>
                       {child.label}
                     </NavLink>
                   ))}

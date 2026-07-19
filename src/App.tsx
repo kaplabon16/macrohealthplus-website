@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import PageShell from './components/layout/PageShell';
+import RouteTransition from './components/ui/RouteTransition';
 import Contact from './pages/Contact';
 import CookieDisclaimer from './pages/CookieDisclaimer';
 import HelpCentre from './pages/HelpCentre';
@@ -21,27 +22,32 @@ import { routes } from './utils/routes';
 export default function App() {
   return (
     <PageShell>
-      <Routes>
-        <Route path={routes.home} element={<Home />} />
-        <Route path={routes.pricing} element={<Pricing />} />
-        <Route path={routes.helpCentre} element={<HelpCentre />} />
-        <Route path={routes.news} element={<News />} />
-        <Route path={routes.contact} element={<Contact />} />
-        <Route path={routes.requestDemo} element={<RequestDemo />} />
-        <Route path={routes.clientLogin} element={<ClientLogin />} />
-        {products.map((product) => <Route key={product.route} path={product.route} element={<ProductDetail />} />)}
-        <Route path={routes.privacy} element={<LegalDetail />} />
-        <Route path={routes.security} element={<LegalDetail />} />
-        <Route path={routes.refundReturnPolicy} element={<LegalDetail />} />
-        <Route path={routes.terms} element={<LegalDetail />} />
-        <Route path={routes.cookieDisclaimer} element={<LegalDetail />} />
-        <Route path="/who-we-are" element={<About />} />
-        <Route path="/why-choose-us" element={<WhyChooseUs />} />
-        <Route path="/research-reports" element={<ResourceTitlePage title="Medical Education" />} />
-        <Route path="/webinars" element={<ResourceTitlePage title="Webinars" />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <RouteTransition>
+        {(location) => (
+          <Routes location={location}>
+            <Route path={routes.home} element={<Home />} />
+            <Route path={routes.pricing} element={<Pricing />} />
+            <Route path={routes.helpCentre} element={<HelpCentre />} />
+            <Route path={routes.news} element={<News />} />
+            <Route path={routes.contact} element={<Contact />} />
+            <Route path={routes.requestDemo} element={<RequestDemo />} />
+            <Route path={routes.clientLogin} element={<ClientLogin />} />
+            {products.map((product) => <Route key={product.route} path={product.route} element={<ProductDetail />} />)}
+            <Route path="/e-pharmacy" element={<ProductDetail />} />
+            <Route path={routes.privacy} element={<LegalDetail />} />
+            <Route path={routes.security} element={<LegalDetail />} />
+            <Route path={routes.refundReturnPolicy} element={<LegalDetail />} />
+            <Route path={routes.terms} element={<LegalDetail />} />
+            <Route path={routes.cookieDisclaimer} element={<LegalDetail />} />
+            <Route path="/who-we-are" element={<About />} />
+            <Route path="/why-choose-us" element={<WhyChooseUs />} />
+            <Route path="/research-reports" element={<ResourceTitlePage title="Medical Education" />} />
+            <Route path="/webinars" element={<ResourceTitlePage title="Webinars" />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        )}
+      </RouteTransition>
     </PageShell>
   );
 }

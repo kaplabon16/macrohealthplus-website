@@ -23,9 +23,15 @@ export default function Footer() {
               <h2 className="font-semibold text-white">{group.title}</h2>
               <div className="mt-3 space-y-2.5">
                 {group.links.map((link) => (
-                  <Link className="block leading-5 text-slate-400 transition hover:text-white hover:underline" key={link.href} to={link.href}>
-                    {link.label}
-                  </Link>
+                  link.href.startsWith('http') ? (
+                    <a className="block leading-5 text-slate-400 transition hover:text-white hover:underline" href={link.href} key={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link className="block leading-5 text-slate-400 transition hover:text-white hover:underline" key={link.href} to={link.href}>
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -60,6 +66,8 @@ export default function Footer() {
             <Link className="hover:text-white hover:underline" to={routes.security}>Security</Link>
             <span>|</span>
             <Link className="hover:text-white hover:underline" to={routes.cookieDisclaimer}>Cookie Disclaimer</Link>
+            <span>|</span>
+            <a className="hover:text-white hover:underline" href="https://kaushikplabon.vercel.app/" target="_blank" rel="noreferrer">Developer's Info</a>
           </div>
         </div>
       </div>

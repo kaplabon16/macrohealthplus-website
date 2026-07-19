@@ -1,6 +1,5 @@
 import { Check } from 'lucide-react';
 import Button from './Button';
-import GlassCard from './GlassCard';
 
 type PricingCardProps = {
   name: string;
@@ -13,7 +12,7 @@ type PricingCardProps = {
 
 export default function PricingCard({ name, description, cta, features, price = 'Contact for pricing', featured }: PricingCardProps) {
   return (
-    <GlassCard className={`h-full ${featured ? 'border-sky-300/40 bg-sky-400/10' : ''}`}>
+    <article className={`pricing-plan group relative h-full ${featured ? 'pricing-plan-featured' : ''}`}>
       <div className="flex items-center justify-between gap-4">
         <h3 className="text-xl font-semibold text-white">{name}</h3>
         {featured ? <span className="rounded-full bg-sky-300/15 px-3 py-1 text-xs font-semibold text-sky-200">Popular</span> : null}
@@ -33,6 +32,6 @@ export default function PricingCard({ name, description, cta, features, price = 
           {cta}
         </Button>
       </div>
-    </GlassCard>
+    </article>
   );
 }

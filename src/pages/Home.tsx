@@ -2,11 +2,12 @@ import { useEffect } from 'react';
 import FacilitySolutions from '../components/home/FacilitySolutions';
 import FinalCTA from '../components/home/FinalCTA';
 import Hero from '../components/home/Hero';
+import ImplementationInPractice from '../components/home/ImplementationInPractice';
 import MimsSection from '../components/home/MimsSection';
+import LatestNews from '../components/home/LatestNews';
 import PlatformOverview from '../components/home/PlatformOverview';
 import Partners from '../components/home/Partners';
 import WorkflowSection from '../components/home/WorkflowSection';
-import PaymentMethodsStrip from '../components/ui/PaymentMethodsStrip';
 import { setPageMeta } from '../utils/seo';
 
 export default function Home() {
@@ -21,9 +22,10 @@ export default function Home() {
       <MimsSection />
       <PlatformOverview />
       <WorkflowSection />
+      <ImplementationInPractice />
+      <LatestNews />
       <Partners />
       <FinalCTA />
-      <PaymentMethodsStrip />
     </>
   );
 }

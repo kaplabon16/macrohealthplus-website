@@ -1,0 +1,43 @@
+Security Policy
+Date of Last Revision: June 23, 2023
+
+The “MacroHealthPlus Website” (hereinafter “the Website”) complies with the Regulation on Electronic Processing of Personal Data Protection. To protect both Website data and your data, MacroHealthPlus implements this Website Security Policy to describe its security practices.
+
+The Scope of the Policy
+The following Website Security Policy is applicable to the collection, utilization, and protection of personal data when you are browsing the Website; however, it is not applicable to the other websites linked from it. When you follow links to other websites, the website security policies of that website apply.
+The Control of Data Access
+System data access and authorization requirements shall be implemented; written, electronic, or other means of notification shall be established to inform the staff and the users of the permissions and responsibilities of the site.
+The authorization privileges for various data resources shall be immediately canceled for staff who have resigned or have been terminated; this shall be regarded as the mandatory procedure for employment termination and resignation. For any adjustment or alteration of staff duty, authorization shall be adjusted within an appropriate period according to the data access privileges of the new position.
+A user registration management system shall be established to strengthen user password management. User passwords, in principle, shall not be used for a period longer than six months.
+When system service vendors remotely log into the system for maintenance, security control measures shall be enhanced. A relevant roster shall be created for personnel with such responsibility.
+An auditing system for data security shall be established to periodically or randomly conduct data security audits.
+The Website Security Procedures and Rules
+Any unauthorized action to intentionally upload or modify any services provided by the office or other relevant information is strictly prohibited, and may violate of the law. In order to attain website security and to ensure that services can be uninterruptedly provided to all internal users, the Website delivers the following security protection measures:
+At the points connecting to external networks, a firewall will be established to control data transfer and source access between external and internal networks and an identification process will be strictly enforced.
+In order to identify unauthorized intruders trying to upload or modify website information, an Internet intrusion detection system will be utilized to monitor the flow of network traffic.
+Anti-virus software will be installed for periodic virus scans to ensure a safer browsing environment for the users.
+A system backup system will be established to execute necessary data and software backup and stand-by operations in order to immediately resume regular operation in the event of disasters or storage media failure.
+Simulated attacks shall be conducted periodically to test system recovery procedures in the event of security incidents and to provide a suitable security defense level.
+Any classified and sensitive data or documents shall not be stored in the public data system; classified documents shall not be transmitted by electronic mail.
+Electronic notifications about the security system and its maintenance will be automatically sent to all system and operation vendors. Patches will also be installed appropriately in accordance with the recommendations of such notices.
+Internet data transmission cannot be guaranteed to be 100 percent secure; the Website will strive to protect Website data and your personal data. In certain situations, a standard SSL security system will be utilized to ensure data transmission security. However, the data transmission process is influenced by your own Internet surfing environment. As we cannot guarantee the security of the data transmission from this Website, you must pay attention to and assume the risks involved in Internet data transmission. Please understand that any consequence resulting from this is beyond the Website’s control.
+The security management of the firewall
+A firewall will be established as a network relay server (such as Proxy Server) that provides the transport and control of Internet services such as Telnet, FTP, and WWW.
+The firewall will be the core of the entire network of this office. In case of unexpected events, a backup shall be prepared for all firewall host hardware and software.
+The office’s firewall system will routinely record the activities and incidents of the entire network. At a minimum, the recorded data shall include the date, time, originating IP, and communication protocol of the incident, for the purposes of routine management and future audit operations.
+The log of the office’s firewall will be examined and analyzed by firewall management personnel for any irregularities; such logs shall be retained for at least one year.
+In order to ensure the security of the firewall host computer, the office’s firewall host computer shall only be logged into via system terminals; it shall not be logged into by any other method.
+The security control setting of the office’s firewall shall be reviewed frequently and adjusted as required to ensure that the goals of security control are attained.
+The office’s firewall system shall be backed up periodically. In addition, the backup shall be done on a stand-alone computer; any other method, including Internet backup, is not allowed.
+The office’s firewall system software shall be updated regularly to be able to respond to a variety of network attacks.
+The principles of data backup operation
+The backup of significant data shall be maintained for at least three generations, in principle.
+The backup data shall be protected by suitable physical and environmental measures; the safety standard shall match the safety standards of the major workplaces as much as possible. The computer security control measures of major workplaces shall be applied to backup operation workplaces as much as possible.
+Periodic testing of backup data shall be conducted to ensure the usability of backup data.
+Data recovery operation principles
+When performing data recovery, the consistency and completeness of the data shall be checked first.
+When recovering website data, except in the event of unexpected major incidents that prevent computer facilities or network operations from recovering, the data shall be restored to regular activities within 24 hours. The backup data shall be maintained and updated to the most recent data within two days to ensure that after the data has been recovered, programs and databases can all immediately resume normal operation.
+Backup data shall be tested regularly to ensure its usability.
+After the data recovery operation has been completed, relevant personnel shall continually monitor the system for three days to ensure its normal operation and the correctness of the newly added data.
+Due to rapid technological advancement, the unfinished implementation of relevant regulations, and other future unforeseeable environmental changes, the data security policy may be changed by the Website as required to ensure proper Internet security protection. After the Website has completed any amendments to the data security policy, MacroHealthPlus will promptly publish the new policy on the Website, and clearly highlight the amended sections for your reference.
+For any questions or comments about the above terms and conditions, you are welcome to contact us through the details listed on the Website.

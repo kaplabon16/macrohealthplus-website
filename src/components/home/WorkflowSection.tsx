@@ -4,18 +4,18 @@ import GlassCard from '../ui/GlassCard';
 
 const items = [
   {
-    title: 'Business Consistency',
-    text: 'Run healthcare services with the discipline of a modern business. MacroHealthPlus helps teams manage patient acquisition, service delivery, billing visibility, and long-term retention through connected workflows.',
+    title: 'A Consistent Standard of Service',
+    text: 'Create a repeatable journey from registration to follow-up, with clear responsibilities, fewer missed handoffs, and a more dependable experience for every patient.',
   },
-  { title: 'Central Management', text: 'Bring appointments, records, lab reports, pharmacy activity, telehealth, and communication into one management view.' },
-  { title: 'Efficient Operations', text: 'Reduce repeated manual work, improve handoffs between teams, and give management better visibility into daily performance.' },
+  { title: 'Decisions With Better Context', text: 'Give authorized teams timely access to appointments, clinical history, diagnostic activity, medicine sales, and service status instead of relying on scattered updates.' },
+  { title: 'Less Administrative Friction', text: 'Reduce duplicate entry, shorten routine desk work, and make outstanding actions easier to identify before they delay care or payment.' },
 ];
 
 const ecosystem = ['Patient', 'Doctors', 'Allied Healthcare Staff', 'Clinic', 'Hospitals', 'Pharmacy', 'Pharmaceutical Company', 'Insurance', 'Tele Medicine', 'Medical College', 'Technology Providers', 'Investor', 'Regulators', 'Government'];
 
 export default function WorkflowSection() {
   return (
-    <Section title="Improve Efficiency, Accuracy, and Operational Control">
+    <Section title="Better work at the desk. Better continuity across the organization." intro="Digital transformation matters when it improves the ordinary moments that shape care: finding the right record, completing an order, collecting payment, publishing a result, or knowing what must happen next.">
       <div className="space-y-10">
         <motion.div
           className="grid gap-5 md:grid-cols-3"
@@ -34,7 +34,7 @@ export default function WorkflowSection() {
           ))}
         </motion.div>
         <div>
-          <h2 className="text-2xl font-semibold text-white">Health Eco-System</h2>
+          <h2 className="text-2xl font-semibold text-white">Designed for the wider healthcare ecosystem</h2>
           <motion.div
             className="mt-5 flex flex-wrap gap-3"
             initial="hidden"

@@ -12,8 +12,8 @@ export default function HelpCentre() {
     <Section
       className="pt-36"
       eyebrow="Help Centre"
-      title="Hi! How can we help you?"
-      intro="Starting a new project and have a few questions? Some of the most frequently asked questions and answers are listed below."
+      title="Answers before you take the next step"
+      intro="Review common questions about product fit, implementation, pricing, access, and support. For requirements specific to your organization, contact the MacroHealthPlus team for a focused discussion."
     >
       <div className="max-w-3xl">
         <FAQAccordion />

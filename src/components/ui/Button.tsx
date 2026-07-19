@@ -15,12 +15,12 @@ const variants = {
 };
 
 export default function Button({ href, children, variant = 'primary', icon = false }: ButtonProps) {
-  const className = `group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 ${variants[variant]}`;
+  const className = `group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 ${variants[variant]}`;
   const content = (
     <>
-      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-700 group-hover:translate-x-full" aria-hidden="true" />
+      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-400 group-hover:translate-x-full" aria-hidden="true" />
       <span className="relative">{children}</span>
-      {icon ? <ArrowRight aria-hidden="true" className="relative h-4 w-4 transition duration-300 group-hover:translate-x-1" /> : null}
+      {icon ? <ArrowRight aria-hidden="true" className="relative h-4 w-4 transition duration-200 group-hover:translate-x-1" /> : null}
     </>
   );
 

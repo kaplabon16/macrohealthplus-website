@@ -1,34 +1,64 @@
 import { motion } from 'framer-motion';
-import { routes } from '../../utils/routes';
-import Button from '../ui/Button';
 import RevealWords from '../ui/RevealWords';
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-[92vh] overflow-hidden bg-black px-6 pb-24 pt-36">
-      <div className="hero-rays" aria-hidden="true" />
-      <div className="shooting-star shooting-star-a" aria-hidden="true" />
-      <div className="shooting-star shooting-star-b" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
-        <motion.div initial={{ opacity: 0, y: 36, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-          <p className="inline-flex rounded-full border border-white/12 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-green-300">Healthcare Management Software</p>
-          <h1 className="mt-6 max-w-4xl text-6xl font-semibold leading-[0.9] text-white md:text-8xl">
-            Take Healthcare Operations Further
-          </h1>
-          <RevealWords
-            className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl"
-            text="MacroHealthPlus connects doctors, clinics, diagnostics, pharmacies, and patients through secure digital workflows built for faster care delivery."
-          />
-          <motion.div className="mt-9 flex flex-col gap-3 sm:flex-row" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
-            <Button href={routes.requestDemo} icon>Request a Demo</Button>
-          </motion.div>
-        </motion.div>
+  const shouldReduceMotion = false;
 
-        <motion.div className="relative" initial={{ opacity: 0, x: 48, rotate: 1.5 }} animate={{ opacity: 1, x: 0, rotate: 0 }} transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}>
-          <div className="absolute -inset-8 rounded-[2.5rem] bg-green-500/10 blur-3xl" aria-hidden="true" />
-          <div className="glass relative overflow-hidden rounded-[2rem] p-2">
-            <img className="relative aspect-[4/3] w-full rounded-[1.55rem] object-cover" src="/assets/generated/health-tech-hero.webp" alt="MacroHealthPlus healthcare software" />
-          </div>
+  return (
+    <section className="hero-section relative min-h-[92svh] overflow-hidden px-6 pb-14 pt-36">
+      <motion.div
+        className="absolute inset-0"
+        role="img"
+        aria-label="MacroHealthPlus products across desktop, laptop, tablet, and mobile devices"
+        initial={{ opacity: 0, scale: 1.045 }}
+        animate={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 1, scale: [1.02, 1, 1.012] }}
+        transition={shouldReduceMotion
+          ? { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+          : { opacity: { duration: 1.1 }, scale: { duration: 16, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' } }}
+      >
+        <img
+          className="hero-theme-image hero-theme-image-dark"
+          src="/assets/generated/health-tech-hero-products.webp"
+          alt=""
+          decoding="async"
+        />
+        <img
+          className="hero-theme-image hero-theme-image-light"
+          src="/assets/generated/health-tech-hero-products-light.webp"
+          alt=""
+          decoding="async"
+        />
+      </motion.div>
+      <div className="hero-contrast-overlay absolute inset-0" aria-hidden="true" />
+      <div className="hero-depth-overlay absolute inset-0" aria-hidden="true" />
+
+      <div className="relative mx-auto flex min-h-[calc(92svh-12.5rem)] max-w-7xl items-end md:items-center">
+        <motion.div
+          className="hero-copy-panel w-full max-w-4xl px-6 py-8 md:px-10 md:py-10"
+          initial={{ opacity: 0, y: 36, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.p
+            className="hero-kicker text-xs font-semibold uppercase tracking-[0.28em]"
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Healthcare Management Software
+          </motion.p>
+          <motion.h1
+            className="hero-title mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl md:text-8xl"
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Take Healthcare Operations Further
+          </motion.h1>
+          <RevealWords
+            className="hero-intro mt-7 max-w-2xl text-base leading-8 md:text-xl"
+            text="From the first appointment to the final report, MacroHealthPlus gives care teams a clearer way to coordinate clinical records, diagnostics, pharmacy operations, billing, and patient follow-up."
+          />
         </motion.div>
       </div>
     </section>

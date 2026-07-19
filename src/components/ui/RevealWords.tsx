@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 type RevealWordsProps = {
   text: string;
@@ -6,7 +6,7 @@ type RevealWordsProps = {
 };
 
 export default function RevealWords({ text, className = '' }: RevealWordsProps) {
-  const shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = false;
   const words = text.split(' ');
 
   if (shouldReduceMotion) {

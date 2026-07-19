@@ -5,8 +5,8 @@ export default function Partners() {
   return (
     <Section
       eyebrow="Our Partners"
-      title="Our Partners"
-      intro="Healthcare organizations use MacroHealthPlus to bring clinical operations, diagnostics, pharmacy workflows, and patient services into a more connected digital environment."
+      title="Trusted by teams delivering care every day"
+      intro="MacroHealthPlus works alongside healthcare organizations that depend on reliable systems at the consultation desk, diagnostic counter, pharmacy, and patient-service point. Their operational experience continues to inform how our products evolve."
     >
       <ClientLogoMarquee />
     </Section>
