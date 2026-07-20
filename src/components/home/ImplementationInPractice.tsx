@@ -47,17 +47,17 @@ export default function ImplementationInPractice() {
 
   return (
     <Section className="overflow-hidden" eyebrow="Implementation in Practice" title="From agreement to working operations" intro="Implementation is where software meets the routines, responsibilities, and service demands of a healthcare organization. These moments reflect the practical work of bringing MacroHealthPlus into real operating environments.">
-      <div className="grid items-center gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-        <div className="border-y border-white/15 py-8">
+      <div className="grid items-center gap-6 sm:gap-8 md:grid-cols-[0.72fr_1.28fr] md:gap-8 lg:gap-20">
+        <div className="border-y border-white/15 py-5 sm:py-6 lg:py-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-green-300">On-site collaboration</p>
-          <p className="mt-5 text-lg leading-8 text-white">
+          <p className="mt-3 text-base leading-6 text-white sm:mt-4 sm:text-lg sm:leading-7 lg:mt-5 lg:leading-8">
             Each implementation begins with people aligning around how the organization works and what the software needs to support.
           </p>
-          <p className="mt-5 text-sm leading-7 text-slate-300">
+          <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 lg:mt-5 lg:leading-7">
             Configuration, operational handover, and direct coordination help turn a selected product into a system teams can begin using with clarity.
           </p>
 
-          <div className="mt-8 flex items-center gap-3">
+          <div className="mt-5 flex items-center gap-3 lg:mt-8">
             <button className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition hover:border-green-300/60 hover:text-green-300" type="button" onClick={showPrevious} aria-label="Show previous implementation image" title="Previous image">
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             </button>
@@ -71,7 +71,7 @@ export default function ImplementationInPractice() {
         </div>
 
         <div
-          className="relative h-[360px] sm:h-[470px] lg:h-[560px]"
+          className="relative h-[250px] sm:h-[340px] md:h-[400px] lg:h-[560px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >

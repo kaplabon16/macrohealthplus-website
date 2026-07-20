@@ -17,7 +17,7 @@ export default function PlatformOverview() {
       intro="MacroHealthPlus replaces fragmented handoffs with a shared digital foundation. Teams can work within focused modules while patient, service, and business information remains available across the wider organization."
     >
       <motion.ul
-        className="grid gap-3 text-sm leading-7 text-slate-300 md:grid-cols-2"
+        className="grid gap-2 text-xs leading-5 text-slate-300 sm:grid-cols-2 sm:gap-3 sm:text-sm sm:leading-6 lg:leading-7"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.01 }}

@@ -13,15 +13,15 @@ export default function Section({ children, eyebrow, title, intro, className = '
   const reduceMotion = false;
 
   return (
-    <section className={`relative bg-black/90 px-4 py-9 sm:px-6 sm:py-12 md:py-16 ${className}`}>
+    <section className={`site-section relative bg-black/90 px-4 py-7 sm:px-6 sm:py-9 md:py-11 lg:py-14 ${className}`}>
       <AnimatedSection className="mx-auto max-w-6xl">
         {title ? (
-          <div className="section-heading mb-6 max-w-3xl md:mb-8">
-            {eyebrow ? <p className="section-eyebrow text-sm font-semibold uppercase tracking-[0.28em] text-green-300">{eyebrow}</p> : null}
-            <h2 className="section-title mt-3 text-2xl font-semibold leading-tight tracking-normal text-white sm:mt-4 sm:text-3xl md:text-5xl">{title}</h2>
-            {intro ? <p className="mt-4 text-[15px] leading-6 text-slate-300 sm:mt-5 sm:text-base sm:leading-7 md:text-lg">{intro}</p> : null}
+          <div className="section-heading mb-5 max-w-3xl sm:mb-6 lg:mb-8">
+            {eyebrow ? <p className="section-eyebrow text-xs font-semibold uppercase tracking-[0.24em] text-green-300 sm:text-sm sm:tracking-[0.28em]">{eyebrow}</p> : null}
+            <h2 className="section-title mt-2.5 text-2xl font-semibold leading-tight tracking-normal text-white sm:mt-3 sm:text-3xl md:text-4xl lg:mt-4 lg:text-5xl">{title}</h2>
+            {intro ? <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:text-[15px] md:text-base md:leading-7 lg:mt-5 lg:text-lg">{intro}</p> : null}
             <motion.span
-              className="section-heading-line mt-5 block h-px sm:mt-6"
+              className="section-heading-line mt-4 block h-px sm:mt-5 lg:mt-6"
               initial={reduceMotion ? false : { scaleX: 0, opacity: 0 }}
               whileInView={{ scaleX: 1, opacity: 1 }}
               viewport={{ once: true, amount: 0 }}

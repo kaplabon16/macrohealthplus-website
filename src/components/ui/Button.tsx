@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 type ButtonProps = {
   href?: string;
@@ -26,7 +26,7 @@ export default function Button({ href, children, variant = 'primary', icon = fal
 
   if (href) {
     return (
-      <Link className={className} to={href}>
+      <Link className={className} href={href}>
         {content}
       </Link>
     );

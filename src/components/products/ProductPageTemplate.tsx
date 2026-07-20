@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import Section from '../layout/Section';
@@ -17,11 +19,11 @@ type ProductPageTemplateProps = {
 export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, features, story = [] }: ProductPageTemplateProps) {
   return (
     <>
-      <Section className="pt-28 md:pt-36" eyebrow="MacroHealthPlus Solution" title={title} intro={subtitle}>
-        <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[1fr_0.9fr]">
+      <Section className="pt-24 sm:pt-28 lg:pt-32" eyebrow="MacroHealthPlus Solution" title={title} intro={subtitle}>
+        <div className="grid items-center gap-5 sm:gap-6 md:grid-cols-[1fr_0.9fr] lg:gap-8">
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
-            <p className="text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">{description}</p>
-            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+            <p className="text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">{description}</p>
+            <div className="mt-4 flex flex-col gap-2.5 sm:mt-6 sm:flex-row lg:mt-8">
               <Button href="/request-demo" icon>Request a Demo</Button>
               <Button href="/pricing" variant="secondary" icon>View Pricing</Button>
             </div>
@@ -36,7 +38,7 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
       {story.length ? (
         <Section eyebrow="Product Experience" title={`See ${title} at work`} intro={`Explore the interfaces behind ${title} and how information moves through its core day-to-day responsibilities.`}>
           <motion.div
-            className="space-y-8 sm:space-y-12"
+            className="space-y-5 sm:space-y-7 lg:space-y-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.01 }}
@@ -52,8 +54,8 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
                   <img src={item.image} alt={`${title}: ${item.title}`} loading="lazy" decoding="async" style={{ objectPosition: item.position ?? 'center center' }} />
                 </div>
                 <div className="product-story-copy">
-                  <h2 className="text-3xl font-semibold leading-tight text-white">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                  <h2 className="text-xl font-semibold leading-tight text-white sm:text-2xl lg:text-3xl">{item.title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-slate-300 sm:mt-3">{item.description}</p>
                 </div>
               </motion.article>
             ))}
@@ -69,9 +71,9 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
           variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
         >
           {features.map((feature) => (
-            <motion.div className="group border-b border-white/15 px-1 py-5 sm:px-5 sm:py-6" key={feature} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
+            <motion.div className="group border-b border-white/15 px-1 py-3.5 sm:px-4 sm:py-4 lg:px-5 lg:py-6" key={feature} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
               <CheckCircle className="h-5 w-5 text-emerald-300" aria-hidden="true" />
-              <p className="mt-4 text-sm font-semibold leading-6 text-white transition duration-200 group-hover:text-green-300">{feature}</p>
+              <p className="mt-2.5 text-sm font-semibold leading-5 text-white transition duration-200 group-hover:text-green-300 sm:mt-3 sm:leading-6 lg:mt-4">{feature}</p>
             </motion.div>
           ))}
         </motion.div>

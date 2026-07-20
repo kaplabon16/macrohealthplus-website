@@ -2,6 +2,7 @@ import Footer from './Footer';
 import Header from './Header';
 import AmbientBackground from '../ui/AmbientBackground';
 import ScrollProgress from '../ui/ScrollProgress';
+import RouteTransition from '../ui/RouteTransition';
 
 type PageShellProps = {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ export default function PageShell({ children }: PageShellProps) {
       <AmbientBackground />
       <ScrollProgress />
       <Header />
-      <main>{children}</main>
+      <main><RouteTransition>{children}</RouteTransition></main>
       <Footer />
     </div>
   );

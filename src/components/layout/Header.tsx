@@ -1,6 +1,8 @@
+'use client';
+
 import { ChevronDown, Menu, Monitor, Moon, Sun, X } from 'lucide-react';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { navigation } from '../../data/navigation';
 import { routes } from '../../utils/routes';
 import Button from '../ui/Button';
@@ -19,11 +21,8 @@ export default function Header() {
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-  const [theme, setTheme] = useState<ThemePreference>(() => {
-    if (typeof window === 'undefined') return 'system';
-    const savedTheme = window.localStorage.getItem('theme');
-    return savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'system';
-  });
+  const [theme, setTheme] = useState<ThemePreference>('system');
+  const [themeReady, setThemeReady] = useState(false);
 
   const cancelThemeMenuClose = () => {
     if (themeMenuCloseTimer.current !== null) {
@@ -48,6 +47,12 @@ export default function Header() {
   useEffect(() => () => cancelThemeMenuClose(), []);
 
   useEffect(() => {
+    const savedTheme = window.localStorage.getItem('theme');
+    setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'system');
+    setThemeReady(true);
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
       setActiveDropdown(null);
@@ -59,6 +64,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    if (!themeReady) return;
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
     const applyTheme = () => {
       document.documentElement.dataset.theme = theme === 'system'
@@ -72,7 +78,7 @@ export default function Header() {
     if (theme !== 'system') return;
     systemTheme.addEventListener('change', applyTheme);
     return () => systemTheme.removeEventListener('change', applyTheme);
-  }, [theme]);
+  }, [theme, themeReady]);
 
   const activeItem = activeDropdown !== null ? navigation[activeDropdown] : null;
   const activeChildren = activeItem && 'children' in activeItem ? activeItem.children : null;
@@ -81,7 +87,7 @@ export default function Header() {
     <header className="fixed left-0 right-0 top-2 z-50 px-2 sm:top-4 sm:px-4">
       <div className="mx-auto max-w-7xl" onMouseLeave={() => setActiveDropdown(null)} onPointerLeave={() => setActiveDropdown(null)}>
       <nav className={`glass nav-glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
-        <NavLink className="flex items-center gap-3" to={routes.home} onClick={() => setIsOpen(false)}>
+        <Link className="flex items-center gap-3" href={routes.home} onClick={() => setIsOpen(false)}>
           <span className={`${scrolled ? 'h-9 w-9' : 'h-11 w-11'} relative block shrink-0 overflow-hidden rounded-full transition-all`} aria-hidden="true">
             <img
               className="absolute left-0 top-1/2 h-full max-w-none -translate-y-1/2 object-contain"
@@ -90,20 +96,20 @@ export default function Header() {
             />
           </span>
           <span className="text-xs font-semibold text-[#69B128] transition-all sm:text-sm">MacroHealthPlus</span>
-        </NavLink>
+        </Link>
 
         <div className="hidden items-center gap-1 xl:flex">
           {navigation.map((item, index) => (
             <div className="relative" key={item.href} onMouseEnter={() => setActiveDropdown('children' in item && item.children ? index : null)}>
-              <NavLink
+              <Link
                 className={`desktop-nav-link relative flex items-center gap-1 rounded-full px-3 py-2 text-sm transition ${
                   activeDropdown === index ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/8 hover:text-white'
                 }`}
-                to={item.href}
+                href={item.href}
               >
                 {item.label}
                 {'children' in item && item.children ? <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" /> : null}
-              </NavLink>
+              </Link>
             </div>
           ))}
         </div>
@@ -185,14 +191,14 @@ export default function Header() {
             </div>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
               {activeChildren.map((child) => (
-                <NavLink
+                <Link
                   className="nav-dropdown-link group rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition duration-200 hover:bg-white hover:text-slate-950"
                   key={child.href}
-                  to={child.href}
+                  href={child.href}
                   onClick={() => setActiveDropdown(null)}
                 >
                   <span className="block transition duration-200 group-hover:translate-x-1">{child.label}</span>
-                </NavLink>
+                </Link>
               ))}
             </div>
           </div>
@@ -203,19 +209,19 @@ export default function Header() {
         <div className="glass nav-glass mx-auto mt-3 max-h-[calc(100vh-6rem)] max-w-7xl overflow-y-auto rounded-3xl p-3 xl:hidden">
           {navigation.map((item) => (
             <div key={item.href}>
-              <NavLink
+              <Link
                 className="nav-mobile-link block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-100 hover:bg-white/8"
-                to={item.href}
+                href={item.href}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </NavLink>
+              </Link>
               {'children' in item && item.children ? (
                 <div className="grid gap-1 pl-4">
                   {item.children.map((child) => (
-                    <NavLink className="nav-mobile-link rounded-2xl px-4 py-2 text-sm text-slate-300 hover:bg-white/8" key={child.href} to={child.href} onClick={() => setIsOpen(false)}>
+                    <Link className="nav-mobile-link rounded-2xl px-4 py-2 text-sm text-slate-300 hover:bg-white/8" key={child.href} href={child.href} onClick={() => setIsOpen(false)}>
                       {child.label}
-                    </NavLink>
+                    </Link>
                   ))}
                 </div>
               ) : null}

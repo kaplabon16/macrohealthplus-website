@@ -8,7 +8,7 @@ export default function FacilitySolutions() {
   return (
     <Section eyebrow="Product Suite" title="Purpose-built software for every part of the care journey" intro="Choose the capabilities your organization needs today, then connect them as your services grow. Each MacroHealthPlus product is designed around a real clinical or operational responsibility, from consultation and diagnostics to workforce, inventory, and medicine delivery.">
       <motion.div
-        className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+        className="grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4"
       >
         {products.map((product, index) => (
           <motion.a
@@ -24,9 +24,9 @@ export default function FacilitySolutions() {
               <div className="product-card-mark">
                 <ProductMark title={product.title} />
               </div>
-              <div className="p-6">
-                <p className="text-sm font-semibold text-green-300">{product.subtitle}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{product.description}</p>
+              <div className="p-3.5 sm:p-5 lg:p-6">
+                <p className="product-card-subtitle text-xs font-semibold text-green-300 sm:text-sm">{product.subtitle}</p>
+                <p className="product-card-description mt-2 text-xs leading-5 text-slate-300 sm:mt-3 sm:text-sm sm:leading-6">{product.description}</p>
               </div>
             </GlassCard>
           </motion.a>
