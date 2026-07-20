@@ -19,12 +19,12 @@ export default function MimsSection() {
             <Button href="/request-demo" icon>Explore Clinical Workflows</Button>
           </div>
         </motion.div>
-        <motion.div className="relative min-h-[230px] sm:min-h-[310px] md:min-h-[360px] lg:min-h-[540px]" initial={{ opacity: 0, x: 38 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}>
-          <a className="absolute right-0 top-0 z-10 block w-44 md:w-56" href="https://corporate.mims.com/" target="_blank" rel="noreferrer" aria-label="Visit the official MIMS website">
+        <motion.div className="mims-visual relative min-h-[330px] sm:min-h-[350px] md:min-h-[360px] lg:min-h-[540px]" initial={{ opacity: 0, x: 38 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}>
+          <a className="mims-logo absolute right-1 top-0 z-10 block w-52 sm:right-0 sm:w-56" href="https://corporate.mims.com/" target="_blank" rel="noreferrer" aria-label="Visit the official MIMS website">
             <img className="h-auto w-full" src="/assets/mims/mims-logo.webp" alt="MIMS" loading="lazy" decoding="async" />
           </a>
           <img
-            className="absolute bottom-0 right-[-8%] h-[88%] w-auto max-w-none object-contain md:right-0 md:h-[92%]"
+            className="mims-people absolute bottom-0 right-[-5%] h-[96%] w-auto max-w-none object-contain sm:right-0 sm:h-[94%] md:h-[92%]"
             src="/assets/mims/mims-healthcare-professional.webp"
             alt="A doctor examining a child with a parent present"
             loading="lazy"
