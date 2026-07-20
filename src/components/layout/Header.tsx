@@ -138,7 +138,7 @@ export default function Header() {
             </button>
             {isThemeMenuOpen ? (
               <div className="absolute right-0 top-full w-36 pt-2">
-                <div className="glass nav-glass rounded-2xl p-1.5">
+                <div className="glass nav-glass nav-menu-frost rounded-2xl p-1.5">
                   {themeOptions.map((option) => {
                     const Icon = option.icon;
                     return (
@@ -182,7 +182,7 @@ export default function Header() {
         }`}
       >
         {activeChildren ? (
-          <div className="glass nav-glass pointer-events-auto overflow-hidden rounded-[2rem] px-8 py-7">
+          <div className="glass nav-glass nav-menu-frost pointer-events-auto overflow-hidden rounded-[2rem] px-8 py-7">
             <div className="mb-5 flex items-end justify-between gap-6">
               <div>
                 <h2 className="text-2xl font-semibold text-white">{activeItem?.label}</h2>
@@ -206,7 +206,7 @@ export default function Header() {
       </div>
 
       {isOpen ? (
-        <div className="glass nav-glass mx-auto mt-3 max-h-[calc(100vh-6rem)] max-w-7xl overflow-y-auto rounded-3xl p-3 xl:hidden">
+        <div className="glass nav-glass nav-menu-frost mx-auto mt-3 max-h-[calc(100vh-6rem)] max-w-7xl overflow-y-auto rounded-3xl p-3 xl:hidden">
           {navigation.map((item) => (
             <div key={item.href}>
               <Link
