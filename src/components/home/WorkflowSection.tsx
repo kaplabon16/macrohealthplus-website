@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import GlassCard from '../ui/GlassCard';
+import ConnectedCareGraph from './ConnectedCareGraph';
 
 const items = [
   {
@@ -10,16 +11,6 @@ const items = [
   { title: 'Decisions With Better Context', text: 'Give authorized teams timely access to appointments, clinical history, diagnostic activity, medicine sales, and service status instead of relying on scattered updates.' },
   { title: 'Less Administrative Friction', text: 'Reduce duplicate entry, shorten routine desk work, and make outstanding actions easier to identify before they delay care or payment.' },
 ];
-
-const ecosystem = ['Patient', 'Doctors', 'Allied Healthcare Staff', 'Clinic', 'Hospitals', 'Pharmacy', 'Pharmaceutical Company', 'Insurance', 'Tele Medicine', 'Medical College', 'Technology Providers', 'Investor', 'Regulators', 'Government'];
-
-const ecosystemRows = [
-  ecosystem.slice(0, 6),
-  ecosystem.slice(6, 10),
-  ecosystem.slice(10),
-];
-
-const ecosystemTextSizes = ['ecosystem-name-small', 'ecosystem-name-large', 'ecosystem-name-medium'];
 
 export default function WorkflowSection() {
   return (
@@ -41,38 +32,7 @@ export default function WorkflowSection() {
             </motion.section>
           ))}
         </motion.div>
-        <div className="ecosystem-section">
-          <div className="mb-4 grid items-end gap-2 md:grid-cols-[1fr_auto] md:gap-6 lg:mb-6 lg:gap-8">
-            <h2 className="max-w-3xl text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">Designed for the wider healthcare ecosystem</h2>
-            <p className="max-w-xs text-xs font-semibold uppercase tracking-[0.22em] text-green-300 md:text-right">Fourteen perspectives. One connected system.</p>
-          </div>
-          <motion.div
-            className="ecosystem-viewport"
-            aria-label={`MacroHealthPlus is designed for ${ecosystem.join(', ')}`}
-            initial={{ opacity: 1, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.01 }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="ecosystem-backdrop-word" aria-hidden="true">CONNECTED CARE</span>
-            {ecosystemRows.map((row, rowIndex) => (
-              <div className={`ecosystem-lane ecosystem-lane-${rowIndex + 1}`} key={row.join('-')} aria-hidden="true">
-                <div className="ecosystem-track">
-                  {[0, 1].map((copyIndex) => (
-                    <div className="ecosystem-set" key={copyIndex}>
-                      {row.map((item, itemIndex) => (
-                        <span className={`ecosystem-name ${ecosystemTextSizes[(itemIndex + rowIndex) % ecosystemTextSizes.length]}`} key={`${copyIndex}-${item}`}>
-                          <small>{String(ecosystem.indexOf(item) + 1).padStart(2, '0')}</small>
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <ConnectedCareGraph />
       </div>
     </Section>
   );

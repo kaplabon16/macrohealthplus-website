@@ -10,7 +10,7 @@ type PageShellProps = {
 
 export default function PageShell({ children }: PageShellProps) {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black text-slate-50">
+    <div className="relative min-h-screen overflow-x-clip bg-black text-slate-50">
       <AmbientBackground />
       <ScrollProgress />
       <Header />

@@ -23,13 +23,13 @@ const leadershipTeam = [
   {
     name: 'Dr. Aminur Rahman',
     role: 'Managing Director & CEO',
-    image: '/assets/about_us/who_we_are/AminurRahman.jpg',
+    image: '/assets/about_us/team_white/aminur-rahman.png',
     imageClassName: 'object-center',
   },
   {
     name: 'Dr. Mohsina Nazneen Bhuiyan',
     role: 'Director',
-    image: '/assets/about_us/who_we_are/mohsina.jpeg',
+    image: '/assets/about_us/team_white/mohsina-nazneen-bhuiyan.png',
     imageClassName: 'object-center',
   },
 ];
@@ -38,14 +38,14 @@ const advisoryMembers = [
   {
     name: 'Nick Ebbeck',
     role: 'Advisor',
-    image: '/assets/about_us/who_we_are/NAEhead.jpg',
+    image: '/assets/about_us/team_white/nick-ebbeck.png',
     imageClassName: 'object-center',
   },
   {
     name: 'Dr Muhammad Sajedur Rahman',
     role: 'Advisor',
-    image: '/assets/about_us/who_we_are/sajed.jpg',
-    imageClassName: 'object-top',
+    image: '/assets/about_us/team_white/muhammad-sajedur-rahman.png',
+    imageClassName: 'object-center',
   },
 ];
 
@@ -66,7 +66,7 @@ function TeamRoster({ members }: { members: TeamMember[] }) {
           key={member.name}
           variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.34, ease: [0.22, 1, 0.36, 1] } } }}
         >
-          <div className="aspect-[4/3] overflow-hidden rounded-lg bg-white/5">
+          <div className="aspect-[4/3] overflow-hidden rounded-lg bg-white">
             <img
               className={`h-full w-full object-cover transition duration-300 group-hover:scale-[1.025] ${member.imageClassName}`}
               src={member.image}
