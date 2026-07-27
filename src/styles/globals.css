@@ -524,11 +524,11 @@ textarea {
 }
 
 .lab-journey-track {
-  --journey-accent: #69b128;
+  --journey-accent: #82b4ff;
   position: relative;
   margin-inline: calc(50% - 50vw);
   color: #f8fafc;
-  background: #070908;
+  background: #101214;
 }
 
 .lab-journey-sticky {
@@ -539,8 +539,8 @@ textarea {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 72% 46%, rgba(105, 177, 40, 0.12), transparent 34%),
-    #070908;
+    radial-gradient(circle at 72% 46%, rgba(79, 143, 241, 0.11), transparent 34%),
+    #101214;
 }
 
 .lab-journey-sticky::before {
@@ -578,14 +578,14 @@ textarea {
 }
 
 .lab-journey-copy > span {
-  color: #80ca42;
+  color: #82b4ff;
 }
 
 .lab-journey-copy h2 {
   max-width: 380px;
   margin-top: 0.9rem;
-  font-size: clamp(2.2rem, 3.25vw, 3.8rem);
-  font-weight: 650;
+  font-size: clamp(2.05rem, 2.8vw, 3.25rem);
+  font-weight: 620;
   letter-spacing: 0;
   line-height: 0.98;
 }
@@ -613,8 +613,8 @@ textarea {
   width: 100%;
   height: 100%;
   overflow: visible;
-  color: #70bf33;
-  filter: drop-shadow(0 0 7px rgba(105, 177, 40, 0.24));
+  color: #82b4ff;
+  filter: drop-shadow(0 0 7px rgba(79, 143, 241, 0.24));
 }
 
 .lab-journey-node {
@@ -622,34 +622,25 @@ textarea {
   top: var(--node-y);
   left: var(--node-x);
   z-index: 3;
-  width: 3.7rem;
-  height: 3.7rem;
+  width: 3.25rem;
+  height: 3.25rem;
   translate: -50% -50%;
   transform-origin: center;
 }
 
-.lab-journey-icon,
-.lab-journey-portrait {
+.lab-journey-icon {
   position: relative;
   display: grid;
-  width: 3.7rem;
-  height: 3.7rem;
-  overflow: hidden;
+  width: 3.25rem;
+  height: 3.25rem;
   place-items: center;
-  border: 1px solid rgba(128, 202, 66, 0.72);
-  border-radius: 50%;
-  color: #8bd04d;
-  background:
-    radial-gradient(circle at 32% 28%, rgba(128, 202, 66, 0.2), transparent 60%),
-    rgba(8, 12, 9, 0.96);
+  border: 1px solid color-mix(in srgb, var(--node-color) 80%, white 20%);
+  border-radius: 0.82rem;
+  color: #fff;
+  background: color-mix(in srgb, var(--node-color) 88%, #16191d);
   box-shadow:
-    0 0 0 0.42rem rgba(105, 177, 40, 0.08),
-    0 0 28px rgba(105, 177, 40, 0.2);
-}
-
-.lab-journey-portrait img {
-  object-fit: cover;
-  object-position: center;
+    0 0 0 0.3rem color-mix(in srgb, var(--node-color) 11%, transparent),
+    0 0 24px color-mix(in srgb, var(--node-color) 22%, transparent);
 }
 
 .lab-journey-node-copy {
@@ -722,6 +713,19 @@ textarea {
   width: 7.2rem;
 }
 
+.lab-journey-node .lab-journey-node-copy {
+  border: 1px solid color-mix(in srgb, var(--node-color) 70%, white 12%);
+  border-radius: 0.42rem;
+  color: #fff;
+  background: color-mix(in srgb, var(--node-color) 78%, #252a31) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.lab-journey-node-10 .lab-journey-node-copy {
+  width: 10.5rem;
+  background: #202329 !important;
+}
+
 .lab-journey-node-copy strong,
 .lab-journey-node-copy small {
   display: block;
@@ -729,8 +733,8 @@ textarea {
 }
 
 .lab-journey-node-copy strong {
-  font-size: 0.72rem;
-  font-weight: 720;
+  font-size: 0.67rem;
+  font-weight: 650;
   line-height: 1.16;
 }
 
@@ -758,11 +762,11 @@ textarea {
   width: 1.32rem;
   height: 1.32rem;
   flex: 0 0 auto;
-  border: 1px solid rgba(128, 202, 66, 0.4);
+  border: 1px solid color-mix(in srgb, var(--node-color) 62%, white 12%);
   border-radius: 0.42rem;
   padding: 0.28rem;
-  color: #86ce49;
-  background: rgba(8, 12, 9, 0.92);
+  color: #fff;
+  background: color-mix(in srgb, var(--node-color) 78%, #202329);
 }
 
 .lab-journey-destinations em {
@@ -779,10 +783,11 @@ textarea {
   left: var(--event-x);
   z-index: 2;
   translate: -50% -50%;
-  border-left: 2px solid #f05f67;
-  padding: 0.15rem 0.4rem;
-  color: #ff8b91;
-  background: rgba(7, 9, 8, 0.84);
+  border: 1px solid color-mix(in srgb, var(--event-color) 76%, white 16%);
+  border-radius: 0.38rem;
+  padding: 0.28rem 0.55rem;
+  color: #fff;
+  background: color-mix(in srgb, var(--event-color) 82%, #252a31);
   font-size: 0.52rem;
   font-weight: 750;
   letter-spacing: 0.08em;
@@ -798,8 +803,8 @@ textarea {
   z-index: 7;
   height: 2px;
   transform-origin: left;
-  background: linear-gradient(90deg, #69b128, #42d6c5, #f0c04b, #e26b9b);
-  box-shadow: 0 0 12px rgba(105, 177, 40, 0.3);
+  background: linear-gradient(90deg, #4f8ff1, #82b4ff, #bd65e8, #f2a51a);
+  box-shadow: 0 0 12px rgba(79, 143, 241, 0.3);
 }
 
 .lab-journey-count {
@@ -816,8 +821,8 @@ textarea {
   padding: 3.2rem 1.25rem 2.5rem;
   color: #f8fafc;
   background:
-    radial-gradient(circle at 80% 8%, rgba(105, 177, 40, 0.12), transparent 25%),
-    #070908;
+    radial-gradient(circle at 80% 8%, rgba(79, 143, 241, 0.12), transparent 25%),
+    #101214;
 }
 
 .lab-journey-mobile header {
@@ -826,7 +831,7 @@ textarea {
 }
 
 .lab-journey-mobile header p {
-  color: #80ca42;
+  color: #82b4ff;
   font-size: 0.63rem;
   font-weight: 750;
   letter-spacing: 0.17em;
@@ -854,13 +859,13 @@ textarea {
   left: 1.82rem;
   width: 2px;
   content: "";
-  background: linear-gradient(#69b128, #42d6c5, #f0c04b, #69b128);
+  background: linear-gradient(#4f8ff1, #82b4ff, #bd65e8, #f2a51a);
 }
 
 .lab-journey-mobile-line article {
   position: relative;
   display: grid;
-  min-height: 5.6rem;
+  min-height: 4.75rem;
   grid-template-columns: 3.7rem minmax(0, 1fr);
   align-items: center;
   gap: 0.9rem;
@@ -872,20 +877,20 @@ textarea {
   top: 0.42rem;
   left: 2.75rem;
   z-index: 3;
-  color: #8cd44c;
+  color: #82b4ff;
   font-size: 0.48rem;
   font-weight: 800;
 }
 
 .lab-journey-mobile-line article > i {
   display: grid;
-  width: 3.7rem;
-  height: 3.7rem;
+  width: 3.25rem;
+  height: 3.25rem;
   place-items: center;
-  border: 1px solid rgba(128, 202, 66, 0.62);
-  border-radius: 50%;
-  color: #83cd47;
-  background: #0a0e0b;
+  border: 1px solid color-mix(in srgb, var(--node-color) 80%, white 20%);
+  border-radius: 0.8rem;
+  color: #fff;
+  background: color-mix(in srgb, var(--node-color) 84%, #1b1e23);
 }
 
 .lab-journey-mobile-line article > i svg {
@@ -919,7 +924,7 @@ textarea {
 
 .lab-journey-mobile-destinations svg {
   width: 1rem;
-  color: #80ca42;
+  color: #82b4ff;
 }
 
 @media (min-width: 1024px) {
@@ -937,7 +942,7 @@ textarea {
 
 :root[data-theme="light"] .lab-journey-sticky {
   background:
-    radial-gradient(circle at 72% 46%, rgba(105, 177, 40, 0.1), transparent 34%),
+    radial-gradient(circle at 72% 46%, rgba(79, 143, 241, 0.1), transparent 34%),
     #f6f8f7;
 }
 
@@ -956,7 +961,8 @@ textarea {
 
 :root[data-theme="light"] .lab-journey-icon,
 :root[data-theme="light"] .lab-journey-mobile-line article > i {
-  background: rgba(250, 252, 251, 0.98);
+  color: #fff;
+  background: color-mix(in srgb, var(--node-color) 84%, #20242a);
 }
 
 :root[data-theme="light"] .lab-journey-node-copy {
@@ -987,12 +993,17 @@ textarea {
   background: linear-gradient(270deg, rgba(246, 248, 247, 0.96) 68%, rgba(246, 248, 247, 0));
 }
 
+:root[data-theme="light"] .lab-journey-node-10 .lab-journey-destinations em {
+  color: #cbd5e1;
+}
+
 :root[data-theme="light"] .lab-journey-node-4 .lab-journey-node-copy {
   background: linear-gradient(270deg, rgba(246, 248, 247, 0.96) 68%, rgba(246, 248, 247, 0));
 }
 
 :root[data-theme="light"] .lab-journey-event {
-  background: rgba(246, 248, 247, 0.9);
+  color: #fff;
+  background: color-mix(in srgb, var(--event-color) 82%, #252a31);
 }
 
 @media (prefers-reduced-motion: reduce) {

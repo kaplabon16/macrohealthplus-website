@@ -17,7 +17,6 @@ import {
 } from 'lucide-react';
 import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
-import Image from 'next/image';
 import type { CSSProperties, ElementType } from 'react';
 import { useRef, useState } from 'react';
 
@@ -28,13 +27,11 @@ type FlowNode = {
   x: number;
   y: number;
   reveal: number;
-  portrait?: number;
 };
 
 type FlowStage = {
   eyebrow: string;
   title: string;
-  description: string;
   focus: number[];
   camera: { x: number; y: number; scale: number };
 };
@@ -47,7 +44,6 @@ const flowNodes: FlowNode[] = [
     x: 10,
     y: 12,
     reveal: 0,
-    portrait: 4,
   },
   {
     title: 'Billing Counter',
@@ -66,13 +62,12 @@ const flowNodes: FlowNode[] = [
     reveal: 2,
   },
   {
-    title: 'Lab & Radiology Technicians',
+    title: 'Lab + Radio Technologists',
     detail: 'Sample transfer and technical processing',
     icon: Microscope,
     x: 50,
     y: 17,
     reveal: 3,
-    portrait: 3,
   },
   {
     title: 'Software Interconnect',
@@ -121,7 +116,6 @@ const flowNodes: FlowNode[] = [
     x: 36,
     y: 86,
     reveal: 7,
-    portrait: 1,
   },
 ];
 
@@ -129,56 +123,48 @@ const flowStages: FlowStage[] = [
   {
     eyebrow: 'Patient entry',
     title: 'The laboratory journey starts with one registered patient.',
-    description: 'Patient registration establishes the identity used for the order, DigiPatient access, the patient card, billing, and every result that follows.',
     focus: [0],
     camera: { x: 58, y: 30, scale: 1.08 },
   },
   {
     eyebrow: 'Billing and invoice',
     title: 'Billing confirms the service before the sample moves.',
-    description: 'The billing counter handles cash, due, and refund activity. The invoice remains connected to the patient, with registration and invoice SMS updates sent at the appropriate handoff.',
     focus: [0, 1],
     camera: { x: 58, y: -8, scale: 1.07 },
   },
   {
     eyebrow: 'Collection points',
     title: 'One order reaches the correct collection point.',
-    description: 'The invoiced service routes the patient to the laboratory or radiology collection point, preserving the link between the patient, order, sample, and payment record.',
     focus: [1, 2],
     camera: { x: 28, y: -34, scale: 1.06 },
   },
   {
     eyebrow: 'Technical processing',
-    title: 'Samples transfer to the people responsible for processing.',
-    description: 'Laboratory and radiology technicians receive the collected material with its identifying context, reducing the risk of disconnected samples or manual re-entry.',
+    title: 'Samples move to Lab + Radio Technologists.',
     focus: [2, 3],
     camera: { x: 14, y: 20, scale: 1.1 },
   },
   {
     eyebrow: 'System interconnection',
     title: 'Verified work flows back through the connected software.',
-    description: 'The laboratory workflow interconnects with the organization’s own software so authorized technicians can enter and verify results in the same operational system.',
     focus: [3, 4, 5],
     camera: { x: -20, y: 28, scale: 1.08 },
   },
   {
     eyebrow: 'Testing and delivery',
     title: 'Testing becomes a completed, deliverable medical report.',
-    description: 'Results move through testing, medical record preparation, and report delivery. A report-ready SMS can notify the patient when the output is available.',
     focus: [5, 6, 7],
     camera: { x: -52, y: -8, scale: 1.08 },
   },
   {
     eyebrow: 'Payment verification',
     title: 'Outstanding payment is checked before final release.',
-    description: 'Payment status remains visible at the final checkpoint. When due collection is completed, the patient can receive a payment confirmation SMS.',
     focus: [7, 8],
     camera: { x: -48, y: -38, scale: 1.08 },
   },
   {
     eyebrow: 'Report distribution',
     title: 'The finished report reaches every intended destination.',
-    description: 'The final report can be distributed through email, the DigiPatient app, and the doctor inbox while remaining connected to the original patient and laboratory journey.',
     focus: flowNodes.map((_, index) => index),
     camera: { x: 0, y: 0, scale: 0.96 },
   },
@@ -197,11 +183,24 @@ const edgePaths = [
 ];
 
 const eventLabels = [
-  { text: 'Registration SMS', x: 13, y: 28, reveal: 1 },
-  { text: 'Invoice SMS', x: 25, y: 58, reveal: 2 },
-  { text: 'Sample transfer', x: 38, y: 43, reveal: 3 },
-  { text: 'Report-ready SMS', x: 86, y: 57, reveal: 6 },
-  { text: 'Payment received SMS', x: 61, y: 82, reveal: 7 },
+  { text: 'Registration SMS', x: 13, y: 28, reveal: 1, color: '#4f8ff1' },
+  { text: 'Invoice SMS', x: 25, y: 58, reveal: 2, color: '#f2a51a' },
+  { text: 'Sample transfer', x: 38, y: 43, reveal: 3, color: '#8bc53f' },
+  { text: 'Report-ready SMS', x: 86, y: 57, reveal: 6, color: '#bd65e8' },
+  { text: 'Payment received SMS', x: 61, y: 82, reveal: 7, color: '#ef6548' },
+];
+
+const nodeColors = [
+  '#4f8ff1',
+  '#f2a51a',
+  '#8bc53f',
+  '#4f8ff1',
+  '#bd65e8',
+  '#4f8ff1',
+  '#f2a51a',
+  '#8bc53f',
+  '#ef6548',
+  '#9b6de3',
 ];
 
 function FlowEdge({
@@ -227,28 +226,20 @@ function FlowEdge({
         strokeWidth="3"
         style={{ opacity, pathLength }}
       />
-      <motion.circle fill="currentColor" r="4" style={{ opacity }}>
-        <animateMotion
-          begin={`${index * 0.28}s`}
-          dur={`${3.2 + index * 0.12}s`}
-          path={edgePaths[index]}
-          repeatCount="indefinite"
-        />
-      </motion.circle>
+      {index % 3 === 0 ? (
+        <motion.circle fill="currentColor" r="5" style={{ opacity }}>
+          <animateMotion begin={`${index * 0.28}s`} dur={`${3.2 + index * 0.12}s`} path={edgePaths[index]} repeatCount="indefinite" />
+        </motion.circle>
+      ) : index % 3 === 1 ? (
+        <motion.rect fill="currentColor" height="11" rx="2.5" style={{ opacity }} width="11" x="-5.5" y="-5.5">
+          <animateMotion begin={`${index * 0.28}s`} dur={`${3.2 + index * 0.12}s`} path={edgePaths[index]} repeatCount="indefinite" />
+        </motion.rect>
+      ) : (
+        <motion.polygon fill="currentColor" points="0,-6 5.2,-3 5.2,3 0,6 -5.2,3 -5.2,-3" style={{ opacity }}>
+          <animateMotion begin={`${index * 0.28}s`} dur={`${3.2 + index * 0.12}s`} path={edgePaths[index]} repeatCount="indefinite" />
+        </motion.polygon>
+      )}
     </>
-  );
-}
-
-function PortraitSprite({ index }: { index: number }) {
-  return (
-    <span className="lab-journey-portrait">
-      <Image
-        alt=""
-        fill
-        sizes="64px"
-        src={`/assets/generated/network-users/user-${index + 1}.png`}
-      />
-    </span>
   );
 }
 
@@ -274,17 +265,16 @@ function FlowNodeView({
       }}
       className={`lab-journey-node lab-journey-node-${index + 1}`}
       initial={false}
-      style={{ '--node-x': `${node.x}%`, '--node-y': `${node.y}%` } as CSSProperties}
+      style={{
+        '--node-color': nodeColors[index],
+        '--node-x': `${node.x}%`,
+        '--node-y': `${node.y}%`,
+      } as CSSProperties}
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
     >
-      {node.portrait !== undefined ? (
-        <PortraitSprite index={node.portrait} />
-      ) : (
-        <span className="lab-journey-icon"><Icon className="h-5 w-5" /></span>
-      )}
+      <span className="lab-journey-icon"><Icon className="h-5 w-5" /></span>
       <span className="lab-journey-node-copy">
         <strong>{node.title}</strong>
-        <small>{node.detail}</small>
         {index === 9 ? (
           <span className="lab-journey-destinations">
             <span><Mail /><em>Report emailed to patient</em></span>
@@ -331,7 +321,11 @@ function DesktopJourney({
             animate={{ opacity: activeStage >= event.reveal ? 1 : 0, y: activeStage >= event.reveal ? 0 : 8 }}
             className="lab-journey-event"
             key={event.text}
-            style={{ '--event-x': `${event.x}%`, '--event-y': `${event.y}%` } as CSSProperties}
+            style={{
+              '--event-color': event.color,
+              '--event-x': `${event.x}%`,
+              '--event-y': `${event.y}%`,
+            } as CSSProperties}
           >
             {event.text}
           </motion.span>
@@ -348,7 +342,6 @@ function DesktopJourney({
         <p>Stage {String(activeStage + 1).padStart(2, '0')}</p>
         <span>{stage.eyebrow}</span>
         <h2>{stage.title}</h2>
-        <div>{stage.description}</div>
       </motion.div>
 
       <motion.div className="lab-journey-progress" style={{ scaleX: progress }} />
@@ -378,8 +371,8 @@ function MobileJourney() {
               transition={{ duration: 0.38 }}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
-              {node.portrait !== undefined ? <PortraitSprite index={node.portrait} /> : <i><Icon /></i>}
-              <div><h3>{node.title}</h3><p>{node.detail}</p></div>
+              <i style={{ '--node-color': nodeColors[index] } as CSSProperties}><Icon /></i>
+              <div><h3>{node.title}</h3></div>
             </motion.article>
           );
         })}
