@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import {
   BadgeDollarSign,
   ClipboardCheck,
@@ -24,6 +25,8 @@ type FlowNode = {
   title: string;
   detail: string;
   icon: ElementType;
+  image?: string;
+  imageAlt?: string;
   x: number;
   y: number;
   reveal: number;
@@ -41,6 +44,8 @@ const flowNodes: FlowNode[] = [
     title: 'Patient',
     detail: 'Registration, DigiPatient app and patient card',
     icon: UserRound,
+    image: '/assets/flow/patient/patient-portrait-v2.jpg',
+    imageAlt: 'MacroHealthPlus patient',
     x: 10,
     y: 12,
     reveal: 0,
@@ -62,7 +67,7 @@ const flowNodes: FlowNode[] = [
     reveal: 2,
   },
   {
-    title: 'Lab + Radio Technologists',
+    title: 'Pathology and Radiology Technicians',
     detail: 'Sample transfer and technical processing',
     icon: Microscope,
     x: 50,
@@ -99,7 +104,7 @@ const flowNodes: FlowNode[] = [
     icon: FileCheck2,
     x: 84,
     y: 66,
-    reveal: 5,
+    reveal: 6,
   },
   {
     title: 'Payment Check',
@@ -107,15 +112,17 @@ const flowNodes: FlowNode[] = [
     icon: BadgeDollarSign,
     x: 84,
     y: 86,
-    reveal: 6,
+    reveal: 7,
   },
   {
     title: 'Report Distribution',
     detail: 'Email, DigiPatient app and doctor inbox',
     icon: Send,
+    image: '/assets/flow/patient/patient-report-v2.jpg',
+    imageAlt: 'The same patient holding her completed medical report',
     x: 36,
     y: 86,
-    reveal: 7,
+    reveal: 8,
   },
 ];
 
@@ -140,7 +147,7 @@ const flowStages: FlowStage[] = [
   },
   {
     eyebrow: 'Technical processing',
-    title: 'Samples move to Lab + Radio Technologists.',
+    title: 'Samples move to Pathology and Radiology Technicians.',
     focus: [2, 3],
     camera: { x: 14, y: 20, scale: 1.1 },
   },
@@ -151,10 +158,16 @@ const flowStages: FlowStage[] = [
     camera: { x: -20, y: 28, scale: 1.08 },
   },
   {
-    eyebrow: 'Testing and delivery',
-    title: 'Testing becomes a completed, deliverable medical report.',
-    focus: [5, 6, 7],
+    eyebrow: 'Laboratory testing',
+    title: 'The laboratory completes and verifies the requested investigation.',
+    focus: [5, 6],
     camera: { x: -52, y: -8, scale: 1.08 },
+  },
+  {
+    eyebrow: 'Report delivery',
+    title: 'Verified results become a completed medical report.',
+    focus: [6, 7],
+    camera: { x: -48, y: -38, scale: 1.08 },
   },
   {
     eyebrow: 'Payment verification',
@@ -183,11 +196,11 @@ const edgePaths = [
 ];
 
 const eventLabels = [
-  { text: 'Registration SMS', x: 13, y: 28, reveal: 1, color: '#4f8ff1' },
-  { text: 'Invoice SMS', x: 25, y: 58, reveal: 2, color: '#f2a51a' },
-  { text: 'Sample transfer', x: 38, y: 43, reveal: 3, color: '#8bc53f' },
-  { text: 'Report-ready SMS', x: 86, y: 57, reveal: 6, color: '#bd65e8' },
-  { text: 'Payment received SMS', x: 61, y: 82, reveal: 7, color: '#ef6548' },
+  { text: 'Registration SMS', x: 10, y: 29, reveal: 1, color: '#ef476f', isSms: true },
+  { text: 'Invoice SMS', x: 23, y: 58, reveal: 2, color: '#ef476f', isSms: true },
+  { text: 'Sample transfer', x: 38, y: 43, reveal: 3, color: '#8bc53f', isSms: false },
+  { text: 'Report-ready SMS', x: 84, y: 57, reveal: 6, color: '#ef476f', isSms: true },
+  { text: 'Payment received SMS', x: 61, y: 86, reveal: 8, color: '#ef476f', isSms: true },
 ];
 
 const nodeColors = [
@@ -213,29 +226,29 @@ function FlowEdge({
   const start = index / edgePaths.length;
   const end = Math.min(1, start + 0.15);
   const pathLength = useTransform(progress, [start, end], [0, 1]);
-  const opacity = useTransform(progress, [start, Math.min(end, start + 0.035)], [0.15, 1]);
+  const opacity = useTransform(progress, [start, Math.min(end, start + 0.035)], [0, 1]);
 
   return (
     <>
       <motion.path
         d={edgePaths[index]}
         fill="none"
-        markerEnd="url(#lab-flow-arrow)"
-        stroke="currentColor"
+        markerEnd={`url(#lab-flow-arrow-${index})`}
+        stroke={nodeColors[index]}
         strokeLinecap="round"
         strokeWidth="3"
         style={{ opacity, pathLength }}
       />
       {index % 3 === 0 ? (
-        <motion.circle fill="currentColor" r="5" style={{ opacity }}>
+        <motion.circle fill={nodeColors[index]} r="5" style={{ opacity }}>
           <animateMotion begin={`${index * 0.28}s`} dur={`${3.2 + index * 0.12}s`} path={edgePaths[index]} repeatCount="indefinite" />
         </motion.circle>
       ) : index % 3 === 1 ? (
-        <motion.rect fill="currentColor" height="11" rx="2.5" style={{ opacity }} width="11" x="-5.5" y="-5.5">
+        <motion.rect fill={nodeColors[index]} height="11" rx="2.5" style={{ opacity }} width="11" x="-5.5" y="-5.5">
           <animateMotion begin={`${index * 0.28}s`} dur={`${3.2 + index * 0.12}s`} path={edgePaths[index]} repeatCount="indefinite" />
         </motion.rect>
       ) : (
-        <motion.polygon fill="currentColor" points="0,-6 5.2,-3 5.2,3 0,6 -5.2,3 -5.2,-3" style={{ opacity }}>
+        <motion.polygon fill={nodeColors[index]} points="0,-6 5.2,-3 5.2,3 0,6 -5.2,3 -5.2,-3" style={{ opacity }}>
           <animateMotion begin={`${index * 0.28}s`} dur={`${3.2 + index * 0.12}s`} path={edgePaths[index]} repeatCount="indefinite" />
         </motion.polygon>
       )}
@@ -260,7 +273,7 @@ function FlowNodeView({
     <motion.div
       animate={{
         filter: current ? 'blur(0px)' : 'blur(0.4px)',
-        opacity: visible ? (current ? 1 : 0.54) : 0.08,
+        opacity: visible ? (current ? 1 : 0.54) : 0,
         scale: current ? 1.06 : 1,
       }}
       className={`lab-journey-node lab-journey-node-${index + 1}`}
@@ -272,7 +285,18 @@ function FlowNodeView({
       } as CSSProperties}
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
     >
-      <span className="lab-journey-icon"><Icon className="h-5 w-5" /></span>
+      {node.image ? (
+        <span className={`lab-journey-person ${index === 9 ? 'lab-journey-person-report' : ''}`}>
+          <Image
+            alt={node.imageAlt ?? node.title}
+            fill
+            sizes={index === 9 ? '96px' : '64px'}
+            src={node.image}
+          />
+        </span>
+      ) : (
+        <span className="lab-journey-icon"><Icon className="h-5 w-5" /></span>
+      )}
       <span className="lab-journey-node-copy">
         <strong>{node.title}</strong>
         {index === 9 ? (
@@ -305,9 +329,11 @@ function DesktopJourney({
       >
         <svg className="lab-journey-lines" preserveAspectRatio="none" viewBox="0 0 1000 600" aria-hidden="true">
           <defs>
-            <marker id="lab-flow-arrow" markerHeight="6" markerWidth="6" orient="auto" refX="5" refY="2.5">
-              <path d="M0 0 L5 2.5 L0 5 Z" fill="currentColor" />
-            </marker>
+            {nodeColors.slice(0, edgePaths.length).map((color, index) => (
+              <marker id={`lab-flow-arrow-${index}`} key={color + index} markerHeight="6" markerWidth="6" orient="auto" refX="5" refY="2.5">
+                <path d="M0 0 L5 2.5 L0 5 Z" fill={color} />
+              </marker>
+            ))}
           </defs>
           {edgePaths.map((_, index) => <FlowEdge index={index} key={edgePaths[index]} progress={progress} />)}
         </svg>
@@ -319,7 +345,7 @@ function DesktopJourney({
         {eventLabels.map((event) => (
           <motion.span
             animate={{ opacity: activeStage >= event.reveal ? 1 : 0, y: activeStage >= event.reveal ? 0 : 8 }}
-            className="lab-journey-event"
+            className={`lab-journey-event ${event.isSms ? 'lab-journey-event-sms' : ''}`}
             key={event.text}
             style={{
               '--event-color': event.color,
@@ -371,7 +397,19 @@ function MobileJourney() {
               transition={{ duration: 0.38 }}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <i style={{ '--node-color': nodeColors[index] } as CSSProperties}><Icon /></i>
+              <i
+                className={node.image ? `lab-journey-mobile-person ${index === 9 ? 'lab-journey-mobile-person-report' : ''}` : ''}
+                style={{ '--node-color': nodeColors[index] } as CSSProperties}
+              >
+                {node.image ? (
+                  <Image
+                    alt={node.imageAlt ?? node.title}
+                    fill
+                    sizes="64px"
+                    src={node.image}
+                  />
+                ) : <Icon />}
+              </i>
               <div><h3>{node.title}</h3></div>
             </motion.article>
           );

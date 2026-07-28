@@ -613,8 +613,7 @@ textarea {
   width: 100%;
   height: 100%;
   overflow: visible;
-  color: #82b4ff;
-  filter: drop-shadow(0 0 7px rgba(79, 143, 241, 0.24));
+  filter: drop-shadow(0 0 6px rgba(80, 92, 110, 0.2));
 }
 
 .lab-journey-node {
@@ -641,6 +640,31 @@ textarea {
   box-shadow:
     0 0 0 0.3rem color-mix(in srgb, var(--node-color) 11%, transparent),
     0 0 24px color-mix(in srgb, var(--node-color) 22%, transparent);
+}
+
+.lab-journey-person {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #b968ea;
+}
+
+.lab-journey-person img {
+  object-fit: cover;
+  object-position: 50% 43%;
+}
+
+.lab-journey-person-report {
+  width: 4.6rem;
+  height: 4.6rem;
+  translate: -0.68rem -0.68rem;
+}
+
+.lab-journey-person-report img {
+  object-position: 50% 42%;
 }
 
 .lab-journey-node-copy {
@@ -695,7 +719,7 @@ textarea {
 }
 
 .lab-journey-node-10 .lab-journey-node-copy {
-  right: 4.35rem;
+  right: 5rem;
   left: auto;
   text-align: right;
   background: linear-gradient(270deg, rgba(7, 9, 8, 0.94) 68%, rgba(7, 9, 8, 0));
@@ -723,7 +747,10 @@ textarea {
 
 .lab-journey-node-10 .lab-journey-node-copy {
   width: 10.5rem;
-  background: #202329 !important;
+  border: 0;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none;
 }
 
 .lab-journey-node-copy strong,
@@ -747,34 +774,34 @@ textarea {
 
 .lab-journey-destinations {
   display: grid;
-  gap: 0.32rem;
-  margin-top: 0.55rem;
+  gap: 0.38rem;
+  margin-top: 0.48rem;
 }
 
 .lab-journey-destinations > span {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.05rem minmax(0, 1fr);
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.42rem;
+  gap: 0.38rem;
+  text-align: left;
 }
 
 .lab-journey-destinations svg {
-  width: 1.32rem;
-  height: 1.32rem;
+  width: 0.95rem;
+  height: 0.95rem;
   flex: 0 0 auto;
-  border: 1px solid color-mix(in srgb, var(--node-color) 62%, white 12%);
-  border-radius: 0.42rem;
-  padding: 0.28rem;
-  color: #fff;
-  background: color-mix(in srgb, var(--node-color) 78%, #202329);
+  border: 0;
+  padding: 0;
+  color: #c58aff;
+  background: transparent;
 }
 
 .lab-journey-destinations em {
-  color: #b7c1bb;
-  font-size: 0.52rem;
+  color: #d7ddd9;
+  font-size: 0.54rem;
   font-style: normal;
   font-weight: 620;
-  line-height: 1.2;
+  line-height: 1.24;
 }
 
 .lab-journey-event {
@@ -793,6 +820,19 @@ textarea {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.lab-journey-event-sms {
+  z-index: 5;
+  min-height: 0;
+  border: 1px solid #72182c;
+  border-radius: 0.32rem;
+  padding: 0.22rem 0.45rem;
+  color: #fff;
+  background: #e84160;
+  box-shadow: 0 3px 9px rgba(111, 20, 42, 0.2);
+  font-size: 0.48rem;
+  letter-spacing: 0.07em;
 }
 
 .lab-journey-progress {
@@ -883,6 +923,7 @@ textarea {
 }
 
 .lab-journey-mobile-line article > i {
+  position: relative;
   display: grid;
   width: 3.25rem;
   height: 3.25rem;
@@ -891,6 +932,29 @@ textarea {
   border-radius: 0.8rem;
   color: #fff;
   background: color-mix(in srgb, var(--node-color) 84%, #1b1e23);
+}
+
+.lab-journey-mobile-line article > i.lab-journey-mobile-person {
+  overflow: hidden;
+  border: 0;
+  border-radius: 50%;
+  background: #b968ea;
+  box-shadow: none;
+}
+
+.lab-journey-mobile-person img {
+  object-fit: cover;
+  object-position: 50% 43%;
+}
+
+.lab-journey-mobile-line article > i.lab-journey-mobile-person-report {
+  width: 4rem;
+  height: 4rem;
+  margin-left: -0.5rem;
+}
+
+.lab-journey-mobile-person-report img {
+  object-position: 50% 42%;
 }
 
 .lab-journey-mobile-line article > i svg {
@@ -990,11 +1054,12 @@ textarea {
 }
 
 :root[data-theme="light"] .lab-journey-node-10 .lab-journey-node-copy {
-  background: linear-gradient(270deg, rgba(246, 248, 247, 0.96) 68%, rgba(246, 248, 247, 0));
+  color: #0f172a;
+  background: transparent !important;
 }
 
 :root[data-theme="light"] .lab-journey-node-10 .lab-journey-destinations em {
-  color: #cbd5e1;
+  color: #334155;
 }
 
 :root[data-theme="light"] .lab-journey-node-4 .lab-journey-node-copy {
@@ -1004,6 +1069,21 @@ textarea {
 :root[data-theme="light"] .lab-journey-event {
   color: #fff;
   background: color-mix(in srgb, var(--event-color) 82%, #252a31);
+}
+
+:root[data-theme="light"] .lab-journey-event-sms {
+  border-color: #72182c;
+  color: #fff;
+  background: #e84160;
+  box-shadow: 0 3px 9px rgba(111, 20, 42, 0.16);
+}
+
+:root[data-theme="light"] .lab-journey-mobile-destinations {
+  color: #45534c;
+}
+
+:root[data-theme="light"] .lab-journey-mobile-destinations svg {
+  color: #397bd9;
 }
 
 @media (prefers-reduced-motion: reduce) {
