@@ -103,7 +103,7 @@ const flowNodes: FlowNode[] = [
     detail: 'Completed report prepared for delivery',
     icon: FileCheck2,
     x: 84,
-    y: 66,
+    y: 74,
     reveal: 6,
   },
   {
@@ -111,7 +111,7 @@ const flowNodes: FlowNode[] = [
     detail: 'Due collection and payment confirmation',
     icon: BadgeDollarSign,
     x: 84,
-    y: 86,
+    y: 94,
     reveal: 7,
   },
   {
@@ -121,7 +121,7 @@ const flowNodes: FlowNode[] = [
     image: '/assets/flow/patient/patient-report-v2.jpg',
     imageAlt: 'The same patient holding her completed medical report',
     x: 36,
-    y: 86,
+    y: 94,
     reveal: 8,
   },
 ];
@@ -190,17 +190,17 @@ const edgePaths = [
   'M530 102 C570 102 610 82 640 76',
   'M700 78 C750 80 790 90 810 108',
   'M840 138 C840 180 840 215 840 234',
-  'M840 294 C840 325 840 345 840 366',
-  'M840 426 C840 450 840 465 840 486',
-  'M810 520 C680 520 535 520 390 520',
+  'M840 294 C840 340 840 382 840 414',
+  'M840 474 C840 495 840 516 840 534',
+  'M810 564 C680 564 535 564 390 564',
 ];
 
 const eventLabels = [
   { text: 'Registration SMS', x: 10, y: 29, reveal: 1, color: '#ef476f', isSms: true },
   { text: 'Invoice SMS', x: 23, y: 58, reveal: 2, color: '#ef476f', isSms: true },
   { text: 'Sample transfer', x: 38, y: 43, reveal: 3, color: '#8bc53f', isSms: false },
-  { text: 'Report-ready SMS', x: 84, y: 57, reveal: 6, color: '#ef476f', isSms: true },
-  { text: 'Payment received SMS', x: 61, y: 86, reveal: 8, color: '#ef476f', isSms: true },
+  { text: 'Report-ready SMS', x: 84, y: 59, reveal: 6, color: '#ef476f', isSms: true },
+  { text: 'Payment received SMS', x: 50, y: 94, reveal: 8, color: '#ef476f', isSms: true },
 ];
 
 const nodeColors = [
@@ -215,6 +215,14 @@ const nodeColors = [
   '#ef6548',
   '#9b6de3',
 ];
+
+const mobileEvents: Record<number, { text: string; isSms: boolean }> = {
+  0: { text: 'Registration SMS', isSms: true },
+  1: { text: 'Invoice SMS', isSms: true },
+  2: { text: 'Sample transfer', isSms: false },
+  7: { text: 'Report-ready SMS', isSms: true },
+  8: { text: 'Payment received SMS', isSms: true },
+};
 
 function FlowEdge({
   index,
@@ -378,50 +386,186 @@ function DesktopJourney({
   );
 }
 
-function MobileJourney() {
+type ResponsivePoint = { x: number; y: number };
+
+const phoneFlowPoints: ResponsivePoint[] = [
+  { x: 18, y: 60 },
+  { x: 76, y: 170 },
+  { x: 24, y: 280 },
+  { x: 72, y: 390 },
+  { x: 28, y: 500 },
+  { x: 78, y: 610 },
+  { x: 22, y: 720 },
+  { x: 74, y: 830 },
+  { x: 30, y: 940 },
+  { x: 70, y: 1050 },
+];
+
+const tabletFlowPoints: ResponsivePoint[] = [
+  { x: 14, y: 70 },
+  { x: 70, y: 165 },
+  { x: 28, y: 260 },
+  { x: 76, y: 355 },
+  { x: 22, y: 450 },
+  { x: 72, y: 545 },
+  { x: 30, y: 640 },
+  { x: 78, y: 735 },
+  { x: 36, y: 830 },
+  { x: 68, y: 925 },
+];
+
+function responsiveEdgePath(start: ResponsivePoint, end: ResponsivePoint) {
+  const startY = start.y + 30;
+  const endY = end.y - 30;
+  const curve = (endY - startY) * 0.52;
+  return `M${start.x * 10} ${startY} C${start.x * 10} ${startY + curve} ${end.x * 10} ${endY - curve} ${end.x * 10} ${endY}`;
+}
+
+function ResponsiveFlowEdge({
+  index,
+  path,
+  progress,
+  strokeWidth,
+}: {
+  index: number;
+  path: string;
+  progress: MotionValue<number>;
+  strokeWidth: number;
+}) {
+  const start = index / flowNodes.length;
+  const end = (index + 1) / flowNodes.length;
+  const pathLength = useTransform(progress, [start, end], [0, 1]);
+  const opacity = useTransform(progress, [start, Math.min(end, start + 0.025)], [0, 1]);
+  const pulseOpacity = useTransform(progress, [Math.max(start, end - 0.01), end], [0, 1]);
+
   return (
-    <div className="lab-journey-mobile lg:hidden">
-      <header>
+    <>
+      <motion.path
+        d={path}
+        fill="none"
+        stroke={nodeColors[index]}
+        strokeLinecap="round"
+        strokeWidth={strokeWidth}
+        style={{ opacity, pathLength }}
+      />
+      <motion.circle fill={nodeColors[index]} r="5" style={{ opacity: pulseOpacity }}>
+        <animateMotion begin={`${index * 0.22}s`} dur={`${2.8 + index * 0.1}s`} path={path} repeatCount="indefinite" />
+      </motion.circle>
+    </>
+  );
+}
+
+function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
+  const isPhone = mode === 'phone';
+  const points = isPhone ? phoneFlowPoints : tabletFlowPoints;
+  const height = isPhone ? 1120 : 995;
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: trackRef,
+    offset: ['start 68%', 'end 38%'],
+  });
+
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    const next = progress >= 0.995
+      ? flowNodes.length - 1
+      : Math.min(flowNodes.length - 1, Math.floor(progress * flowNodes.length));
+    setActiveIndex((current) => current === next ? current : next);
+  });
+
+  return (
+    <div className={`lab-journey-responsive lab-journey-responsive-${mode} ${isPhone ? 'md:hidden' : 'hidden md:block lg:hidden'}`}>
+      <motion.header
+        initial={{ opacity: 0, y: 18 }}
+        viewport={{ once: true, amount: 0.45 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
         <p>Connected laboratory workflow</p>
-        <h2>From registration to report distribution.</h2>
-      </header>
-      <div className="lab-journey-mobile-line">
+        <h2>{isPhone ? 'The patient journey, connected step by step.' : 'One connected path from registration to report distribution.'}</h2>
+      </motion.header>
+
+      <div
+        className="lab-journey-responsive-track"
+        ref={trackRef}
+        style={{ '--responsive-height': `${height}px` } as CSSProperties}
+      >
+        <svg className="lab-journey-responsive-lines" preserveAspectRatio="none" viewBox={`0 0 1000 ${height}`} aria-hidden="true">
+          {points.slice(0, -1).map((point, index) => (
+            <ResponsiveFlowEdge
+              index={index}
+              key={`${mode}-${flowNodes[index].title}`}
+              path={responsiveEdgePath(point, points[index + 1])}
+              progress={scrollYProgress}
+              strokeWidth={isPhone ? 4 : 3.5}
+            />
+          ))}
+        </svg>
+
         {flowNodes.map((node, index) => {
           const Icon = node.icon;
+          const point = points[index];
+          const copyOnLeft = point.x > 52;
+
           return (
             <motion.article
-              initial={{ opacity: 0, x: 20 }}
-              key={node.title}
-              viewport={{ once: true, amount: 0.28 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.38 }}
+              animate={{
+                filter: index === activeIndex ? 'blur(0px)' : 'blur(0.35px)',
+                opacity: index <= activeIndex ? (index === activeIndex ? 1 : 0.48) : 0,
+                scale: index === activeIndex ? 1.08 : 1,
+              }}
+              className={`lab-journey-responsive-node ${copyOnLeft ? 'lab-journey-responsive-node-left' : 'lab-journey-responsive-node-right'}`}
+              initial={false}
+              key={`${mode}-${node.title}`}
+              style={{
+                '--node-color': nodeColors[index],
+                '--responsive-node-x': `${point.x}%`,
+                '--responsive-node-y': `${point.y}px`,
+              } as CSSProperties}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <i
-                className={node.image ? `lab-journey-mobile-person ${index === 9 ? 'lab-journey-mobile-person-report' : ''}` : ''}
-                style={{ '--node-color': nodeColors[index] } as CSSProperties}
-              >
+              <i className={node.image ? 'lab-journey-responsive-person' : ''}>
                 {node.image ? (
-                  <Image
-                    alt={node.imageAlt ?? node.title}
-                    fill
-                    sizes="64px"
-                    src={node.image}
-                  />
+                  <Image alt={node.imageAlt ?? node.title} fill sizes={isPhone ? '60px' : '68px'} src={node.image} />
                 ) : <Icon />}
               </i>
-              <div><h3>{node.title}</h3></div>
+              <div className="lab-journey-responsive-copy">
+                <h3>{node.title}</h3>
+                {index === flowNodes.length - 1 ? (
+                  <span className="lab-journey-responsive-destinations">
+                    <span><Mail />Report emailed to patient</span>
+                    <span><Smartphone />Available in DigiPatient</span>
+                    <span><Stethoscope />Delivered to doctor inbox</span>
+                  </span>
+                ) : null}
+              </div>
             </motion.article>
           );
         })}
-      </div>
-      <div className="lab-journey-mobile-destinations">
-        <Mail />
-        <span>Report emailed to patient</span>
-        <Smartphone />
-        <span>Report available in DigiPatient</span>
-        <Stethoscope />
-        <span>Report delivered to doctor inbox</span>
+
+        {points.slice(0, -1).map((point, index) => {
+          const journeyEvent = mobileEvents[index];
+          if (!journeyEvent) return null;
+          const next = points[index + 1];
+
+          return (
+            <motion.span
+              animate={{
+                opacity: activeIndex > index ? 1 : 0,
+                scale: activeIndex > index ? 1 : 0.82,
+              }}
+              className={`lab-journey-responsive-event ${journeyEvent.isSms ? 'lab-journey-responsive-event-sms' : ''}`}
+              initial={false}
+              key={`${mode}-${journeyEvent.text}`}
+              style={{
+                '--responsive-event-x': `${(point.x + next.x) / 2}%`,
+                '--responsive-event-y': `${(point.y + next.y) / 2}px`,
+              } as CSSProperties}
+              transition={{ duration: 0.22 }}
+            >
+              {journeyEvent.text}
+            </motion.span>
+          );
+        })}
       </div>
     </div>
   );
@@ -449,7 +593,8 @@ export default function ConnectedCareGraph() {
       style={{ '--journey-steps': flowStages.length } as CSSProperties}
     >
       <DesktopJourney activeStage={activeStage} progress={scrollYProgress} />
-      <MobileJourney />
+      <ResponsiveJourney mode="tablet" />
+      <ResponsiveJourney mode="phone" />
     </section>
   );
 }
