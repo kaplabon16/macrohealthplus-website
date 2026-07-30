@@ -16,6 +16,19 @@ export default function FinalCTA() {
         transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="home-final-cta-signal" aria-hidden="true" />
+        <motion.div
+          className="home-final-cta-art"
+          aria-hidden="true"
+          initial={reduceMotion ? false : { opacity: 0, x: -34, rotate: -5 }}
+          whileInView={{ opacity: 1, x: 0, rotate: -2 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: reduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="home-final-cta-plane home-final-cta-plane-violet" />
+          <span className="home-final-cta-plane home-final-cta-plane-blue" />
+          <span className="home-final-cta-plane home-final-cta-plane-red" />
+          <span className="home-final-cta-plane home-final-cta-plane-green" />
+        </motion.div>
         <p className="home-final-cta-kicker">A clearer operating model starts here</p>
         <div className="home-final-cta-copy">
           <h2>See how MacroHealthPlus fits your operation</h2>

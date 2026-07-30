@@ -50,8 +50,15 @@ export default function News() {
                   <p className="text-sm leading-6 text-slate-300 sm:text-base sm:leading-7 lg:text-lg lg:leading-8" key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-              <figure className="border-l-2 border-green-400/50 pl-5">
-                <img className="w-full object-cover" src={item.productImage} alt={item.productImageAlt} loading="lazy" decoding="async" />
+              <figure className="news-android-feature">
+                <div className="news-android-device">
+                  <span className="news-android-camera" aria-hidden="true" />
+                  <span className="news-android-button news-android-button-volume" aria-hidden="true" />
+                  <span className="news-android-button news-android-button-power" aria-hidden="true" />
+                  <div className="news-android-screen">
+                    <img src={item.productImage} alt={item.productImageAlt} loading="lazy" decoding="async" />
+                  </div>
+                </div>
                 <figcaption className="mt-4 text-xs uppercase leading-5 tracking-[0.16em] text-slate-400">
                   Mobile prescription tools, patient access, appointments, and daily schedules in one doctor workspace.
                 </figcaption>

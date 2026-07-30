@@ -2368,6 +2368,12 @@ textarea {
   background: #f3faef;
 }
 
+:root[data-theme="light"] .pricing-plan-header span {
+  border: 1px solid rgba(63, 127, 27, 0.25);
+  color: #285f13;
+  background: rgba(105, 177, 40, 0.14);
+}
+
 :root[data-theme="light"] .pricing-plan-details span,
 :root[data-theme="light"] .pricing-plan-includes,
 :root[data-theme="light"] .pricing-category-rail {
@@ -4222,18 +4228,179 @@ textarea {
   color: #86efac;
 }
 
+.news-android-feature {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  border-left: 2px solid rgba(105, 177, 40, 0.5);
+  background:
+    linear-gradient(145deg, rgba(105, 177, 40, 0.08), transparent 46%),
+    linear-gradient(325deg, rgba(103, 232, 249, 0.07), transparent 42%);
+}
+
+.news-android-device {
+  position: relative;
+  width: min(100%, 18.5rem);
+  padding: 0.48rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2.45rem;
+  background: #090b0b;
+  box-shadow:
+    0 1.6rem 4rem rgba(0, 0, 0, 0.34),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.news-android-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #fff;
+}
+
+.news-android-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.news-android-camera {
+  position: absolute;
+  top: 0.78rem;
+  left: 50%;
+  z-index: 3;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 2px solid #151919;
+  border-radius: 50%;
+  background: #253c45;
+  box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.22);
+  transform: translateX(-50%);
+}
+
+.news-android-button {
+  position: absolute;
+  right: -0.2rem;
+  width: 0.2rem;
+  border-radius: 0 0.2rem 0.2rem 0;
+  background: #252b2a;
+}
+
+.news-android-button-volume {
+  top: 5.3rem;
+  height: 3.5rem;
+}
+
+.news-android-button-power {
+  top: 10rem;
+  height: 2.2rem;
+}
+
+.news-android-feature figcaption {
+  width: min(100%, 18.5rem);
+}
+
+:root[data-theme="light"] .news-android-feature {
+  border-left-color: rgba(79, 154, 34, 0.46);
+  background:
+    linear-gradient(145deg, rgba(105, 177, 40, 0.07), transparent 46%),
+    linear-gradient(325deg, rgba(8, 145, 178, 0.055), transparent 42%);
+}
+
+:root[data-theme="light"] .news-android-device {
+  border-color: rgba(15, 23, 42, 0.3);
+  box-shadow:
+    0 1.5rem 3.5rem rgba(15, 23, 42, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
 .home-final-cta {
   position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 0.54fr minmax(0, 1.25fr) auto;
   gap: clamp(1.5rem, 4vw, 4rem);
   align-items: end;
-  padding: clamp(2rem, 5vw, 4.5rem) 0;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1rem, 2.5vw, 2.25rem);
   border-block: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.home-final-cta > :not(.home-final-cta-art, .home-final-cta-signal) {
+  position: relative;
+  z-index: 2;
+}
+
+.home-final-cta-art {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  left: 0.5rem;
+  z-index: 0;
+  width: clamp(13rem, 27%, 20rem);
+  overflow: hidden;
+  background: #090b0a;
+  clip-path: polygon(7% 5%, 94% 0, 100% 86%, 0 100%);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.22);
+  transform-origin: center;
+}
+
+.home-final-cta-art::after {
+  content: "\2197";
+  position: absolute;
+  right: 12%;
+  bottom: 12%;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 420;
+  line-height: 1;
+}
+
+.home-final-cta-plane {
+  position: absolute;
+  display: block;
+}
+
+.home-final-cta-plane-violet {
+  top: 14%;
+  left: 10%;
+  width: 56%;
+  height: 42%;
+  background: #b965e6;
+  transform: rotate(-7deg);
+}
+
+.home-final-cta-plane-blue {
+  top: 31%;
+  right: 8%;
+  width: 50%;
+  height: 42%;
+  background: #2469d8;
+  transform: rotate(8deg);
+}
+
+.home-final-cta-plane-red {
+  bottom: 13%;
+  left: 24%;
+  width: 40%;
+  height: 37%;
+  background: #cf3b18;
+  transform: rotate(2deg);
+}
+
+.home-final-cta-plane-green {
+  top: 8%;
+  right: 7%;
+  width: 0.7rem;
+  height: 28%;
+  background: #69b128;
+  transform: rotate(12deg);
 }
 
 .home-final-cta-signal {
   position: absolute;
+  z-index: 3;
   top: -1px;
   left: 0;
   width: 32%;
@@ -4249,9 +4416,10 @@ textarea {
 }
 
 .home-final-cta-kicker {
-  align-self: start;
+  align-self: center;
   max-width: 10rem;
-  color: #86efac;
+  margin-left: clamp(1rem, 2vw, 2rem);
+  color: #fff;
   font-size: 0.68rem;
   font-weight: 740;
   letter-spacing: 0.18em;
@@ -4592,11 +4760,30 @@ textarea {
   .home-final-cta {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 2rem 0;
+    padding: 1.2rem 0 1.7rem;
+  }
+
+  .home-final-cta-art {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    grid-column: 1;
+    grid-row: 1;
+    width: min(100%, 18rem);
+    height: 7rem;
+    clip-path: polygon(3% 8%, 97% 0, 100% 84%, 0 100%);
   }
 
   .home-final-cta-kicker {
-    max-width: none;
+    grid-column: 1;
+    grid-row: 1;
+    width: min(100%, 18rem);
+    max-width: 18rem;
+    min-height: 7rem;
+    margin-left: 0;
+    padding: 1.55rem 1.4rem;
+    align-content: center;
   }
 
   .home-final-cta-copy h2 {
