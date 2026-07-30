@@ -16,10 +16,10 @@ import {
   Stethoscope,
   UserRound,
 } from 'lucide-react';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useMotionValueEvent, useTransform } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
 import type { CSSProperties, ElementType } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type FlowNode = {
   title: string;
@@ -224,6 +224,50 @@ const mobileEvents: Record<number, { text: string; isSms: boolean }> = {
   8: { text: 'Payment received SMS', isSms: true },
 };
 
+function useElementScrollProgress(
+  ref: React.RefObject<HTMLElement | HTMLDivElement | null>,
+  mode: 'story' | 'responsive',
+) {
+  const progress = useMotionValue(0);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const update = () => {
+      const element = ref.current;
+      if (!element) return;
+
+      const rect = element.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const start = mode === 'story' ? top : top - viewportHeight * 0.68;
+      const end = mode === 'story'
+        ? top + rect.height - viewportHeight
+        : top + rect.height - viewportHeight * 0.38;
+      const next = end <= start ? 0 : (window.scrollY - start) / (end - start);
+
+      progress.set(Math.max(0, Math.min(1, next)));
+    };
+
+    const schedule = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+    };
+  }, [mode, progress, ref]);
+
+  return progress;
+}
+
 function FlowEdge({
   index,
   progress,
@@ -373,15 +417,11 @@ function DesktopJourney({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p>Stage {String(activeStage + 1).padStart(2, '0')}</p>
         <span>{stage.eyebrow}</span>
         <h2>{stage.title}</h2>
       </motion.div>
 
       <motion.div className="lab-journey-progress" style={{ scaleX: progress }} />
-      <small className="lab-journey-count">
-        {String(activeStage + 1).padStart(2, '0')} / {String(flowStages.length).padStart(2, '0')}
-      </small>
     </div>
   );
 }
@@ -461,10 +501,7 @@ function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
   const height = isPhone ? 1120 : 995;
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const { scrollYProgress } = useScroll({
-    target: trackRef,
-    offset: ['start 68%', 'end 38%'],
-  });
+  const scrollYProgress = useElementScrollProgress(trackRef, 'responsive');
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
     const next = progress >= 0.995
@@ -574,10 +611,7 @@ function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
 export default function ConnectedCareGraph() {
   const storyRef = useRef<HTMLElement>(null);
   const [activeStage, setActiveStage] = useState(0);
-  const { scrollYProgress } = useScroll({
-    target: storyRef,
-    offset: ['start start', 'end end'],
-  });
+  const scrollYProgress = useElementScrollProgress(storyRef, 'story');
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
     const next = progress >= 0.995

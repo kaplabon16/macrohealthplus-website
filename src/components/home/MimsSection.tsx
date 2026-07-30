@@ -1,36 +1,51 @@
-import { motion } from 'framer-motion';
+import { AlertTriangle, Baby, Pill } from 'lucide-react';
 import Section from '../layout/Section';
 import Button from '../ui/Button';
 
+const clinicalSignals = [
+  { label: 'Drug interactions', icon: Pill },
+  { label: 'Allergy guidance', icon: AlertTriangle },
+  { label: 'Pregnancy considerations', icon: Baby },
+];
+
 export default function MimsSection() {
   return (
-    <Section className="overflow-hidden">
-      <div className="grid items-center gap-5 sm:gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-8 lg:gap-20">
-        <motion.div initial={{ opacity: 0, x: -32 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}>
+    <Section className="mims-section overflow-hidden">
+      <div className="mims-composition">
+        <div className="mims-copy">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-green-300">Medication Intelligence</p>
-          <h2 className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-4xl lg:mt-4 lg:text-5xl">Clinical decisions supported by trusted MIMS medicine information.</h2>
-          <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:text-[15px] sm:leading-7 md:text-base lg:mt-6 lg:text-lg lg:leading-8">
+          <h2>Trusted medicine information, present when clinical decisions are made.</h2>
+          <p>
             MacroHealthPlus brings MIMS drug knowledge into the prescribing workflow, giving clinicians relevant medicine information at the point where a prescription is prepared.
           </p>
-          <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:text-base sm:leading-7 lg:leading-8">
-            Interaction guidance can help teams review drug-to-drug, allergy, pregnancy, and other prescribing considerations without interrupting the consultation to search across disconnected references.
+          <p>
+            Interaction guidance helps teams review drug-to-drug, allergy, pregnancy, and other prescribing considerations without interrupting the consultation to search across disconnected references.
           </p>
-          <div className="mt-5 lg:mt-8">
+          <div className="mims-signal-list" aria-label="Clinical guidance areas">
+            {clinicalSignals.map(({ label, icon: Icon }) => (
+              <span key={label}><Icon aria-hidden="true" />{label}</span>
+            ))}
+          </div>
+          <div className="mims-action">
             <Button href="/request-demo" icon>Explore Clinical Workflows</Button>
           </div>
-        </motion.div>
-        <motion.div className="mims-visual relative min-h-[330px] sm:min-h-[350px] md:min-h-[360px] lg:min-h-[540px]" initial={{ opacity: 0, x: 38 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}>
-          <a className="mims-logo absolute right-1 top-0 z-10 block w-52 sm:right-0 sm:w-56" href="https://corporate.mims.com/" target="_blank" rel="noreferrer" aria-label="Visit the official MIMS website">
-            <img className="h-auto w-full" src="/assets/mims/mims-logo.webp" alt="MIMS" loading="lazy" decoding="async" />
+        </div>
+
+          <div className="mims-stage">
+            <div className="mims-orbit mims-orbit-one" aria-hidden="true" />
+            <div className="mims-orbit mims-orbit-two" aria-hidden="true" />
+            <a className="mims-logo" href="https://corporate.mims.com/" target="_blank" rel="noreferrer" aria-label="Visit the official MIMS website">
+            <img src="/assets/mims/mims-logo.webp" alt="MIMS" loading="eager" decoding="async" />
           </a>
           <img
-            className="mims-people absolute bottom-0 right-[-5%] h-[96%] w-auto max-w-none object-contain sm:right-0 sm:h-[94%] md:h-[92%]"
+            className="mims-people"
             src="/assets/mims/mims-healthcare-professional.webp"
             alt="A doctor examining a child with a parent present"
-            loading="lazy"
+            loading="eager"
             decoding="async"
+            fetchPriority="high"
           />
-        </motion.div>
+        </div>
       </div>
     </Section>
   );

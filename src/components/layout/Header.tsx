@@ -170,7 +170,6 @@ export default function Header() {
             ) : null}
           </div>
           <Button href={routes.requestDemo} variant="primary">Request a Demo</Button>
-          <Button href={routes.clientLogin} variant="secondary">Client Login</Button>
         </div>
 
         <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white xl:hidden" onClick={() => { setIsOpen((value) => !value); setMobileSubmenu(null); }} aria-label="Toggle navigation">
@@ -233,7 +232,6 @@ export default function Header() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button href={routes.requestDemo} icon>Request a Demo</Button>
-            <Button href={routes.clientLogin} variant="secondary">Client Login</Button>
           </div>
         </div>
       ) : null}

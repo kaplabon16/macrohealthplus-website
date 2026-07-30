@@ -10,8 +10,10 @@ export default function ClientLogoMarquee() {
       <div className="client-logo-track" aria-label="MacroHealthPlus client logos">
         {marqueeLogos.map((logo, index) => (
           <article className="client-logo-card" key={`${logo.clientName}-${index}`}>
-            <img src={logo.logoPath} alt={logo.altText} loading="lazy" decoding="async" />
-            <span>{logo.clientName}</span>
+            <span className="client-logo-image">
+              <img src={logo.logoPath} alt={logo.altText} loading="lazy" decoding="async" />
+            </span>
+            <span className="client-logo-name">{logo.clientName}</span>
           </article>
         ))}
       </div>

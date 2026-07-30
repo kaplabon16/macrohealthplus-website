@@ -84,8 +84,11 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html data-scroll-behavior="smooth" lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://dam-cdn.atl.orangelogic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="https://dam-cdn.atl.orangelogic.com/CDNLink/AT12FH6" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="https://dam-cdn.atl.orangelogic.com/CDNLink/AT12FKT" as="font" type="font/woff2" crossOrigin="anonymous" />
         <Script id="theme-init" strategy="beforeInteractive">{`try{var t=localStorage.getItem('theme');var p=t==='light'||t==='dark'?t:'system';document.documentElement.dataset.theme=p==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):p}catch(e){document.documentElement.dataset.theme='dark'}`}</Script>
       </head>
       <body>

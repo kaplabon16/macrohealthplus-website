@@ -1,10 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
 import Section from '../layout/Section';
 import Button from '../ui/Button';
 import type { ProductVisual } from '../../data/products';
+import CapabilityNetwork from './CapabilityNetwork';
+import ExpandableProductImage from './ExpandableProductImage';
+import HospitalCareFlows from './HospitalCareFlows';
 
 type ProductPageTemplateProps = {
   title: string;
@@ -29,8 +31,15 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
             </div>
           </motion.div>
           {image ? (
-            <motion.div className="product-hero-frame" initial={{ opacity: 0, x: 38 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-              <img className="product-hero-image" src={image} alt={`${title} product interface`} loading="eager" decoding="async" style={{ objectPosition: imagePosition ?? 'center center' }} />
+            <motion.div initial={{ opacity: 0, x: 38 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
+              <ExpandableProductImage
+                frameClassName="product-hero-frame"
+                imageClassName="product-hero-image"
+                src={image}
+                alt={`${title} product interface`}
+                eager
+                objectPosition={imagePosition}
+              />
             </motion.div>
           ) : null}
         </div>
@@ -50,9 +59,13 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
                 key={`${item.title}-${item.image}`}
                 variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }}
               >
-                <div className="product-story-media">
-                  <img src={item.image} alt={`${title}: ${item.title}`} loading="lazy" decoding="async" style={{ objectPosition: item.position ?? 'center center' }} />
-                </div>
+                <ExpandableProductImage
+                  frameClassName="product-story-media"
+                  imageClassName="product-story-image"
+                  src={item.image}
+                  alt={`${title}: ${item.title}`}
+                  objectPosition={item.position}
+                />
                 <div className="product-story-copy">
                   <h2 className="text-xl font-semibold leading-tight text-white sm:text-2xl lg:text-3xl">{item.title}</h2>
                   <p className="mt-2 text-sm leading-6 text-slate-300 sm:mt-3">{item.description}</p>
@@ -62,21 +75,9 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
           </motion.div>
         </Section>
       ) : null}
+      {title === 'Hospital' ? <HospitalCareFlows /> : null}
       <Section eyebrow="Core Capabilities" title={`Built into ${title}`} intro="Focused tools for the recurring tasks your team needs to complete accurately and on time.">
-        <motion.div
-          className="feature-list-grid grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-3"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.01 }}
-          variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
-        >
-          {features.map((feature) => (
-            <motion.div className="group border-b border-white/15 px-1 py-3.5 sm:px-4 sm:py-4 lg:px-5 lg:py-6" key={feature} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
-              <CheckCircle className="h-5 w-5 text-emerald-300" aria-hidden="true" />
-              <p className="mt-2.5 text-sm font-semibold leading-5 text-white transition duration-200 group-hover:text-green-300 sm:mt-3 sm:leading-6 lg:mt-4">{feature}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <CapabilityNetwork product={title} features={features} />
       </Section>
     </>
   );

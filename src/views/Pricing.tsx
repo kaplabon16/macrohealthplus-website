@@ -17,29 +17,33 @@ export default function Pricing() {
   return (
     <>
       <Section
-        className="pt-24 sm:pt-28 lg:pt-32"
+        className="pricing-page-section pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Pricing"
         title="Plans matched to the way you operate"
-        intro="Compare the published packages for GreatPharma, GreatDoc, and GreatClinic. All listed prices are in BDT; premium plans are scoped with the MacroHealthPlus team around your organization’s requirements."
+        intro="Compare the available package structures for GreatPharma, GreatDoc, and GreatClinic. Premium plans are shaped with the MacroHealthPlus team around your organization’s requirements."
       >
-        <div className="space-y-6 lg:space-y-8">
+        <div className="pricing-catalog">
           {pricingCategories.map((category) => (
             <motion.div
+              className="pricing-category"
               key={category.tabTitle}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.01 }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="pricing-category-rail mb-2 flex items-center justify-between gap-3 border-y border-white/15 py-3.5 sm:py-4 lg:py-5">
-                <h2 className="text-xl font-semibold text-white sm:text-2xl">{category.tabTitle}</h2>
-                <a className="group/link inline-flex items-center gap-2 text-sm font-semibold text-green-200 transition duration-200 hover:text-green-300" href={`/${category.tabLink}`}>
+              <div className="pricing-category-rail">
+                <div>
+                  <p>Product plans</p>
+                  <h2>{category.tabTitle}</h2>
+                </div>
+                <a className="group/link pricing-category-link" href={`/${category.tabLink}`}>
                   View solution
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" aria-hidden="true" />
                 </a>
               </div>
               <motion.div
-                className="pricing-plan-grid grid sm:grid-cols-2 lg:grid-cols-3"
+                className="pricing-plan-grid"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.01 }}
@@ -49,10 +53,15 @@ export default function Pricing() {
                   <motion.div key={`${category.tabTitle}-${plan.planTitle}`} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
                     <PricingCard
                       name={plan.planTitle}
-                      description={[plan.serviceTitle, plan.pharmacyType ? `Pharmacy: ${plan.pharmacyType}` : '', plan.userType ? `User: ${plan.userType}` : '', plan.monthlyServiceCharge ? `Service Charge: ${plan.monthlyServiceCharge}` : '', plan.billingYear ?? ''].filter(Boolean).join(' | ')}
+                      description={plan.serviceTitle}
+                      details={[
+                        plan.pharmacyType ?? '',
+                        plan.userType ?? '',
+                        plan.billingYear ?? '',
+                      ].filter(Boolean)}
                       cta={plan.buttonText}
                       features={plan.services}
-                      price={plan.cost ?? plan.everyThing ?? 'Let’s talk'}
+                      featured={plan.planTitle === 'Premium'}
                     />
                   </motion.div>
                 ))}

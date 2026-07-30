@@ -18,7 +18,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Charlie Text', 'Atlassian Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Charlie Display', 'Atlassian Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         glass: '0 24px 80px rgba(0, 0, 0, 0.34)',

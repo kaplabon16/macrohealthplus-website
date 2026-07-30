@@ -1,38 +1,69 @@
-import { motion } from 'framer-motion';
+import { Activity, BarChart3, Building2, FileHeart, ShieldCheck, Stethoscope } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Section from '../layout/Section';
 
 const points = [
-  'Configure the platform around an independent practice, a multi-service clinic, a diagnostic network, a pharmacy, or a hospital operation.',
-  'Bring MIMS medicine information and interaction guidance closer to the moment a clinician prepares a prescription.',
-  'Carry patient context from booking into consultation, investigation, billing, reporting, and follow-up without rebuilding the record at every desk.',
-  'Organize reminders, recalls, documents, results, and communication history around one consistent patient identity.',
-  'Translate routine service activity into operational and financial reports that leaders can review and act on.',
-  'Define access by role and responsibility so clinical, administrative, and management users see the information required for their work.',
+  { icon: Building2, label: 'Adaptable operations', text: 'Configure the platform around an independent practice, a multi-service clinic, a diagnostic network, a pharmacy, or a hospital operation.' },
+  { icon: Stethoscope, label: 'Medicine intelligence', text: 'Bring MIMS medicine information and interaction guidance closer to the moment a clinician prepares a prescription.' },
+  { icon: Activity, label: 'Continuous context', text: 'Carry patient context from booking into consultation, investigation, billing, reporting, and follow-up without rebuilding the record at every desk.' },
+  { icon: FileHeart, label: 'One patient identity', text: 'Organize reminders, recalls, documents, results, and communication history around one consistent patient identity.' },
+  { icon: BarChart3, label: 'Operational visibility', text: 'Translate routine service activity into operational and financial reports that leaders can review and act on.' },
+  { icon: ShieldCheck, label: 'Responsible access', text: 'Define access by role and responsibility so clinical, administrative, and management users see the information required for their work.' },
 ];
 
 export default function PlatformOverview() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <Section
+    <Section className="platform-overview-section"
       title="One operational foundation, shaped around your organization"
       intro="MacroHealthPlus replaces fragmented handoffs with a shared digital foundation. Teams can work within focused modules while patient, service, and business information remains available across the wider organization."
     >
-      <motion.ul
-        className="grid gap-2 text-xs leading-5 text-slate-300 sm:grid-cols-2 sm:gap-3 sm:text-sm sm:leading-6 lg:leading-7"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.01 }}
-        variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
-      >
-        {points.map((point) => (
-          <motion.li
-            className="border-t border-white/10 pt-3 transition duration-200 hover:border-green-300/60 hover:text-white"
-            key={point}
-            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}
-          >
-            {point}
-          </motion.li>
-        ))}
-      </motion.ul>
+      <div className="platform-operating-grid">
+        <motion.div
+          className="platform-orbit"
+          initial={{ opacity: 0.5, scale: reduceMotion ? 1 : 0.94 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}
+          aria-hidden="true"
+        >
+          <span className="platform-orbit-ring platform-orbit-ring-one" />
+          <span className="platform-orbit-ring platform-orbit-ring-two" />
+          <span className="platform-orbit-core">
+            <span className="platform-orbit-logo-crop">
+              <img src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png" alt="" />
+            </span>
+          </span>
+          <strong>One Shared<br />Connected Platform</strong>
+          <span className="platform-orbit-signal" />
+        </motion.div>
+
+        <motion.ul
+          className="platform-capability-list"
+          initial="rest"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+          variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.07 } } }}
+        >
+          {points.map(({ icon: Icon, label, text }) => (
+            <motion.li
+              className="platform-capability"
+              key={label}
+              variants={{
+                rest: { opacity: 0.45, x: reduceMotion ? 0 : 24 },
+                visible: { opacity: 1, x: 0, transition: { duration: reduceMotion ? 0 : 0.58, ease: [0.22, 1, 0.36, 1] } },
+              }}
+            >
+              <span className="platform-capability-icon"><Icon /></span>
+              <div>
+                <h3>{label}</h3>
+                <p>{text}</p>
+              </div>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </div>
     </Section>
   );
 }

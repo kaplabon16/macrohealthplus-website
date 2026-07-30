@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Section from '../layout/Section';
 
 const implementationImages = [
@@ -25,7 +25,7 @@ const implementationImages = [
 export default function ImplementationInPractice() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const reduceMotion = false;
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (reduceMotion || isPaused) return undefined;
@@ -64,9 +64,6 @@ export default function ImplementationInPractice() {
             <button className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition hover:border-green-300/60 hover:text-green-300" type="button" onClick={showNext} aria-label="Show next implementation image" title="Next image">
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
-            <p className="ml-2 min-w-16 text-xs font-semibold tracking-[0.18em] text-slate-300" aria-live="polite">
-              {String(activeIndex + 1).padStart(2, '0')} / {String(implementationImages.length).padStart(2, '0')}
-            </p>
           </div>
         </div>
 

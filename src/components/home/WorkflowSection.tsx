@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
+import { ArrowDownRight } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Section from '../layout/Section';
-import GlassCard from '../ui/GlassCard';
 import ConnectedCareGraph from './ConnectedCareGraph';
 
 const items = [
@@ -13,23 +13,31 @@ const items = [
 ];
 
 export default function WorkflowSection() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <Section title="Better work at the desk. Better continuity across the organization." intro="Digital transformation matters when it improves the ordinary moments that shape care: finding the right record, completing an order, collecting payment, publishing a result, or knowing what must happen next.">
+    <Section disableAnimation className="workflow-home-section" title="Better work at the desk. Better continuity across the organization." intro="Digital transformation matters when it improves the ordinary moments that shape care: finding the right record, completing an order, collecting payment, publishing a result, or knowing what must happen next.">
       <div className="space-y-7 sm:space-y-8 lg:space-y-10">
         <motion.div
-          className="grid gap-3 sm:grid-cols-3 lg:gap-5"
-          initial="hidden"
+          className="workflow-principles"
+          initial="rest"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.01 }}
-          variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+          viewport={{ once: true, amount: 0.08 }}
+          variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.1 } } }}
         >
           {items.map((item) => (
-            <motion.section key={item.title} variants={{ hidden: { opacity: 1, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }}>
-              <GlassCard className="h-full p-4 sm:p-5 lg:p-6">
-              <h2 className="text-lg font-semibold text-white sm:text-xl lg:text-2xl">{item.title}</h2>
-              {item.text ? <p className="mt-2.5 text-xs leading-5 text-slate-300 sm:mt-3 sm:text-sm sm:leading-6 lg:mt-4 lg:leading-7">{item.text}</p> : null}
-              </GlassCard>
-            </motion.section>
+            <motion.article
+              className="workflow-principle"
+              key={item.title}
+              variants={{
+                rest: { opacity: 0.5, y: reduceMotion ? 0 : 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0 : 0.68, ease: [0.22, 1, 0.36, 1] } },
+              }}
+            >
+              <ArrowDownRight className="workflow-principle-arrow" aria-hidden="true" />
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </motion.article>
           ))}
         </motion.div>
         <ConnectedCareGraph />

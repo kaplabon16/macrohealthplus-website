@@ -17,18 +17,17 @@ export type Product = {
   notes?: string;
 };
 
-const productImage = (file: string) => `/assets/product_images/web/${file}.webp`;
+const productImage = (file: string) => `/assets/product_images/clean/${file}.webp`;
 
 export const products: Product[] = [
   {
     title: 'DigiPatient',
     route: '/digi-patient',
     subtitle: 'A Continuous Patient Record',
-    description: 'Organize appointments, investigations, clinical documents, vital signs, medical history, and reports around one patient profile so important health information remains available beyond a single visit.',
+    description: 'Organize investigations, clinical documents, vital signs, medical history, and reports around one patient profile so important health information remains available beyond a single visit.',
     image: productImage('digi_patient'),
-    features: ['Appointments', 'Investigation results', 'Doctor’s reports', 'Health documents', 'Previous medical history', 'Vitals and disease photos'],
+    features: ['Investigation results', 'Doctor’s reports', 'Health documents', 'Previous medical history', 'Vitals and disease photos'],
     story: [
-      { title: 'Find the right record quickly', image: productImage('digi_patient'), description: 'Search and review patient profiles from an organized list, with the essential identifiers needed to continue care confidently.' },
       { title: 'Keep activity in context', image: productImage('digi_patients'), description: 'Bring clinical and administrative history together so authorized teams can understand what has happened and what still requires attention.' },
     ],
   },
@@ -41,7 +40,6 @@ export const products: Product[] = [
     imagePosition: 'center top',
     features: ['Online booking', 'Patient records', 'Consultation from templates', 'Referral letters and prescriptions', 'Tele-consulting', 'Appointment notification by SMS'],
     story: [
-      { title: 'A schedule the whole practice can follow', image: productImage('appointment'), description: 'Create and update bookings while keeping the day’s consultation status visible to both clinical and front-desk users.', position: 'center top' },
       { title: 'Clinical context at consultation time', image: productImage('digi_patients'), description: 'Open the relevant patient history directly from the practice workflow instead of reconstructing context from separate files and messages.' },
     ],
   },
@@ -53,7 +51,6 @@ export const products: Product[] = [
     image: productImage('great_lab_product_img'),
     features: ['Patient registration', 'Billing management', 'QR Code System', 'QR Coded Lab Report', 'Machine integrations', 'Advanced Integrated Report- MIS'],
     story: [
-      { title: 'Reports that move through a defined process', image: productImage('great_lab_product_img'), description: 'Prepare, review, verify, and publish diagnostic information with QR-ready records and a clearer view of report status.' },
       { title: 'Billing connected to the order', image: productImage('lab_billing'), description: 'Handle test selection, charges, discounts, payment, and delivery information without separating the financial record from the laboratory request.' },
     ],
   },
@@ -65,7 +62,6 @@ export const products: Product[] = [
     image: productImage('great_pharma'),
     features: ['Fast invoicing', 'Stock management', 'Smooth returns', 'Purchase management', 'Rack management', 'Web and Mobile App Access'],
     story: [
-      { title: 'A faster, more informed counter', image: productImage('great_pharma'), description: 'Bring medicine search, customer details, item availability, payment, and invoice actions into one focused sales interface.' },
       { title: 'Know what is available and where', image: productImage('inventory_product'), description: 'Monitor stock position and item movement so purchasing and service decisions are based on current inventory information.' },
       { title: 'Understand every transaction', image: productImage('transaction_data_pharmacy'), description: 'Review sales and payment activity with the detail needed for reconciliation, oversight, and day-to-day business decisions.' },
     ],
@@ -78,7 +74,6 @@ export const products: Product[] = [
     image: productImage('hospital_product'),
     features: ['Patient service coordination', 'Admission support', 'Billing workflow', 'Department visibility', 'Operational handoff tracking', 'QR-enabled records'],
     story: [
-      { title: 'A command view for patient services', image: productImage('hospital_product'), description: 'Bring service activity, billing status, and department coordination into a shared operational view for hospital teams.' },
       { title: 'Connect scheduled and ongoing care', image: productImage('appointment'), description: 'Carry appointment information into the wider hospital journey so departments can prepare for the patient and coordinate the next action.' },
     ],
   },
@@ -105,7 +100,6 @@ export const products: Product[] = [
     image: productImage('inventory_product'),
     features: ['Stock overview', 'Item movement', 'Store visibility', 'Low-stock tracking', 'Purchase support', 'Operational reporting'],
     story: [
-      { title: 'A current view of stock', image: productImage('inventory_product'), description: 'Review item availability and movement from a central inventory screen designed for routine operational decisions.' },
       { title: 'Connect movement to pharmacy activity', image: productImage('transaction_data_pharmacy'), description: 'Relate inventory changes to transaction data, making it easier to understand why stock has moved and where follow-up may be required.' },
     ],
   },
@@ -118,7 +112,6 @@ export const products: Product[] = [
     imagePosition: 'center top',
     features: ['Setup your timing', 'Define payment', 'Send consultation summary', 'New consultation flow', 'Text message updates', 'Remote patient conversation'],
     story: [
-      { title: 'Remote care begins with a clear schedule', image: productImage('appointment'), description: 'Define availability and organize online appointments so clinicians and patients enter the consultation with a shared understanding of timing.', position: 'center top' },
       { title: 'The consultation remains part of the record', image: productImage('digi_patient'), description: 'Keep advice, orders, prescriptions, and follow-up connected to the patient’s broader history rather than leaving remote care in isolation.' },
     ],
   },
@@ -130,7 +123,6 @@ export const products: Product[] = [
     image: productImage('great_pharma'),
     features: ['Add item', 'Payment tracking', 'Pharmacy marketplace', 'High quality', 'Best price', 'After sales services'],
     story: [
-      { title: 'Commerce connected to service operations', image: productImage('great_pharma'), description: 'Support catalogue, order, and customer-service activity with the pharmacy workflows responsible for fulfilment.' },
       { title: 'Availability customers can depend on', image: productImage('inventory_product'), description: 'Ground marketplace activity in current inventory information so online demand and operational supply remain aligned.' },
     ],
   },
@@ -143,7 +135,6 @@ export const products: Product[] = [
     features: ['Online medicine sales', 'Product catalogue', 'Order flow', 'Customer access', 'Pharmacy marketplace'],
     story: [
       { title: 'Online orders, operationally connected', image: productImage('great_pharma'), description: 'Carry digital demand into the pharmacy environment responsible for product selection, sale, and fulfilment.' },
-      { title: 'A traceable commercial record', image: productImage('transaction_data_pharmacy'), description: 'Review payment and sales activity with enough detail to follow an order through the commercial process.' },
     ],
     notes: 'The old /e-pharmacy route renders a 404; the live internal route is /e-commerce-medicine.',
   },
@@ -155,7 +146,6 @@ export const products: Product[] = [
     image: productImage('lab_agent'),
     features: ['External lab support', 'Order payment', 'Collection workflow', 'Lab service coordination'],
     story: [
-      { title: 'A visible external-lab handoff', image: productImage('lab_agent'), description: 'Record referred diagnostic activity and follow its progress so collection teams can respond accurately to patient and partner enquiries.' },
       { title: 'Payment aligned with the request', image: productImage('lab_billing'), description: 'Keep test charges, payment status, and collection information associated with the diagnostic order throughout the external workflow.' },
     ],
   },
