@@ -36,8 +36,24 @@ export default function PlatformOverview() {
               <img src="/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png" alt="" />
             </span>
           </span>
-          <strong>One Shared<br />Connected Platform</strong>
-          <span className="platform-orbit-signal" />
+          <span className="platform-orbit-copy">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <path id="platform-orbit-copy-path" d="M 50,23.5 a 26.5,26.5 0 1,1 0,53 a 26.5,26.5 0 1,1 0,-53" />
+                <linearGradient id="platform-orbit-copy-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#01D439" />
+                  <stop offset="52%" stopColor="#0EA5A4" />
+                  <stop offset="100%" stopColor="#01D439" />
+                </linearGradient>
+              </defs>
+              <text>
+                <textPath href="#platform-orbit-copy-path" startOffset="50%" textAnchor="middle">ONE SHARED  CONNECTED PLATFORM</textPath>
+              </text>
+            </svg>
+          </span>
+          <span className="platform-orbit-signal platform-orbit-signal-outer" />
+          <span className="platform-orbit-signal platform-orbit-signal-middle" />
+          <span className="platform-orbit-signal platform-orbit-signal-inner" />
         </motion.div>
 
         <motion.ul

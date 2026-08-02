@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="border-b border-slate-300/70 pb-4 sm:pb-5 lg:pb-6">
           <Link className="inline-flex items-center" href={routes.home}>
-            <img className="site-footer-logo h-20 w-auto object-contain object-left sm:h-24" src="/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png" alt="MacroHealthPlus - Systems Thinking" />
+            <img className="site-footer-logo h-24 w-28 object-contain object-left sm:h-28 sm:w-32" src="/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png" alt="MacroHealthPlus - Systems Thinking" />
           </Link>
           <p className="mt-2 max-w-3xl leading-5 text-slate-300 sm:mt-3 sm:leading-6">
             Practice management software for doctors, clinics, diagnostics, pharmacies, telehealth providers, and healthcare teams.

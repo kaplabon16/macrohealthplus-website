@@ -9,7 +9,7 @@ import Providers from './providers';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'MacroHealthPlus | Healthcare Management Software',
+    default: 'MacroHealthPlus',
     template: '%s | MacroHealthPlus',
   },
   description: 'MacroHealthPlus connects appointments, clinical records, diagnostics, pharmacy operations, billing, telehealth, and patient follow-up in one healthcare software ecosystem.',
@@ -47,8 +47,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png',
-    apple: '/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png',
+    icon: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png',
+    shortcut: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png',
+    apple: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png',
   },
 };
 
@@ -66,7 +67,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'MacroHealthPlus',
   url: siteUrl,
-  logo: `${siteUrl}/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png`,
+  logo: `${siteUrl}/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png`,
   email: contactInfo.email,
   telephone: [contactInfo.bangladeshPhone, contactInfo.headOfficePhone],
   address: [
