@@ -3351,6 +3351,8 @@ textarea {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
+  cursor: grab;
+  user-select: none;
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background:
@@ -3362,6 +3364,14 @@ textarea {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   scrollbar-width: none;
+}
+
+.client-logo-shell.is-dragging {
+  cursor: grabbing;
+}
+
+.client-logo-shell.is-dragging .client-logo-track {
+  animation-play-state: paused;
 }
 
 :root[data-theme="light"] .client-logo-shell {
@@ -5159,6 +5169,7 @@ textarea {
   width: max-content;
   align-items: stretch;
   cursor: grab;
+  user-select: none;
   will-change: transform;
 }
 

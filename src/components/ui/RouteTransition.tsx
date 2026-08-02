@@ -11,6 +11,13 @@ type RouteTransitionProps = {
 export default function RouteTransition({ children }: RouteTransitionProps) {
   const pathname = usePathname();
   const [useBlur, setUseBlur] = useState(false);
+  const isLegalPage = [
+    '/privacy',
+    '/terms',
+    '/refund-return-policy',
+    '/security',
+    '/cookie-disclaimer',
+  ].includes(pathname);
 
   useEffect(() => {
     setUseBlur(!window.matchMedia('(max-width: 767px)').matches);
@@ -24,6 +31,10 @@ export default function RouteTransition({ children }: RouteTransitionProps) {
 
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
+
+  if (isLegalPage) {
+    return <div className="page-transition">{children}</div>;
+  }
 
   return (
     <AnimatePresence mode="wait">

@@ -138,8 +138,10 @@ export default function FacilitySolutions({
               className="product-showcase-track"
               animate={{ x: -offset }}
               drag={reduceMotion ? false : 'x'}
+              dragDirectionLock
               dragConstraints={{ left: -metrics.maxOffset, right: 0 }}
               dragElastic={0.06}
+              dragMomentum={false}
               onDragEnd={(_, info) => {
                 if (info.offset.x < -55) setNext();
                 if (info.offset.x > 55) setPrevious();
@@ -172,6 +174,7 @@ export default function FacilitySolutions({
                 return (
                   <motion.a
                     className="product-showcase-card group"
+                    draggable={false}
                     href={product.route}
                     key={product.route}
                     layoutId={enableProductHandoff && productIndex < 4 ? `featured-product-${product.route}` : undefined}
