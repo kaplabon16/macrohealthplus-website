@@ -2484,6 +2484,30 @@ textarea {
   background: color-mix(in srgb, var(--brand-green) 7%, transparent);
 }
 
+.team-profile-dialog {
+  color: var(--text-main);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--brand-green) 5%, transparent), transparent 36%),
+    var(--bg-main);
+}
+
+.team-profile-close {
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--bg-main) 78%, transparent);
+  box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+
+.team-profile-close:hover,
+.team-profile-close:focus-visible {
+  border-color: color-mix(in srgb, var(--brand-green) 55%, transparent);
+  background: color-mix(in srgb, var(--brand-green) 10%, var(--bg-main));
+  transform: rotate(4deg);
+}
+
 .hero-section {
   z-index: 1;
   background: #000;
