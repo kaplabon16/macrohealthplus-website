@@ -16,14 +16,23 @@ type ProductPageTemplateProps = {
   imagePosition?: string;
   features: string[];
   story?: ProductVisual[];
+  placeholder?: boolean;
 };
 
-export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, features, story = [] }: ProductPageTemplateProps) {
+export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, features, story = [], placeholder = false }: ProductPageTemplateProps) {
+  if (placeholder) {
+    return (
+      <Section className="min-h-[70svh] pt-24 sm:pt-28 lg:pt-32" eyebrow="MacroHealthPlus Solution" title={title}>
+        <div aria-hidden="true" />
+      </Section>
+    );
+  }
+
   return (
     <>
       <Section className="pt-24 sm:pt-28 lg:pt-32" eyebrow="MacroHealthPlus Solution" title={title} intro={subtitle}>
         <div className="grid items-center gap-5 sm:gap-6 md:grid-cols-[1fr_0.9fr] lg:gap-8">
-          <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
+          <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
             <p className="text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">{description}</p>
             <div className="mt-4 flex flex-col gap-2.5 sm:mt-6 sm:flex-row lg:mt-8">
               <Button href="/request-demo" icon>Request a Demo</Button>
@@ -31,7 +40,7 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
             </div>
           </motion.div>
           {image ? (
-            <motion.div initial={{ opacity: 0, x: 38 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div initial={{ opacity: 0, x: 38 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
               <ExpandableProductImage
                 frameClassName="product-hero-frame"
                 imageClassName="product-hero-image"
@@ -50,14 +59,14 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
             className="space-y-5 sm:space-y-7 lg:space-y-12"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.01 }}
-            variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
+            viewport={{ once: true, amount: 0.15 }}
+            variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
           >
             {story.map((item, index) => (
               <motion.article
                 className={`product-story-panel ${index % 2 ? 'product-story-panel-reverse' : ''}`}
                 key={`${item.title}-${item.image}`}
-                variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }}
+                variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
               >
                 <ExpandableProductImage
                   frameClassName="product-story-media"

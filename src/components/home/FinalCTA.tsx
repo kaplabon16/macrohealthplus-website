@@ -10,10 +10,10 @@ export default function FinalCTA() {
     <Section className="home-final-cta-section">
       <motion.div
         className="home-final-cta"
-        initial={{ opacity: 0.5, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.985 }}
+        initial={{ opacity: 0, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.985 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.12 }}
-        transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, amount: 0.18 }}
+        transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="home-final-cta-signal" aria-hidden="true" />
         <motion.div
@@ -22,7 +22,7 @@ export default function FinalCTA() {
           initial={reduceMotion ? false : { opacity: 0, x: -34, rotate: -5 }}
           whileInView={{ opacity: 1, x: 0, rotate: -2 }}
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: reduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="home-final-cta-plane home-final-cta-plane-violet" />
           <span className="home-final-cta-plane home-final-cta-plane-blue" />

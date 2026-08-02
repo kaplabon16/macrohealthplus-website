@@ -287,6 +287,10 @@ textarea {
   font: inherit;
 }
 
+.animated-section[data-section-visible="false"] * {
+  animation-play-state: paused !important;
+}
+
 .glass {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
@@ -1389,7 +1393,7 @@ textarea {
 
 @media (min-width: 1024px) {
   .lab-journey-track {
-    height: calc(var(--journey-steps) * 42svh);
+    height: calc(var(--journey-steps) * 32svh);
   }
 }
 
@@ -3297,9 +3301,16 @@ textarea {
   display: flex;
   width: max-content;
   min-width: 100%;
-  gap: 16px;
-  padding: 18px;
+  gap: 0;
+  padding: 0;
   animation: client-marquee 34s linear infinite;
+}
+
+.client-logo-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  padding: 18px 8px;
 }
 
 .client-logo-shell:hover .client-logo-track {
@@ -3840,8 +3851,8 @@ textarea {
   position: relative;
   z-index: 2;
   display: grid;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 8.25rem;
+  height: 7.35rem;
   place-items: center;
   color: #86efac;
   background: transparent;
@@ -3856,25 +3867,19 @@ textarea {
 .platform-orbit-logo-crop {
   position: relative;
   display: block;
-  width: 3.75rem;
-  height: 3.75rem;
-  overflow: hidden;
+  width: 8.25rem;
+  height: 7.35rem;
 }
 
 .platform-orbit-logo-crop img {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: auto;
-  max-width: none;
+  width: 100%;
   height: 100%;
-  translate: 0 -50%;
   object-fit: contain;
 }
 
 .platform-orbit strong {
   position: absolute;
-  top: 61.5%;
+  top: 69%;
   color: var(--text-main);
   font-size: clamp(1.15rem, 2vw, 1.65rem);
   line-height: 1.08;
@@ -4066,6 +4071,11 @@ textarea {
   padding: 0;
 }
 
+.partners-runway .client-logo-group {
+  gap: 0;
+  padding: 0;
+}
+
 .partners-runway .client-logo-card {
   position: relative;
   display: grid;
@@ -4113,15 +4123,18 @@ textarea {
   transform: scale(1.42);
 }
 
-.client-logo-name {
+.client-logo-card .client-logo-name {
+  display: -webkit-box;
   width: 100%;
+  min-height: 1.9rem;
   overflow: hidden;
   color: var(--text-muted);
   font-size: 0.72rem;
   line-height: 1.3;
   text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .partners-runway .client-logo-fade {
@@ -4647,12 +4660,12 @@ textarea {
   }
 
   .platform-orbit-core {
-    width: 3.75rem;
-    height: 3.75rem;
+    width: 6.8rem;
+    height: 6rem;
   }
 
   .platform-orbit strong {
-    top: 61%;
+    top: 69%;
     font-size: 1.05rem;
   }
 
@@ -4721,7 +4734,7 @@ textarea {
     height: auto;
   }
 
-  .client-logo-name {
+  .client-logo-card .client-logo-name {
     font-size: 0.62rem;
   }
 
@@ -6918,6 +6931,18 @@ textarea {
 }
 
 /* MIMS clinical intelligence composition */
+.mims-wordmark-text {
+  color: #ef3340;
+  font-weight: 780;
+  letter-spacing: 0.015em;
+  text-shadow: 0 0 1rem rgba(239, 51, 64, 0.2);
+}
+
+:root[data-theme="light"] .mims-wordmark-text {
+  color: #d92332;
+  text-shadow: none;
+}
+
 .mims-composition {
   display: grid;
   align-items: center;
@@ -7165,6 +7190,90 @@ textarea {
   }
 }
 
+/* Shared motion language for illustrative feature icons. */
+@keyframes feature-icon-alive {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  42% {
+    transform: translate3d(0, -4px, 0) rotate(-4deg) scale(1.1);
+  }
+  68% {
+    transform: translate3d(0, -1px, 0) rotate(3deg) scale(1.04);
+  }
+}
+
+@keyframes brand-logo-alive {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  48% {
+    transform: translate3d(0, -3px, 0) scale(1.025);
+  }
+}
+
+.platform-capability-icon svg,
+.product-mark-symbol svg,
+.capability-network-logo svg,
+.lab-journey-icon svg,
+.hospital-flow-icon svg,
+.opd-reference-symbol svg,
+.ipd-reference-group header > span svg,
+.ipd-reference-details svg,
+.lab-journey-destinations svg,
+.lab-journey-mobile-destinations svg,
+.lab-journey-responsive-destinations svg,
+.mims-signal-list svg,
+.pricing-plan-features svg,
+.feature-icon-motion {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: feature-icon-alive 2.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.platform-capability:nth-child(2n) .platform-capability-icon svg,
+.pricing-plan-features li:nth-child(2n) svg,
+.ipd-reference-details > div:nth-child(2n) svg {
+  animation-delay: -0.9s;
+}
+
+.platform-capability:nth-child(3n) .platform-capability-icon svg,
+.pricing-plan-features li:nth-child(3n) svg,
+.ipd-reference-details > div:nth-child(3n) svg {
+  animation-delay: -1.7s;
+}
+
+.platform-capability:hover .platform-capability-icon svg,
+.product-showcase-card:hover .product-mark-symbol svg,
+.pricing-plan-features li:hover svg {
+  animation-duration: 0.8s;
+}
+
+.official-brand-motion,
+.site-footer-logo,
+.platform-orbit-logo-crop,
+.client-logo-image,
+.payment-method-logo-motion {
+  transform-origin: center;
+  animation: brand-logo-alive 3.4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.client-logo-card:nth-child(2n) .client-logo-image,
+.group:nth-child(2n) .payment-method-logo-motion {
+  animation-delay: -1.1s;
+}
+
+.client-logo-card:nth-child(3n) .client-logo-image,
+.group:nth-child(3n) .payment-method-logo-motion {
+  animation-delay: -2.2s;
+}
+
+.client-logo-card:hover .client-logo-image,
+.group:hover .payment-method-logo-motion,
+.apple-brand-button:hover .official-brand-motion {
+  animation-duration: 0.9s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animated-section,
   .section-heading-line,
@@ -7184,6 +7293,31 @@ textarea {
   .mims-logo,
   .mims-people,
   .mims-orbit {
+    animation: none !important;
+  }
+
+  .platform-capability-icon svg,
+  .product-mark-symbol svg,
+  .capability-network-logo svg,
+  .lab-journey-icon svg,
+  .hospital-flow-icon svg,
+  .opd-reference-symbol svg,
+  .ipd-reference-group header > span svg,
+  .ipd-reference-details svg,
+  .lab-journey-destinations svg,
+  .lab-journey-mobile-destinations svg,
+  .lab-journey-responsive-destinations svg,
+  .mims-signal-list svg,
+  .pricing-plan-features svg,
+  .feature-icon-motion {
+    animation: none !important;
+  }
+
+  .official-brand-motion,
+  .site-footer-logo,
+  .platform-orbit-logo-crop,
+  .client-logo-image,
+  .payment-method-logo-motion {
     animation: none !important;
   }
 }

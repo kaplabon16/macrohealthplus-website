@@ -1,8 +1,8 @@
 'use client';
 
-import { ChevronLeft, Menu, Monitor, Moon, Sun, X } from 'lucide-react';
+import { ChevronLeft, Menu, Moon, Sun, X } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { navigation } from '../../data/navigation';
 import { routes } from '../../utils/routes';
 import Button from '../ui/Button';
@@ -10,10 +10,26 @@ import Button from '../ui/Button';
 type ThemePreference = 'system' | 'light' | 'dark';
 
 const themeOptions = [
-  { value: 'system' as const, label: 'System', icon: Monitor },
+  { value: 'system' as const, label: 'System', icon: Sun },
   { value: 'light' as const, label: 'Light', icon: Sun },
   { value: 'dark' as const, label: 'Dark', icon: Moon },
 ];
+
+const systemThemeQuery = '(prefers-color-scheme: dark)';
+
+function subscribeToSystemTheme(onChange: () => void) {
+  const media = window.matchMedia(systemThemeQuery);
+  media.addEventListener('change', onChange);
+  return () => media.removeEventListener('change', onChange);
+}
+
+function getSystemThemeSnapshot() {
+  return window.matchMedia(systemThemeQuery).matches;
+}
+
+function getServerThemeSnapshot() {
+  return false;
+}
 
 export default function Header() {
   const themeMenuCloseTimer = useRef<number | null>(null);
@@ -25,6 +41,9 @@ export default function Header() {
   const [mobileSubmenu, setMobileSubmenu] = useState<number | null>(null);
   const [theme, setTheme] = useState<ThemePreference>('system');
   const [themeReady, setThemeReady] = useState(false);
+  const systemTheme = useSyncExternalStore(subscribeToSystemTheme, getSystemThemeSnapshot, getServerThemeSnapshot)
+    ? 'dark'
+    : 'light';
 
   const cancelThemeMenuClose = () => {
     if (themeMenuCloseTimer.current !== null) {
@@ -99,36 +118,27 @@ export default function Header() {
 
   useEffect(() => {
     if (!themeReady) return;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const applyTheme = () => {
-      document.documentElement.dataset.theme = theme === 'system'
-        ? (systemTheme.matches ? 'dark' : 'light')
-        : theme;
-    };
-
-    applyTheme();
+    document.documentElement.dataset.theme = theme === 'system' ? systemTheme : theme;
     window.localStorage.setItem('theme', theme);
-
-    if (theme !== 'system') return;
-    systemTheme.addEventListener('change', applyTheme);
-    return () => systemTheme.removeEventListener('change', applyTheme);
-  }, [theme, themeReady]);
+  }, [systemTheme, theme, themeReady]);
 
   const activeItem = activeDropdown !== null ? navigation[activeDropdown] : null;
   const activeChildren = activeItem && 'children' in activeItem ? activeItem.children : null;
   const mobileItem = mobileSubmenu !== null ? navigation[mobileSubmenu] : null;
   const mobileChildren = mobileItem && 'children' in mobileItem ? mobileItem.children : null;
+  const ActiveThemeIcon = theme === 'system'
+    ? (systemTheme === 'dark' ? Moon : Sun)
+    : (theme === 'light' ? Sun : Moon);
 
   return (
     <header className="apple-nav-typography fixed left-0 right-0 top-2 z-50 px-2 sm:top-4 sm:px-4">
       <div className={`apple-nav-curtain ${activeChildren || isOpen ? 'apple-nav-curtain-visible' : ''}`} aria-hidden="true" />
       <div className="relative z-[3] mx-auto max-w-7xl" onMouseEnter={cancelDropdownClose} onMouseLeave={scheduleDropdownClose}>
       <nav className={`glass nav-glass relative z-[3] mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
-        <Link className="apple-brand-button flex items-center gap-3" href={routes.home} onClick={() => setIsOpen(false)}>
-          <span className={`${scrolled ? 'h-9 w-9' : 'h-11 w-11'} relative block shrink-0 overflow-hidden rounded-full transition-all`} aria-hidden="true">
-            <img className="absolute left-0 top-1/2 h-full max-w-none -translate-y-1/2 object-contain" src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png" alt="" />
+        <Link className="apple-brand-button flex items-center" href={routes.home} onClick={() => setIsOpen(false)}>
+          <span className={`${scrolled ? 'h-8 w-[9.75rem] sm:w-[10.75rem]' : 'h-9 w-[10.5rem] sm:h-10 sm:w-[11.5rem]'} official-brand-motion relative block shrink-0 transition-all`}>
+            <img className="h-full w-full object-contain object-left" src="/assets/macrohealthplus/official-logos/MHP-Logo-horizontal.png" alt="MacroHealthPlus - Systems Thinking" />
           </span>
-          <span className="text-xs font-semibold text-[#69B128] transition-all sm:text-sm">MacroHealthPlus</span>
         </Link>
 
         <div className="hidden items-center gap-1 xl:flex">
@@ -151,13 +161,15 @@ export default function Header() {
         <div className="apple-nav-actions hidden items-center gap-2 xl:flex">
           <div className="relative" onPointerEnter={openThemeMenu} onPointerLeave={scheduleThemeMenuClose} onFocus={openThemeMenu} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) scheduleThemeMenuClose(); }}>
             <button className="apple-appearance-button flex h-11 w-9 items-center justify-center" type="button" aria-label="Choose color theme" aria-expanded={isThemeMenuOpen} onClick={() => { cancelThemeMenuClose(); setIsThemeMenuOpen((value) => !value); }}>
-              {theme === 'system' ? <Monitor className="h-4 w-4" aria-hidden="true" /> : theme === 'light' ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+              <ActiveThemeIcon className="h-4 w-4" aria-hidden="true" />
             </button>
             {isThemeMenuOpen ? (
               <div className="absolute right-0 top-full w-36 pt-2">
                 <div className="glass nav-glass nav-menu-frost rounded-2xl p-1.5">
                   {themeOptions.map((option) => {
-                    const Icon = option.icon;
+                    const Icon = option.value === 'system'
+                      ? (systemTheme === 'dark' ? Moon : Sun)
+                      : option.icon;
                     return (
                       <button className={`nav-dropdown-link flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-sm transition ${theme === option.value ? 'bg-white/10 text-green-300' : 'text-slate-200 hover:bg-white/10 hover:text-white'}`} key={option.value} type="button" aria-pressed={theme === option.value} onClick={() => { setTheme(option.value); setIsThemeMenuOpen(false); }}>
                         <Icon className="h-4 w-4" aria-hidden="true" />
@@ -221,7 +233,9 @@ export default function Header() {
             <span className="text-xs font-semibold text-slate-300">Appearance</span>
             <div className="mobile-theme-picker grid grid-cols-3 gap-1 p-1" aria-label="Color theme">
               {themeOptions.map((option) => {
-                const Icon = option.icon;
+                const Icon = option.value === 'system'
+                  ? (systemTheme === 'dark' ? Moon : Sun)
+                  : option.icon;
                 return (
                   <button className={`mobile-theme-option flex h-9 w-9 items-center justify-center rounded-xl transition ${theme === option.value ? 'mobile-theme-option-active' : ''}`} key={option.value} type="button" aria-label={`${option.label} theme`} aria-pressed={theme === option.value} title={option.label} onClick={() => setTheme(option.value)}>
                     <Icon className="h-4 w-4" aria-hidden="true" />

@@ -15,6 +15,7 @@ export type Product = {
   features: string[];
   story?: ProductVisual[];
   notes?: string;
+  placeholder?: boolean;
 };
 
 const productImage = (file: string) => `/assets/product_images/clean/${file}.webp`;
@@ -81,9 +82,9 @@ export const products: Product[] = [
     title: 'HR Management',
     route: '/hr-management',
     subtitle: 'Workforce Administration for Healthcare',
-    description: 'Manage employee profiles, attendance, leave balances, departmental visibility, and salary processing in one workforce system built for the staffing realities of healthcare organizations.',
+    description: 'Manage employee profiles, attendance, rosters, overtime, leave balances, loans and advances, departmental visibility, and salary processing in one workforce system built for the staffing realities of healthcare organizations.',
     image: productImage('hr_product'),
-    features: ['Employee profiles', 'Attendance summary', 'Leave balance', 'Salary processing', 'Quick workforce view', 'Role and department visibility'],
+    features: ['Employee profiles', 'Attendance summary', 'Leave balance', 'Salary processing', 'Quick workforce view', 'Role and department visibility', 'Roster Management', 'Overtime Management', 'Loan and Advance'],
     story: [
       { title: 'Workforce status at a glance', image: productImage('hr_dashboard'), description: 'Review current HR activity and employee movement from a dashboard designed to surface the information administrators need first.' },
       { title: 'Immediate employee context', image: productImage('hr_dashboard_quickview'), description: 'Check department, availability, and attendance status without opening a long sequence of individual records.' },
@@ -144,9 +145,39 @@ export const products: Product[] = [
     subtitle: 'External Laboratory Coordination',
     description: 'Coordinate collection centres, referred tests, payments, and service handoffs so an externally processed diagnostic request remains traceable from order capture through report delivery.',
     image: productImage('lab_agent'),
-    features: ['External lab support', 'Order payment', 'Collection workflow', 'Lab service coordination'],
+    features: ['External lab support', 'Order payment', 'Collection workflow', 'Lab service coordination', 'Credit management', 'Report handling'],
     story: [
       { title: 'Payment aligned with the request', image: productImage('lab_billing'), description: 'Keep test charges, payment status, and collection information associated with the diagnostic order throughout the external workflow.' },
+    ],
+  },
+  {
+    title: 'Medical Home Service Management',
+    route: '/medical-home-service-management',
+    subtitle: '',
+    description: '',
+    features: [],
+    placeholder: true,
+  },
+  {
+    title: 'Hospital CRM Management',
+    route: '/hospital-crm-management',
+    subtitle: '',
+    description: '',
+    features: [],
+    placeholder: true,
+  },
+  {
+    title: 'Aura',
+    route: '/aura',
+    subtitle: 'Circle of Care',
+    description: 'Aura is a premium home healthcare service delivering trusted caregivers, professional nursing, and expert physiotherapy to families across Dhaka, providing comfort, dignity, and peace of mind at home.',
+    features: [
+      'Caregiver support',
+      'Professional nursing at home',
+      'Physiotherapy and recovery care',
+      'Daily assistance and companionship',
+      'Post-surgery and wound care',
+      'Mobility and strengthening support',
     ],
   },
 ];

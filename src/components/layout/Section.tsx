@@ -22,8 +22,8 @@ export default function Section({ children, eyebrow, title, intro, className = '
             className="section-heading-line mt-4 block h-px sm:mt-5 lg:mt-6"
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           />
         </div>
       ) : null}

@@ -1,6 +1,7 @@
 import { Activity, BarChart3, Building2, FileHeart, ShieldCheck, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Section from '../layout/Section';
+import BrandedText from '../ui/BrandedText';
 
 const points = [
   { icon: Building2, label: 'Adaptable operations', text: 'Configure the platform around an independent practice, a multi-service clinic, a diagnostic network, a pharmacy, or a hospital operation.' },
@@ -22,17 +23,17 @@ export default function PlatformOverview() {
       <div className="platform-operating-grid">
         <motion.div
           className="platform-orbit"
-          initial={{ opacity: 0.5, scale: reduceMotion ? 1 : 0.94 }}
+          initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.94 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
           aria-hidden="true"
         >
           <span className="platform-orbit-ring platform-orbit-ring-one" />
           <span className="platform-orbit-ring platform-orbit-ring-two" />
           <span className="platform-orbit-core">
             <span className="platform-orbit-logo-crop">
-              <img src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png" alt="" />
+              <img src="/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png" alt="" />
             </span>
           </span>
           <strong>One Shared<br />Connected Platform</strong>
@@ -43,22 +44,22 @@ export default function PlatformOverview() {
           className="platform-capability-list"
           initial="rest"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
-          variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.07 } } }}
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.05 } } }}
         >
           {points.map(({ icon: Icon, label, text }) => (
             <motion.li
               className="platform-capability"
               key={label}
               variants={{
-                rest: { opacity: 0.45, x: reduceMotion ? 0 : 24 },
-                visible: { opacity: 1, x: 0, transition: { duration: reduceMotion ? 0 : 0.58, ease: [0.22, 1, 0.36, 1] } },
+                rest: { opacity: 0, x: reduceMotion ? 0 : 24 },
+                visible: { opacity: 1, x: 0, transition: { duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] } },
               }}
             >
               <span className="platform-capability-icon"><Icon /></span>
               <div>
                 <h3>{label}</h3>
-                <p>{text}</p>
+                <p><BrandedText>{text}</BrandedText></p>
               </div>
             </motion.li>
           ))}

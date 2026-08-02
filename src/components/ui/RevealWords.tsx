@@ -16,7 +16,7 @@ export default function RevealWords({ text, className = '' }: RevealWordsProps) 
           key={`${word}-${index}`}
           variants={{
             hidden: { opacity: 0.38, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
           }}
         >
           {word}

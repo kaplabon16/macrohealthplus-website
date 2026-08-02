@@ -31,7 +31,7 @@ export default function ClientLogin() {
         className="grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.01 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
       >
         {products.map((product) => (
@@ -39,7 +39,7 @@ export default function ClientLogin() {
             className="group flex min-h-20 items-center justify-between gap-3 border-b border-white/15 px-4 py-4 transition duration-200 hover:bg-green-400/[0.06] sm:min-h-24 sm:border-r sm:px-5 lg:min-h-28 lg:py-6"
             href={product.href}
             key={product.title}
-            variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } } }}
+            variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
           >
             <h2 className="text-base font-semibold text-white transition duration-200 group-hover:text-accent-primary sm:text-lg">{product.title}</h2>
             <ArrowUpRight className="h-5 w-5 text-slate-400 transition duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-green-300" aria-hidden="true" />

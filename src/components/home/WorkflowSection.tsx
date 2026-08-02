@@ -22,16 +22,16 @@ export default function WorkflowSection() {
           className="workflow-principles"
           initial="rest"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
-          variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.1 } } }}
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.06 } } }}
         >
           {items.map((item) => (
             <motion.article
               className="workflow-principle"
               key={item.title}
               variants={{
-                rest: { opacity: 0.5, y: reduceMotion ? 0 : 24 },
-                visible: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0 : 0.68, ease: [0.22, 1, 0.36, 1] } },
+                rest: { opacity: 0, y: reduceMotion ? 0 : 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] } },
               }}
             >
               <ArrowDownRight className="workflow-principle-arrow" aria-hidden="true" />

@@ -20,7 +20,7 @@ export default function RouteStructuredData({ slug }: { slug: string }) {
     },
   ];
 
-  if (product) {
+  if (product && !product.placeholder) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',

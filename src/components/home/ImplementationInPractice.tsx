@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import Section from '../layout/Section';
 
 const implementationImages = [
@@ -25,17 +25,19 @@ const implementationImages = [
 export default function ImplementationInPractice() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(contentRef, { amount: 0.15 });
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion || isPaused) return undefined;
+    if (reduceMotion || isPaused || !isInView) return undefined;
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % implementationImages.length);
     }, 3600);
 
     return () => window.clearInterval(timer);
-  }, [isPaused, reduceMotion]);
+  }, [isInView, isPaused, reduceMotion]);
 
   const showPrevious = () => {
     setActiveIndex((current) => (current - 1 + implementationImages.length) % implementationImages.length);
@@ -47,7 +49,7 @@ export default function ImplementationInPractice() {
 
   return (
     <Section className="overflow-hidden" eyebrow="Implementation in Practice" title="From agreement to working operations" intro="Implementation is where software meets the routines, responsibilities, and service demands of a healthcare organization. These moments reflect the practical work of bringing MacroHealthPlus into real operating environments.">
-      <div className="grid items-center gap-6 sm:gap-8 md:grid-cols-[0.72fr_1.28fr] md:gap-8 lg:gap-20">
+      <div className="grid items-center gap-6 sm:gap-8 md:grid-cols-[0.72fr_1.28fr] md:gap-8 lg:gap-20" ref={contentRef}>
         <div className="border-y border-white/15 py-5 sm:py-6 lg:py-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-green-300">On-site collaboration</p>
           <p className="mt-3 text-base leading-6 text-white sm:mt-4 sm:text-lg sm:leading-7 lg:mt-5 lg:leading-8">
@@ -87,7 +89,7 @@ export default function ImplementationInPractice() {
                   rotate: position === 0 ? 0 : position % 2 === 0 ? -1.2 : 1.2,
                   opacity: 1 - position * 0.18,
                 }}
-                transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                transition={reduceMotion ? { duration: 0 } : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 style={{ zIndex: implementationImages.length - position }}
               >
                 <img className="h-full w-full object-cover" src={image.src} alt={image.alt} loading="lazy" decoding="async" />

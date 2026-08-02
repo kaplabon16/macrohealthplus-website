@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Section from '../components/layout/Section';
+import BrandedText from '../components/ui/BrandedText';
 import { setPageMeta } from '../utils/seo';
 
 const workflowPoints = [
@@ -48,11 +49,11 @@ export default function WhyChooseUs() {
           className="max-w-4xl space-y-4 text-sm leading-7 text-slate-300"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.01 }}
+          viewport={{ once: true, amount: 0.15 }}
           variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
         >
           {workflowPoints.map((point) => (
-            <motion.li className="border-t border-white/10 pt-4" key={point} variants={{ hidden: { opacity: 0, x: -12 }, visible: { opacity: 1, x: 0, transition: { duration: 0.28 } } }}>{point}</motion.li>
+            <motion.li className="border-t border-white/10 pt-4" key={point} variants={{ hidden: { opacity: 0, x: -12 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}><BrandedText>{point}</BrandedText></motion.li>
           ))}
         </motion.ul>
       </Section>
@@ -64,7 +65,7 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <h2 className="text-xl font-semibold text-white">{point.title}</h2>
               <p className="mt-3 text-sm leading-7 text-slate-300">{point.text}</p>

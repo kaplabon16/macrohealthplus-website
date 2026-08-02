@@ -29,8 +29,8 @@ export default function Pricing() {
               key={category.tabTitle}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="pricing-category-rail">
                 <div>
@@ -46,11 +46,11 @@ export default function Pricing() {
                 className="pricing-plan-grid"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.01 }}
+                viewport={{ once: true, amount: 0.15 }}
                 variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
               >
                 {category.items.map((plan) => (
-                  <motion.div key={`${category.tabTitle}-${plan.planTitle}`} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }}>
+                  <motion.div key={`${category.tabTitle}-${plan.planTitle}`} variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}>
                     <PricingCard
                       name={plan.planTitle}
                       description={plan.serviceTitle}

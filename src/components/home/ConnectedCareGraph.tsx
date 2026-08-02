@@ -240,10 +240,10 @@ function useElementScrollProgress(
       const rect = element.getBoundingClientRect();
       const top = rect.top + window.scrollY;
       const viewportHeight = window.innerHeight;
-      const start = mode === 'story' ? top : top - viewportHeight * 0.68;
+      const start = mode === 'story' ? top : top - viewportHeight * 0.58;
       const end = mode === 'story'
         ? top + rect.height - viewportHeight
-        : top + rect.height - viewportHeight * 0.38;
+        : top + rect.height - viewportHeight * 0.98;
       const next = end <= start ? 0 : (window.scrollY - start) / (end - start);
 
       progress.set(Math.max(0, Math.min(1, next)));
@@ -335,7 +335,7 @@ function FlowNodeView({
         '--node-x': `${node.x}%`,
         '--node-y': `${node.y}%`,
       } as CSSProperties}
-      transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       {node.image ? (
         <span className={`lab-journey-person ${index === 9 ? 'lab-journey-person-report' : ''}`}>
@@ -377,7 +377,7 @@ function DesktopJourney({
       <motion.div
         animate={stage.camera}
         className="lab-journey-camera"
-        transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <svg className="lab-journey-lines" preserveAspectRatio="none" viewBox="0 0 1000 600" aria-hidden="true">
           <defs>
@@ -415,7 +415,7 @@ function DesktopJourney({
         key={stage.eyebrow}
         initial={{ opacity: 0, y: 26 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <span>{stage.eyebrow}</span>
         <h2>{stage.title}</h2>
@@ -429,29 +429,29 @@ function DesktopJourney({
 type ResponsivePoint = { x: number; y: number };
 
 const phoneFlowPoints: ResponsivePoint[] = [
-  { x: 18, y: 60 },
-  { x: 76, y: 170 },
-  { x: 24, y: 280 },
-  { x: 72, y: 390 },
-  { x: 28, y: 500 },
-  { x: 78, y: 610 },
-  { x: 22, y: 720 },
-  { x: 74, y: 830 },
-  { x: 30, y: 940 },
-  { x: 70, y: 1050 },
+  { x: 18, y: 50 },
+  { x: 76, y: 145 },
+  { x: 24, y: 240 },
+  { x: 72, y: 335 },
+  { x: 28, y: 430 },
+  { x: 78, y: 525 },
+  { x: 22, y: 620 },
+  { x: 74, y: 715 },
+  { x: 30, y: 810 },
+  { x: 70, y: 905 },
 ];
 
 const tabletFlowPoints: ResponsivePoint[] = [
-  { x: 14, y: 70 },
-  { x: 70, y: 165 },
-  { x: 28, y: 260 },
-  { x: 76, y: 355 },
-  { x: 22, y: 450 },
-  { x: 72, y: 545 },
-  { x: 30, y: 640 },
-  { x: 78, y: 735 },
-  { x: 36, y: 830 },
-  { x: 68, y: 925 },
+  { x: 14, y: 60 },
+  { x: 70, y: 145 },
+  { x: 28, y: 230 },
+  { x: 76, y: 315 },
+  { x: 22, y: 400 },
+  { x: 72, y: 485 },
+  { x: 30, y: 570 },
+  { x: 78, y: 655 },
+  { x: 36, y: 740 },
+  { x: 68, y: 825 },
 ];
 
 function responsiveEdgePath(start: ResponsivePoint, end: ResponsivePoint) {
@@ -498,7 +498,7 @@ function ResponsiveFlowEdge({
 function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
   const isPhone = mode === 'phone';
   const points = isPhone ? phoneFlowPoints : tabletFlowPoints;
-  const height = isPhone ? 1120 : 995;
+  const height = isPhone ? 970 : 890;
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollYProgress = useElementScrollProgress(trackRef, 'responsive');
@@ -514,8 +514,9 @@ function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
     <div className={`lab-journey-responsive lab-journey-responsive-${mode} ${isPhone ? 'md:hidden' : 'hidden md:block lg:hidden'}`}>
       <motion.header
         initial={{ opacity: 0, y: 18 }}
-        viewport={{ once: true, amount: 0.45 }}
+        viewport={{ once: true, amount: 0.2 }}
         whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <p>Connected laboratory workflow</p>
         <h2>{isPhone ? 'The patient journey, connected step by step.' : 'One connected path from registration to report distribution.'}</h2>
@@ -558,7 +559,7 @@ function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
                 '--responsive-node-x': `${point.x}%`,
                 '--responsive-node-y': `${point.y}px`,
               } as CSSProperties}
-              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <i className={node.image ? 'lab-journey-responsive-person' : ''}>
                 {node.image ? (
@@ -597,7 +598,7 @@ function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
                 '--responsive-event-x': `${(point.x + next.x) / 2}%`,
                 '--responsive-event-y': `${(point.y + next.y) / 2}px`,
               } as CSSProperties}
-              transition={{ duration: 0.22 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               {journeyEvent.text}
             </motion.span>

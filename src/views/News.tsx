@@ -26,8 +26,8 @@ export default function News() {
             key={item.id}
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.01 }}
-            transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="grid border-y border-white/15 md:grid-cols-[1.25fr_0.75fr]">
               <div className="min-h-[180px] overflow-hidden border-b border-white/15 sm:min-h-[230px] md:border-b-0 md:border-r lg:min-h-[280px]">

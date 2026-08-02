@@ -26,7 +26,7 @@ export default function Contact() {
               {contactInfo.email}
             </a>
           </div>
-          <Mail className="h-7 w-7 text-green-300" aria-hidden="true" />
+          <Mail className="feature-icon-motion h-7 w-7 text-green-300" aria-hidden="true" />
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
@@ -45,14 +45,14 @@ export default function Contact() {
             <GlassCard className="p-5 sm:p-6 lg:p-8" key={office.title}>
               <h2 className="text-xl font-semibold text-white">{office.title}</h2>
               <div className="mt-4 grid gap-4 sm:mt-5 sm:grid-cols-[auto_1fr] sm:items-start lg:mt-7 lg:gap-6">
-                <Phone className="h-6 w-6 text-green-300" aria-hidden="true" />
+                <Phone className="feature-icon-motion h-6 w-6 text-green-300" aria-hidden="true" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Phone</p>
                   <a className="mt-2 block text-base text-white transition hover:text-green-300" href={`tel:${office.phone.replace(/[^+\d]/g, '')}`}>
                     {office.phone}
                   </a>
                 </div>
-                <MapPin className="h-6 w-6 text-green-300" aria-hidden="true" />
+                <MapPin className="feature-icon-motion h-6 w-6 text-green-300" aria-hidden="true" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Address</p>
                   <p className="mt-2 max-w-md text-sm leading-7 text-slate-300">{office.address}</p>

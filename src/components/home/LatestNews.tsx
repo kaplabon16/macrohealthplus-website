@@ -15,10 +15,10 @@ export default function LatestNews() {
     <Section className="latest-news-section" eyebrow="Latest News" title="From MacroHealthPlus">
       <motion.article
         className="news-editorial"
-        initial={{ opacity: 0.5, y: reduceMotion ? 0 : 28 }}
+        initial={{ opacity: 0, y: reduceMotion ? 0 : 28 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.12 }}
-        transition={{ duration: reduceMotion ? 0 : 0.78, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, amount: 0.18 }}
+        transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <Link className="news-editorial-image group" href={`${routes.news}#${latest.id}`} aria-label={`Read: ${latest.title}`}>
           <img

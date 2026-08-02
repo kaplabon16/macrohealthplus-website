@@ -48,7 +48,7 @@ export default function Hero({
         aria-label="MacroHealthPlus products across desktop, laptop, tablet, and mobile devices"
         initial={{ opacity: 0.58, scale: 1.035 }}
         animate={{ opacity: 1, scale: [1.02, 1, 1.012] }}
-        transition={{ opacity: { duration: 1.1 }, scale: { duration: 16, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' } }}
+        transition={{ opacity: { duration: 0.5 }, scale: { duration: 16, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' } }}
       >
         <img
           className="hero-theme-image hero-theme-image-dark"
@@ -99,11 +99,11 @@ export default function Hero({
                   scale: 1 - depth * 0.035,
                 }}
                 transition={{
-                  duration: reduceMotion ? 0 : 0.72,
+                  duration: reduceMotion ? 0 : 0.5,
                   ease: [0.22, 1, 0.36, 1],
                   layout: {
-                    duration: reduceMotion ? 0 : 0.95,
-                    delay: reduceMotion ? 0 : index * 0.045,
+                    duration: reduceMotion ? 0 : 0.5,
+                    delay: reduceMotion ? 0 : index * 0.025,
                     ease: [0.22, 1, 0.36, 1],
                   },
                 }}
@@ -120,13 +120,13 @@ export default function Hero({
           className="hero-copy-panel w-full max-w-4xl px-4 py-4 sm:px-6 sm:py-6 xl:px-10 xl:py-10"
           initial={{ opacity: 0.68, y: 30, filter: 'blur(7px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
             className="hero-kicker text-xs font-semibold uppercase tracking-[0.28em]"
             initial={{ opacity: 0.64, x: -14 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             Healthcare Management Software
           </motion.p>
@@ -134,7 +134,7 @@ export default function Hero({
             className="hero-title mt-3 max-w-4xl text-3xl font-semibold leading-[1.02] sm:mt-4 sm:text-5xl sm:leading-[0.98] md:text-6xl xl:mt-5 xl:text-8xl xl:leading-[0.95]"
             initial={{ opacity: 0.68, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           >
             Take Healthcare Operations Further
           </motion.h1>

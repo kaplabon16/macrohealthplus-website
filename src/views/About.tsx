@@ -57,14 +57,14 @@ function TeamRoster({ members }: { members: TeamMember[] }) {
       className="grid grid-cols-2 gap-x-4 gap-y-7 sm:gap-x-6 sm:gap-y-9 lg:gap-x-8 lg:gap-y-12"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.01 }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
     >
       {members.map((member) => (
         <motion.article
           className="group"
           key={member.name}
-          variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.34, ease: [0.22, 1, 0.36, 1] } } }}
+          variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
         >
           <div className="aspect-[4/3] overflow-hidden rounded-lg bg-white">
             <img
@@ -97,8 +97,8 @@ export default function About() {
             className="grid items-center gap-3 border-y border-green-400/30 bg-gradient-to-r from-green-500/15 via-green-500/5 to-transparent px-4 py-5 md:grid-cols-[minmax(150px,0.7fr)_minmax(70px,0.25fr)_minmax(0,1.25fr)] md:gap-5 md:px-6 md:py-6 lg:px-8 lg:py-8"
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.01 }}
-            transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-green-300">Our purpose</p>
@@ -117,8 +117,8 @@ export default function About() {
             className="grid items-center gap-3 border-y border-teal-400/30 bg-gradient-to-l from-teal-500/15 via-teal-500/5 to-transparent px-4 py-5 md:grid-cols-[minmax(0,1.25fr)_minmax(70px,0.25fr)_minmax(150px,0.7fr)] md:gap-5 md:px-6 md:py-6 lg:px-8 lg:py-8"
             initial={{ opacity: 0, x: 18 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.01 }}
-            transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="md:order-3 md:text-right">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-teal-300">Our direction</p>

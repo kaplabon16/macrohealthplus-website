@@ -6,7 +6,7 @@ type CapabilityNetworkProps = {
   features: string[];
 };
 
-const nodePositions = [
+const standardNodePositions = [
   { x: 17, y: 23, side: 'left' },
   { x: 50, y: 14, side: 'center' },
   { x: 83, y: 23, side: 'right' },
@@ -15,7 +15,19 @@ const nodePositions = [
   { x: 83, y: 76, side: 'right' },
 ] as const;
 
-const accents = ['#69b128', '#58d5ce', '#6b9cff', '#f4b63f', '#b66bea', '#f4778a'];
+const expandedNodePositions = [
+  { x: 15, y: 16, side: 'left' },
+  { x: 50, y: 12, side: 'center' },
+  { x: 85, y: 16, side: 'right' },
+  { x: 11, y: 39, side: 'left' },
+  { x: 89, y: 39, side: 'right' },
+  { x: 11, y: 64, side: 'left' },
+  { x: 89, y: 64, side: 'right' },
+  { x: 24, y: 87, side: 'left' },
+  { x: 76, y: 87, side: 'right' },
+] as const;
+
+const accents = ['#69b128', '#58d5ce', '#6b9cff', '#f4b63f', '#b66bea', '#f4778a', '#45c7a8', '#ff8a4c', '#8d7cf6'];
 
 function connectionPath(x: number, y: number) {
   const controlY = y < 50 ? y + 17 : y - 17;
@@ -23,6 +35,7 @@ function connectionPath(x: number, y: number) {
 }
 
 export default function CapabilityNetwork({ product, features }: CapabilityNetworkProps) {
+  const nodePositions = features.length > standardNodePositions.length ? expandedNodePositions : standardNodePositions;
   const items = features.slice(0, nodePositions.length);
 
   return (

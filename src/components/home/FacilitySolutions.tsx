@@ -26,7 +26,7 @@ function ProductSuiteHeading({ floating }: { floating: boolean }) {
     <motion.div
       className={`product-showcase-after-heading${floating ? ' product-showcase-heading-floating' : ''}`}
       layoutId="product-suite-heading"
-      transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <p className="section-eyebrow">Product Suite</p>
       <div>
@@ -43,7 +43,7 @@ function ProductSuiteHeading({ floating }: { floating: boolean }) {
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       />
     </motion.div>
   );
@@ -125,7 +125,7 @@ export default function FacilitySolutions({
           initial={false}
           style={{ pointerEvents: isHandoffActive ? 'none' : 'auto' }}
           transition={{
-            duration: reduceMotion ? 0 : 0.35,
+            duration: reduceMotion ? 0 : 0.5,
             ease: [0.22, 1, 0.36, 1],
           }}
           onMouseEnter={() => setIsPaused(true)}
@@ -144,7 +144,7 @@ export default function FacilitySolutions({
                 if (info.offset.x < -55) setNext();
                 if (info.offset.x > 55) setPrevious();
               }}
-              transition={{ duration: reduceMotion ? 0 : 0.82, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
               style={{ gap: metrics.gap }}
             >
               {showcaseProducts.map((product) => {
@@ -184,14 +184,14 @@ export default function FacilitySolutions({
                       scale: reduceMotion ? 1 : 0.9,
                     }}
                     whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
-                    viewport={{ once: true, amount: 0.08 }}
+                    viewport={{ once: true, amount: 0.18 }}
                     transition={{
-                      duration: reduceMotion ? 0 : 0.82,
-                      delay: reduceMotion ? 0 : Math.min(productIndex, 3) * 0.08,
+                      duration: reduceMotion ? 0 : 0.5,
+                      delay: reduceMotion ? 0 : Math.min(productIndex, 3) * 0.05,
                       ease: [0.22, 1, 0.36, 1],
                       layout: {
-                        duration: reduceMotion ? 0 : 0.95,
-                        delay: reduceMotion ? 0 : productIndex * 0.045,
+                        duration: reduceMotion ? 0 : 0.5,
+                        delay: reduceMotion ? 0 : productIndex * 0.025,
                         ease: [0.22, 1, 0.36, 1],
                       },
                     }}
@@ -208,7 +208,7 @@ export default function FacilitySolutions({
               <span className="product-showcase-progress" aria-hidden="true">
                 <motion.i
                   animate={{ scaleX: metrics.maxIndex ? (activeIndex + 1) / (metrics.maxIndex + 1) : 1 }}
-                  transition={{ duration: reduceMotion ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
                 />
               </span>
               <button type="button" onClick={setPrevious} disabled={activeIndex === 0} aria-label="Show previous products" title="Previous products">

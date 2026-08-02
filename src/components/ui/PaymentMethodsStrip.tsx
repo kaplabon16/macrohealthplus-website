@@ -16,7 +16,7 @@ export default function PaymentMethodsStrip({ className = '' }: PaymentMethodsSt
               key={method.title}
               title={method.title}
             >
-              <span className="flex h-16 w-44 max-w-full items-center justify-center overflow-visible">
+              <span className="payment-method-logo-motion flex h-16 w-44 max-w-full items-center justify-center overflow-visible">
                 <img
                   className="payment-method-logo h-14 w-44 max-w-full object-contain"
                   src={method.logoPath}

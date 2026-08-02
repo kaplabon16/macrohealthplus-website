@@ -17,4 +17,7 @@ export const requestDemoSolutions = [
   'Marketplace',
   'e-Pharmacy',
   'LabAgent',
+  'Medical Home Service Management',
+  'Hospital CRM Management',
+  'Aura',
 ];

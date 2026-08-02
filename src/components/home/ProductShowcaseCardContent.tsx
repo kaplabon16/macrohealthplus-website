@@ -16,19 +16,22 @@ export const productPalette = [
   { accent: '#7cbcff', ink: '#061220', field: '#173f68', glow: '#60a5fa' },
 ];
 
-export const productCategories = [
-  'Patient experience',
-  'Clinical practice',
-  'Diagnostics',
-  'Pharmacy operations',
-  'Hospital operations',
-  'Workforce',
-  'Inventory',
-  'Virtual care',
-  'Digital marketplace',
-  'Online pharmacy',
-  'Laboratory network',
-];
+export const productCategories: Record<string, string> = {
+  DigiPatient: 'Patient experience',
+  GreatDoc: 'Clinical practice',
+  GreatClinic: 'Diagnostics',
+  GreatPharma: 'Pharmacy operations',
+  Hospital: 'Hospital operations',
+  'HR Management': 'Workforce',
+  Inventory: 'Inventory',
+  Telehealth: 'Virtual care',
+  Marketplace: 'Digital marketplace',
+  'e-Pharmacy': 'Online pharmacy',
+  LabAgent: 'Laboratory network',
+  'Medical Home Service Management': 'Home service management',
+  'Hospital CRM Management': 'Hospital relationship management',
+  Aura: 'Home healthcare',
+};
 
 export const featuredProductTitles = ['GreatClinic', 'GreatDoc', 'Hospital', 'GreatPharma'];
 
@@ -61,9 +64,9 @@ export default function ProductShowcaseCardContent({ index, product }: ProductSh
       </div>
 
       <div className="product-showcase-copy">
-        <span className="product-showcase-type">{productCategories[index]}</span>
-        <h3>{product.subtitle}</h3>
-        <p>{product.description}</p>
+        <span className="product-showcase-type">{productCategories[product.title]}</span>
+        <h3>{product.subtitle || product.title}</h3>
+        {product.description ? <p>{product.description}</p> : null}
         <span className="product-showcase-link">
           Explore {product.title}
           <ArrowUpRight aria-hidden="true" />

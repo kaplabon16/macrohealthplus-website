@@ -1,11 +1,14 @@
-import { AlertTriangle, Baby, Pill } from 'lucide-react';
+import { Activity, AlertTriangle, Baby, Milk, Pill } from 'lucide-react';
 import Section from '../layout/Section';
+import BrandedText from '../ui/BrandedText';
 import Button from '../ui/Button';
 
 const clinicalSignals = [
-  { label: 'Drug interactions', icon: Pill },
-  { label: 'Allergy guidance', icon: AlertTriangle },
-  { label: 'Pregnancy considerations', icon: Baby },
+  { label: 'Drug Interaction', icon: Pill },
+  { label: 'Disease Interaction', icon: Activity },
+  { label: 'Pregnancy', icon: Baby },
+  { label: 'Allergy', icon: AlertTriangle },
+  { label: 'Lactogen', icon: Milk },
 ];
 
 export default function MimsSection() {
@@ -16,10 +19,10 @@ export default function MimsSection() {
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-green-300">Medication Intelligence</p>
           <h2>Trusted medicine information, present when clinical decisions are made.</h2>
           <p>
-            MacroHealthPlus brings MIMS drug knowledge into the prescribing workflow, giving clinicians relevant medicine information at the point where a prescription is prepared.
+            <BrandedText>MacroHealthPlus brings MIMS drug knowledge into the prescribing workflow, giving clinicians relevant medicine information at the point where a prescription is prepared.</BrandedText>
           </p>
           <p>
-            Interaction guidance helps teams review drug-to-drug, allergy, pregnancy, and other prescribing considerations without interrupting the consultation to search across disconnected references.
+            Interaction guidance helps teams review drug, disease, pregnancy, allergy, and lactogen considerations without interrupting the consultation to search across disconnected references.
           </p>
           <div className="mims-signal-list" aria-label="Clinical guidance areas">
             {clinicalSignals.map(({ label, icon: Icon }) => (
@@ -35,7 +38,7 @@ export default function MimsSection() {
             <div className="mims-orbit mims-orbit-one" aria-hidden="true" />
             <div className="mims-orbit mims-orbit-two" aria-hidden="true" />
             <a className="mims-logo" href="https://corporate.mims.com/" target="_blank" rel="noreferrer" aria-label="Visit the official MIMS website">
-            <img src="/assets/mims/mims-logo.webp" alt="MIMS" loading="eager" decoding="async" />
+            <img src="/assets/macrohealthplus/official-logos/Mims.png" alt="MIMS integrated" loading="eager" decoding="async" />
           </a>
           <img
             className="mims-people"

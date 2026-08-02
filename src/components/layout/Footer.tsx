@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="border-b border-slate-300/70 pb-4 sm:pb-5 lg:pb-6">
           <Link className="inline-flex items-center gap-2" href={routes.home}>
-            <img className="h-6 w-6 rounded-full object-contain" src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png" alt="MacroHealthPlus logo" />
+            <img className="site-footer-logo h-6 w-6 rounded-full object-contain" src="/assets/macrohealthplus/logo/logo-img_logo1.bb49aa63f28b32801c37.png" alt="MacroHealthPlus logo" />
             <span className="font-semibold text-white">MacroHealthPlus</span>
           </Link>
           <p className="mt-2 max-w-3xl leading-5 text-slate-300 sm:mt-3 sm:leading-6">
@@ -41,15 +41,16 @@ export default function Footer() {
         <div className="border-b border-white/10 py-4 leading-5 sm:py-5 sm:leading-6">
           <p>
             Contact: <a className="text-green-200 hover:underline" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-            <span className="px-2 text-slate-600">|</span>
-            Bangladesh: {contactInfo.bangladeshPhone}
-            <span className="px-2 text-slate-600">|</span>
-            Head Office: {contactInfo.headOfficePhone}
           </p>
           <p className="mt-1">
-            {contactInfo.headOfficeAddress}
+            Bangladesh: {contactInfo.bangladeshPhone}
             <span className="px-2 text-slate-600">|</span>
             {contactInfo.bangladeshOfficeAddress}
+          </p>
+          <p className="mt-1">
+            Head Office: {contactInfo.headOfficePhone}
+            <span className="px-2 text-slate-600">|</span>
+            {contactInfo.headOfficeAddress}
           </p>
           <p className="mt-1">{contactInfo.tin}</p>
         </div>

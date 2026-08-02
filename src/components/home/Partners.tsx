@@ -14,10 +14,10 @@ export default function Partners() {
     >
       <motion.div
         className="partners-runway"
-        initial={{ opacity: 0.5, y: reduceMotion ? 0 : 24 }}
+        initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.12 }}
-        transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, amount: 0.18 }}
+        transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="partners-runway-meta" aria-hidden="true">
           <span>Healthcare network</span>
