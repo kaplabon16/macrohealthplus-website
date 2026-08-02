@@ -23,7 +23,7 @@ export default function DeveloperInfo() {
             </div>
 
             <h1 className="text-4xl font-extrabold leading-none text-white sm:text-5xl lg:text-6xl">Kaushik Plabon</h1>
-            <p className="mt-4 text-lg font-semibold text-[#01D439] sm:text-xl">Developer</p>
+            <p className="mt-4 text-lg font-semibold text-[#01D439] sm:text-xl">Engineer</p>
             <p className="mt-1 text-sm uppercase tracking-[0.2em] text-slate-400 sm:text-base">MacroHealthPlus</p>
 
             <div className="mt-8 grid w-full border-y border-white/15 sm:mt-10 sm:grid-cols-2">
@@ -46,7 +46,7 @@ export default function DeveloperInfo() {
 
             <div className="mt-7 flex items-center gap-2 text-sm text-slate-400">
               <BriefcaseBusiness className="feature-icon-motion h-4 w-4 text-[#EF0000]" aria-hidden="true" />
-              <span>Developer at MacroHealthPlus</span>
+              <span>Engineer at MacroHealthPlus</span>
             </div>
           </div>
         </div>

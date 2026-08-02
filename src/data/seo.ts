@@ -8,7 +8,6 @@ export const routeSeo: Record<string, { title: string; description: string }> = 
   '/news-and-views': { title: 'News & Views', description: 'MacroHealthPlus product developments, company news, releases, and healthcare software updates.' },
   '/contact': { title: 'Contact', description: 'Contact MacroHealthPlus about healthcare software, product demonstrations, implementation requirements, pricing, and support.' },
   '/request-demo': { title: 'Request a Demo', description: 'Request a guided MacroHealthPlus demonstration tailored to your healthcare organization and operational workflows.' },
-  '/client-login': { title: 'Product Login', description: 'Access MacroHealthPlus product portals for doctors, clinics, pharmacies, external laboratories, and marketplace teams.' },
   '/who-we-are': { title: 'Who We Are', description: 'Learn about the MacroHealthPlus mission, vision, leadership, advisors, corporate development, and healthcare technology strategy.' },
   '/why-choose-us': { title: 'Why Choose MacroHealthPlus', description: 'Explore MacroHealthPlus workflow continuity, role-based access, data protection, prescribing intelligence, and operational control.' },
   '/research-reports': { title: 'Medical Education', description: 'Medical education resources from MacroHealthPlus.' },

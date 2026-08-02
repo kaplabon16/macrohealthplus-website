@@ -6,7 +6,6 @@ export const routes = {
   newsAndViews: '/news-and-views',
   contact: '/contact',
   requestDemo: '/request-demo',
-  clientLogin: '/client-login',
   terms: '/terms',
   privacy: '/privacy',
   security: '/security',

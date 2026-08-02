@@ -7,7 +7,6 @@ import { getLegalPage } from '../../data/legal-server';
 import { products } from '../../data/products';
 import { allRouteSlugs, isKnownSlug, metadataForRoute } from '../../data/seo';
 import About from '../../views/About';
-import ClientLogin from '../../views/ClientLogin';
 import Contact from '../../views/Contact';
 import DeveloperInfo from '../../views/DeveloperInfo';
 import HelpCentre from '../../views/HelpCentre';
@@ -48,7 +47,6 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
       case 'contact': content = <Contact />; break;
       case 'developers-info': content = <DeveloperInfo />; break;
       case 'request-demo': content = <RequestDemo />; break;
-      case 'client-login': content = <ClientLogin />; break;
       case 'who-we-are': content = <About />; break;
       case 'why-choose-us': content = <WhyChooseUs />; break;
       case 'research-reports': content = <ResourceTitlePage title="Medical Education" />; break;

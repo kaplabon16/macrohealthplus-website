@@ -13,7 +13,6 @@ export const footerGroups = [
       { label: 'Help Centre', href: routes.helpCentre },
       { label: 'News and Views', href: routes.news },
       { label: 'Request Demo', href: routes.requestDemo },
-      { label: 'Client Login', href: routes.clientLogin },
     ],
   },
   {
