@@ -8,7 +8,7 @@ export default function PaymentMethodsStrip({ className = '' }: PaymentMethodsSt
   return (
     <section className={`bg-black px-4 py-7 sm:px-6 sm:py-9 lg:py-12 ${className}`} aria-label="Payment methods">
       <div className="mx-auto max-w-6xl border-y border-white/10 py-5 sm:py-6 lg:py-8">
-        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-green-300 sm:mb-8">Accepted payment methods</p>
+        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-[#01D439] sm:mb-8">Accepted payment methods</p>
         <div className="grid grid-cols-2 items-start gap-x-4 gap-y-6 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-7">
           {paymentMethods.map((method) => (
             <span

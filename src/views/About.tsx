@@ -94,18 +94,18 @@ export default function About() {
       <Section className="pt-24 sm:pt-28 lg:pt-32" eyebrow="About MacroHealthPlus" title="Healthcare technology grounded in the realities of care delivery" intro="MacroHealthPlus develops practical digital systems for the people responsible for consultations, diagnostics, medicine services, administration, and patient continuity. Our work is shaped by the belief that better software should make complex healthcare operations easier to understand and run.">
         <div className="space-y-5 sm:space-y-6 lg:space-y-8">
           <motion.article
-            className="grid items-center gap-3 border-y border-green-400/30 bg-gradient-to-r from-green-500/15 via-green-500/5 to-transparent px-4 py-5 md:grid-cols-[minmax(150px,0.7fr)_minmax(70px,0.25fr)_minmax(0,1.25fr)] md:gap-5 md:px-6 md:py-6 lg:px-8 lg:py-8"
+            className="grid items-center gap-3 border-y border-[#01D439]/30 bg-gradient-to-r from-[#01D439]/15 via-[#01D439]/5 to-transparent px-4 py-5 md:grid-cols-[minmax(150px,0.7fr)_minmax(70px,0.25fr)_minmax(0,1.25fr)] md:gap-5 md:px-6 md:py-6 lg:px-8 lg:py-8"
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-green-300">Our purpose</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#01D439]">Our purpose</p>
               <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">Mission</h2>
             </div>
-            <div className="flex items-center text-green-300" aria-hidden="true">
-              <span className="h-px flex-1 bg-green-400/50" />
+            <div className="flex items-center text-[#01D439]" aria-hidden="true">
+              <span className="h-px flex-1 bg-[#01D439]/50" />
               <ArrowRight className="h-7 w-7 shrink-0" />
             </div>
             <p className="text-sm leading-7 text-slate-300 md:text-base">
@@ -144,8 +144,8 @@ export default function About() {
             <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 lg:mt-5 lg:leading-7">
               The registration records a consistent business identity for MacroHealthPlus as the company builds professional relationships across healthcare and technology.
             </p>
-            <div className="mt-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-green-300 sm:mt-6 lg:mt-8 lg:gap-4 lg:text-xs lg:tracking-[0.22em]">
-              <span className="h-px w-12 bg-green-400/60" />
+            <div className="mt-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#01D439] sm:mt-6 lg:mt-8 lg:gap-4 lg:text-xs lg:tracking-[0.22em]">
+              <span className="h-px w-12 bg-[#01D439]/60" />
               Registered business identity
             </div>
           </div>

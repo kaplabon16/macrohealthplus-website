@@ -16,7 +16,7 @@ export default function MimsSection() {
     <Section className="mims-section overflow-hidden">
       <div className="mims-composition">
         <div className="mims-copy">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-green-300">Medication Intelligence</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#01D439]">Medication Intelligence</p>
           <h2>Trusted medicine information, present when clinical decisions are made.</h2>
           <p>
             <BrandedText>MacroHealthPlus brings MIMS drug knowledge into the prescribing workflow, giving clinicians relevant medicine information at the point where a prescription is prepared.</BrandedText>

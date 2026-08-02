@@ -24,7 +24,7 @@ export const footerGroups = [
       { label: 'Security', href: routes.security },
       { label: 'Refund & Return Policy', href: routes.refundReturnPolicy },
       { label: 'Cookie Disclaimer', href: routes.cookieDisclaimer },
-      { label: "Developer's Info", href: 'https://kaushikplabon.vercel.app/' },
+      { label: "Developer's Info", href: routes.developerInfo },
     ],
   },
 ];

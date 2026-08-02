@@ -38,7 +38,7 @@ type OpdStep = {
 const opdSteps: OpdStep[] = [
   { key: 'arrival', title: 'Patient Arrival & Registration', icon: UserRoundPlus, color: '#3696d7', x: 12, y: 22 },
   { key: 'consultation', title: 'Initial Consultation', icon: Stethoscope, color: '#ef8d22', x: 35, y: 22 },
-  { key: 'diagnostics', title: 'Diagnostic Tests & Procedures', icon: FlaskConical, color: '#69b128', x: 58, y: 22 },
+  { key: 'diagnostics', title: 'Diagnostic Tests & Procedures', icon: FlaskConical, color: '#01D439', x: 58, y: 22 },
   { key: 'followup', title: 'Follow-Up Scheduling', icon: CalendarCheck, color: '#58ad72', x: 84, y: 22 },
   { key: 'review', title: 'Doctor Review & Treatment Plan', icon: ClipboardCheck, color: '#36a9c8', x: 47, y: 54, wide: true },
   { key: 'pharmacy', title: 'Pharmacy & Billing', icon: Pill, color: '#ef8d22', x: 61, y: 82 },

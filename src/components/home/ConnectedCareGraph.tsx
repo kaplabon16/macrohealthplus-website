@@ -198,7 +198,7 @@ const edgePaths = [
 const eventLabels = [
   { text: 'Registration SMS', x: 10, y: 29, reveal: 1, color: '#ef476f', isSms: true },
   { text: 'Invoice SMS', x: 23, y: 58, reveal: 2, color: '#ef476f', isSms: true },
-  { text: 'Sample transfer', x: 38, y: 43, reveal: 3, color: '#8bc53f', isSms: false },
+  { text: 'Sample transfer', x: 38, y: 43, reveal: 3, color: '#01D439', isSms: false },
   { text: 'Report-ready SMS', x: 84, y: 59, reveal: 6, color: '#ef476f', isSms: true },
   { text: 'Payment received SMS', x: 50, y: 94, reveal: 8, color: '#ef476f', isSms: true },
 ];
@@ -206,12 +206,12 @@ const eventLabels = [
 const nodeColors = [
   '#4f8ff1',
   '#f2a51a',
-  '#8bc53f',
+  '#01D439',
   '#4f8ff1',
   '#bd65e8',
   '#4f8ff1',
   '#f2a51a',
-  '#8bc53f',
+  '#01D439',
   '#ef6548',
   '#9b6de3',
 ];

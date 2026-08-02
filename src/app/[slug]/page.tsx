@@ -9,6 +9,7 @@ import { allRouteSlugs, isKnownSlug, metadataForRoute } from '../../data/seo';
 import About from '../../views/About';
 import ClientLogin from '../../views/ClientLogin';
 import Contact from '../../views/Contact';
+import DeveloperInfo from '../../views/DeveloperInfo';
 import HelpCentre from '../../views/HelpCentre';
 import News from '../../views/News';
 import NotFound from '../../views/NotFound';
@@ -45,6 +46,7 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
       case 'help-centre': content = <HelpCentre />; break;
       case 'news-and-views': content = <News />; break;
       case 'contact': content = <Contact />; break;
+      case 'developers-info': content = <DeveloperInfo />; break;
       case 'request-demo': content = <RequestDemo />; break;
       case 'client-login': content = <ClientLogin />; break;
       case 'who-we-are': content = <About />; break;

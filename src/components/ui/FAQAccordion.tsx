@@ -11,7 +11,7 @@ export default function FAQAccordion() {
       {faqs.map((faq, index) => (
         <div className="border-b border-white/15" key={faq.question}>
           <button
-            className="group flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-white transition duration-200 hover:text-green-300"
+            className="group flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-white transition duration-200 hover:text-[#01D439]"
             onClick={() => setOpen(open === index ? -1 : index)}
           >
             {faq.question}

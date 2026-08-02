@@ -23,7 +23,7 @@ export default function RequestDemo() {
       <div className="grid gap-6 lg:grid-cols-[1fr_0.75fr]">
         <GlassCard>
           {submitted ? (
-            <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-5 text-sm text-emerald-100">
+            <div className="rounded-3xl border border-[#01D439]/25 bg-[#01D439]/10 p-5 text-sm text-[#01D439]">
               Thank you. Our team will review your organization, selected solution, and message before following up with a relevant product conversation.
             </div>
           ) : null}
@@ -42,7 +42,7 @@ export default function RequestDemo() {
             <label className="grid gap-2 text-sm text-slate-300">Contact Number<input required type="tel" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
             <label className="grid gap-2 text-sm text-slate-300">Message<textarea required rows={4} className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
             <label className="flex gap-3 text-sm text-slate-300"><input required type="checkbox" className="mt-1" /> I agree to be contacted about MacroHealthPlus and acknowledge the Privacy Policy and Terms.</label>
-            <button className="min-h-12 rounded-full bg-green-600 px-5 text-sm font-semibold text-[#fff] transition hover:bg-green-700" type="submit">Request Demo</button>
+            <button className="brand-primary-button min-h-12 rounded-full bg-[#01D439] px-5 text-sm font-semibold text-white transition" type="submit">Request Demo</button>
           </form>
         </GlassCard>
         <GlassCard>

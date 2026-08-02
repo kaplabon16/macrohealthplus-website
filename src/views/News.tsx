@@ -38,7 +38,7 @@ export default function News() {
                 />
               </div>
               <header className="flex flex-col justify-end px-4 py-5 sm:px-6 sm:py-7 lg:px-10 lg:py-12">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-green-300">{item.category}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#01D439]">{item.category}</p>
                 <h2 className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl lg:mt-5 lg:text-4xl">{item.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:text-base sm:leading-7 lg:mt-6 lg:leading-8">{item.excerpt}</p>
               </header>

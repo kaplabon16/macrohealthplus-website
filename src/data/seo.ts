@@ -18,6 +18,7 @@ export const routeSeo: Record<string, { title: string; description: string }> = 
   '/security': { title: 'Security Policy', description: 'Security practices and responsibilities for MacroHealthPlus products and services.' },
   '/refund-return-policy': { title: 'Refund & Return Policy', description: 'MacroHealthPlus refund and return policy.' },
   '/cookie-disclaimer': { title: 'Cookie Disclaimer', description: 'MacroHealthPlus cookie and website disclaimer information.' },
+  '/developers-info': { title: "Developer's Info", description: 'Developer information for Kaushik Plabon at MacroHealthPlus.' },
   '/404': { title: 'Page Not Found', description: 'The requested MacroHealthPlus page could not be found.' },
 };
 

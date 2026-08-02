@@ -171,7 +171,7 @@ export default function Header() {
                       ? (systemTheme === 'dark' ? Moon : Sun)
                       : option.icon;
                     return (
-                      <button className={`nav-dropdown-link flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-sm transition ${theme === option.value ? 'bg-white/10 text-green-300' : 'text-slate-200 hover:bg-white/10 hover:text-white'}`} key={option.value} type="button" aria-pressed={theme === option.value} onClick={() => { setTheme(option.value); setIsThemeMenuOpen(false); }}>
+                      <button className={`nav-dropdown-link flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-sm transition ${theme === option.value ? 'bg-white/10 text-[#01D439]' : 'text-slate-200 hover:bg-white/10 hover:text-white'}`} key={option.value} type="button" aria-pressed={theme === option.value} onClick={() => { setTheme(option.value); setIsThemeMenuOpen(false); }}>
                         <Icon className="h-4 w-4" aria-hidden="true" />
                         {option.label}
                       </button>

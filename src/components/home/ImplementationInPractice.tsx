@@ -51,7 +51,7 @@ export default function ImplementationInPractice() {
     <Section className="overflow-hidden" eyebrow="Implementation in Practice" title="From agreement to working operations" intro="Implementation is where software meets the routines, responsibilities, and service demands of a healthcare organization. These moments reflect the practical work of bringing MacroHealthPlus into real operating environments.">
       <div className="grid items-center gap-6 sm:gap-8 md:grid-cols-[0.72fr_1.28fr] md:gap-8 lg:gap-20" ref={contentRef}>
         <div className="border-y border-white/15 py-5 sm:py-6 lg:py-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-green-300">On-site collaboration</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#01D439]">On-site collaboration</p>
           <p className="mt-3 text-base leading-6 text-white sm:mt-4 sm:text-lg sm:leading-7 lg:mt-5 lg:leading-8">
             Each implementation begins with people aligning around how the organization works and what the software needs to support.
           </p>
@@ -60,10 +60,10 @@ export default function ImplementationInPractice() {
           </p>
 
           <div className="mt-5 flex items-center gap-3 lg:mt-8">
-            <button className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition hover:border-green-300/60 hover:text-green-300" type="button" onClick={showPrevious} aria-label="Show previous implementation image" title="Previous image">
+            <button className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition hover:border-[#01D439]/60 hover:text-[#01D439]" type="button" onClick={showPrevious} aria-label="Show previous implementation image" title="Previous image">
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             </button>
-            <button className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition hover:border-green-300/60 hover:text-green-300" type="button" onClick={showNext} aria-label="Show next implementation image" title="Next image">
+            <button className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white transition hover:border-[#01D439]/60 hover:text-[#01D439]" type="button" onClick={showNext} aria-label="Show next implementation image" title="Next image">
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>

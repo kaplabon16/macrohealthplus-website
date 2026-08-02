@@ -40,7 +40,7 @@ export default function Footer() {
 
         <div className="border-b border-white/10 py-4 leading-5 sm:py-5 sm:leading-6">
           <p>
-            Contact: <a className="text-green-200 hover:underline" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+            Contact: <a className="text-[#01D439] hover:underline" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
           </p>
           <p className="mt-1">
             Bangladesh: {contactInfo.bangladeshPhone}
@@ -68,7 +68,7 @@ export default function Footer() {
             <span>|</span>
             <Link className="hover:text-white hover:underline" href={routes.cookieDisclaimer}>Cookie Disclaimer</Link>
             <span>|</span>
-            <a className="hover:text-white hover:underline" href="https://kaushikplabon.vercel.app/" target="_blank" rel="noreferrer">Developer's Info</a>
+            <Link className="hover:text-white hover:underline" href={routes.developerInfo}>Developer's Info</Link>
           </div>
         </div>
       </div>

@@ -21,12 +21,12 @@ export default function Contact() {
       >
         <div className="mb-6 flex flex-col gap-3 border-y border-white/15 py-4 sm:flex-row sm:items-center sm:justify-between sm:py-5 lg:mb-10 lg:py-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-green-300">Direct enquiries</p>
-            <a className="mt-2 inline-block text-lg font-medium text-white transition hover:text-green-300" href={`mailto:${contactInfo.email}`}>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#01D439]">Direct enquiries</p>
+            <a className="mt-2 inline-block text-lg font-medium text-white transition hover:text-[#01D439]" href={`mailto:${contactInfo.email}`}>
               {contactInfo.email}
             </a>
           </div>
-          <Mail className="feature-icon-motion h-7 w-7 text-green-300" aria-hidden="true" />
+          <Mail className="feature-icon-motion h-7 w-7 text-[#01D439]" aria-hidden="true" />
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
@@ -45,14 +45,14 @@ export default function Contact() {
             <GlassCard className="p-5 sm:p-6 lg:p-8" key={office.title}>
               <h2 className="text-xl font-semibold text-white">{office.title}</h2>
               <div className="mt-4 grid gap-4 sm:mt-5 sm:grid-cols-[auto_1fr] sm:items-start lg:mt-7 lg:gap-6">
-                <Phone className="feature-icon-motion h-6 w-6 text-green-300" aria-hidden="true" />
+                <Phone className="feature-icon-motion h-6 w-6 text-[#01D439]" aria-hidden="true" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Phone</p>
-                  <a className="mt-2 block text-base text-white transition hover:text-green-300" href={`tel:${office.phone.replace(/[^+\d]/g, '')}`}>
+                  <a className="mt-2 block text-base text-white transition hover:text-[#01D439]" href={`tel:${office.phone.replace(/[^+\d]/g, '')}`}>
                     {office.phone}
                   </a>
                 </div>
-                <MapPin className="feature-icon-motion h-6 w-6 text-green-300" aria-hidden="true" />
+                <MapPin className="feature-icon-motion h-6 w-6 text-[#01D439]" aria-hidden="true" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Address</p>
                   <p className="mt-2 max-w-md text-sm leading-7 text-slate-300">{office.address}</p>

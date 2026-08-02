@@ -12,4 +12,5 @@ export const routes = {
   security: '/security',
   refundReturnPolicy: '/refund-return-policy',
   cookieDisclaimer: '/cookie-disclaimer',
+  developerInfo: '/developers-info',
 } as const;
