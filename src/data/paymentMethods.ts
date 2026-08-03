@@ -11,5 +11,5 @@ export const paymentMethods = [
   { title: 'Bank Asia', logoPath: '/assets/payment-methods/web/bank-asia.svg', altText: 'Bank Asia logo', opticalScale: 1 },
   { title: 'bKash', logoPath: '/assets/payment-methods/web/bkash.svg', altText: 'bKash logo', opticalScale: 1.28 },
   { title: 'Nagad', logoPath: '/assets/payment-methods/web/nagad.svg', altText: 'Nagad logo', opticalScale: 1.24 },
-  { title: 'SSLCommerz', logoPath: '/assets/payment-methods/web/sslcommerz.png', altText: 'SSLCommerz logo', opticalScale: 1 },
+  { title: 'SSLCommerz', logoPath: '/assets/payment-methods/web/sslcommerz.webp', altText: 'SSLCommerz logo', opticalScale: 1 },
 ];

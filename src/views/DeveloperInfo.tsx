@@ -17,7 +17,7 @@ export default function DeveloperInfo() {
             <div className="developer-portrait-frame relative mb-7 h-52 w-52 overflow-hidden sm:mb-9 sm:h-64 sm:w-64">
               <img
                 className="h-full w-full object-cover"
-                src="/assets/developer/kaushik-plabon.jpg"
+                src="/assets/developer/kaushik-plabon.webp"
                 alt="Kaushik Plabon"
               />
             </div>

@@ -127,7 +127,7 @@ export default function HospitalCareFlows() {
           <div className="opd-reference-map">
             <svg className="opd-reference-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               <defs>
-                <marker id="opd-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <marker id="opd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto" markerUnits="strokeWidth">
                   <path d="M 0 0 L 10 5 L 0 10 z" />
                 </marker>
               </defs>
@@ -161,7 +161,7 @@ export default function HospitalCareFlows() {
           <div className="ipd-reference-map">
             <svg className="ipd-reference-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               <defs>
-                <marker id="ipd-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <marker id="ipd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto" markerUnits="strokeWidth">
                   <path d="M 0 0 L 10 5 L 0 10 z" />
                 </marker>
               </defs>

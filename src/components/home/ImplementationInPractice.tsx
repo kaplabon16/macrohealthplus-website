@@ -5,19 +5,19 @@ import Section from '../layout/Section';
 
 const implementationImages = [
   {
-    src: '/assets/implementation_images/253af0d6-20df-406c-a79a-fe6e17018945.jpeg',
+    src: '/assets/implementation_images/253af0d6-20df-406c-a79a-fe6e17018945.webp',
     alt: 'MacroHealthPlus implementation team completing a software handover with a healthcare organization',
   },
   {
-    src: '/assets/implementation_images/4465e6a6-a5fb-41e2-9277-4b50add69688.jpeg',
+    src: '/assets/implementation_images/4465e6a6-a5fb-41e2-9277-4b50add69688.webp',
     alt: 'Healthcare and MacroHealthPlus representatives at an implementation handover',
   },
   {
-    src: '/assets/implementation_images/2bf2131a-31f3-44d2-aebf-ebe2302efaf8.jpeg',
+    src: '/assets/implementation_images/2bf2131a-31f3-44d2-aebf-ebe2302efaf8.webp',
     alt: 'MacroHealthPlus representatives presenting implementation documentation at a diagnostic centre',
   },
   {
-    src: '/assets/implementation_images/4dac747b-dc9e-48e7-80e4-c32638928e7e.jpeg',
+    src: '/assets/implementation_images/4dac747b-dc9e-48e7-80e4-c32638928e7e.webp',
     alt: 'MacroHealthPlus representative with a healthcare professional during implementation',
   },
 ];

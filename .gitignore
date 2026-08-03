@@ -9,3 +9,9 @@ out/
 !.env.example
 
 .DS_Store
+
+# Local crawl, QA, and migration artifacts
+crawl-output/
+tmp-*.png
+*_REPORT.md
+QA_*.md

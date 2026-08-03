@@ -33,7 +33,7 @@ export default function PlatformOverview() {
           <span className="platform-orbit-ring platform-orbit-ring-two" />
           <span className="platform-orbit-core">
             <span className="platform-orbit-logo-crop">
-              <img src="/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png" alt="" />
+              <img src="/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.webp" alt="" />
             </span>
           </span>
           <span className="platform-orbit-copy">

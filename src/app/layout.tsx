@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png',
-    shortcut: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png',
-    apple: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png',
+    icon: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.webp',
+    shortcut: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.webp',
+    apple: '/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.webp',
   },
 };
 
@@ -67,7 +67,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'MacroHealthPlus',
   url: siteUrl,
-  logo: `${siteUrl}/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.png`,
+  logo: `${siteUrl}/assets/macrohealthplus/official-logos/MHP-Logo-Vertical.webp`,
   email: contactInfo.email,
   telephone: [contactInfo.bangladeshPhone, contactInfo.headOfficePhone],
   address: [

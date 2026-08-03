@@ -44,7 +44,7 @@ const flowNodes: FlowNode[] = [
     title: 'Patient',
     detail: 'Registration, DigiPatient app and patient card',
     icon: UserRound,
-    image: '/assets/flow/patient/patient-portrait-v2.jpg',
+    image: '/assets/flow/patient/patient-portrait-v2.webp',
     imageAlt: 'MacroHealthPlus patient',
     x: 10,
     y: 12,
@@ -118,7 +118,7 @@ const flowNodes: FlowNode[] = [
     title: 'Report Distribution',
     detail: 'Email, DigiPatient app and doctor inbox',
     icon: Send,
-    image: '/assets/flow/patient/patient-report-v2.jpg',
+    image: '/assets/flow/patient/patient-report-v2.webp',
     imageAlt: 'The same patient holding her completed medical report',
     x: 36,
     y: 94,
@@ -437,8 +437,8 @@ const phoneFlowPoints: ResponsivePoint[] = [
   { x: 78, y: 525 },
   { x: 22, y: 620 },
   { x: 74, y: 715 },
-  { x: 30, y: 810 },
-  { x: 70, y: 905 },
+  { x: 30, y: 805 },
+  { x: 70, y: 960 },
 ];
 
 const tabletFlowPoints: ResponsivePoint[] = [
@@ -498,7 +498,7 @@ function ResponsiveFlowEdge({
 function ResponsiveJourney({ mode }: { mode: 'phone' | 'tablet' }) {
   const isPhone = mode === 'phone';
   const points = isPhone ? phoneFlowPoints : tabletFlowPoints;
-  const height = isPhone ? 970 : 890;
+  const height = isPhone ? 1030 : 890;
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollYProgress = useElementScrollProgress(trackRef, 'responsive');

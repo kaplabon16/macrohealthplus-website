@@ -38,7 +38,7 @@ export default function MimsSection() {
             <div className="mims-orbit mims-orbit-one" aria-hidden="true" />
             <div className="mims-orbit mims-orbit-two" aria-hidden="true" />
             <a className="mims-logo" href="https://corporate.mims.com/" target="_blank" rel="noreferrer" aria-label="Visit the official MIMS website">
-            <img src="/assets/macrohealthplus/official-logos/Mims.png" alt="MIMS integrated" loading="eager" decoding="async" />
+            <img src="/assets/macrohealthplus/official-logos/Mims.webp" alt="MIMS integrated" loading="eager" decoding="async" />
           </a>
           <img
             className="mims-people"

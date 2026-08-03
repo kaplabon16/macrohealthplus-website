@@ -137,7 +137,7 @@ export default function Header() {
       <nav className={`glass nav-glass relative z-[3] mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
         <Link className="apple-brand-button flex items-center" href={routes.home} onClick={() => setIsOpen(false)}>
           <span className={`${scrolled ? 'h-8 w-[9.75rem] sm:w-[10.75rem]' : 'h-9 w-[10.5rem] sm:h-10 sm:w-[11.5rem]'} official-brand-motion relative block shrink-0 transition-all`}>
-            <img className="h-full w-full object-contain object-left" src="/assets/macrohealthplus/official-logos/MHP-Logo-horizontal.png" alt="MacroHealthPlus - Systems Thinking" />
+            <img className="h-full w-full object-contain object-left" src="/assets/macrohealthplus/official-logos/MHP-Logo-horizontal.webp" alt="MacroHealthPlus - Systems Thinking" />
           </span>
         </Link>
 

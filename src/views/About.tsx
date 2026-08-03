@@ -34,7 +34,7 @@ const leadershipTeam: TeamMember[] = [
     id: 'aminur-rahman',
     name: 'Dr. Aminur Rahman',
     role: 'Managing Director & CEO',
-    image: '/assets/about_us/team_white/aminur-rahman.png',
+    image: '/assets/about_us/team_white/aminur-rahman.webp',
     imageClassName: 'object-center',
     biography: [
       'Dr. Md Aminur Rahman is the CEO of MacroHealthPlus Software, a cutting-edge technology company in the healthcare sector. He is a highly experienced and accomplished professional with a background in medicine and a passion for using technology to improve healthcare outcomes.',
@@ -48,7 +48,7 @@ const leadershipTeam: TeamMember[] = [
     id: 'mohsina-nazneen-bhuiyan',
     name: 'Dr. Mohsina Nazneen Bhuiyan',
     role: 'Director',
-    image: '/assets/about_us/team_white/mohsina-nazneen-bhuiyan.png',
+    image: '/assets/about_us/team_white/mohsina-nazneen-bhuiyan.webp',
     imageClassName: 'object-center',
     biography: [
       'Dr. Mohsina Bhuiyan is the Director of MacroHealthPlus Software, a healthcare technology company that develops innovative software solutions to improve patient care and streamline healthcare services. Dr. Bhuiyan is a highly skilled and experienced healthcare professional who has dedicated her career to improving healthcare access and quality for patients. She has extensive experience in healthcare management and software development and is known for her leadership and vision in the industry.',
@@ -65,7 +65,7 @@ const advisoryMembers: TeamMember[] = [
     id: 'nick-ebbeck',
     name: 'Nick Ebbeck',
     role: 'Advisor',
-    image: '/assets/about_us/team_white/nick-ebbeck.png',
+    image: '/assets/about_us/team_white/nick-ebbeck.webp',
     imageClassName: 'object-center',
     biography: [
       'Nick is an experienced CEO with over 30 years of corporate experience. He has global experience, particularly in the Australian and New Zealand markets, driving growth in the technology industry.',
@@ -77,7 +77,7 @@ const advisoryMembers: TeamMember[] = [
     id: 'muhammad-sajedur-rahman',
     name: 'Dr Muhammad Sajedur Rahman',
     role: 'Advisor',
-    image: '/assets/about_us/team_white/muhammad-sajedur-rahman.png',
+    image: '/assets/about_us/team_white/muhammad-sajedur-rahman.webp',
     imageClassName: 'object-center',
     biography: [
       'Sajed possesses over four decades of experience and versatile knowledge across diverse areas, ranging from academia and applied research in scientific and engineering fields to international business development and marketing management consultancy.',
@@ -258,7 +258,7 @@ export default function About() {
           <figure className="overflow-hidden rounded-lg">
             <img
               className="aspect-[4/3] w-full object-cover"
-              src="/assets/DUNS_Certification/60173d4a-358b-4872-8cf9-206951573a7f.jpeg"
+              src="/assets/DUNS_Certification/60173d4a-358b-4872-8cf9-206951573a7f.webp"
               alt="MacroHealthPlus receiving its D-U-N-S Registered Certificate"
               loading="lazy"
               decoding="async"

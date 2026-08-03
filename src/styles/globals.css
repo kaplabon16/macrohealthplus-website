@@ -6675,10 +6675,10 @@ textarea {
 .ipd-reference-connectors path {
   fill: none;
   stroke: #56bfd2;
-  stroke-width: 2;
+  stroke-width: 2.15;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 2 1;
+  stroke-dasharray: 5 3;
   vector-effect: non-scaling-stroke;
   animation: journey-path-travel 5.5s linear infinite;
   filter: drop-shadow(0 0 0.35rem rgba(86, 191, 210, 0.38));
@@ -6933,7 +6933,7 @@ textarea {
   .ipd-reference-map {
     display: grid;
     min-height: 0;
-    padding: 1.1rem;
+    padding: 0.95rem;
   }
 
   .opd-reference-connectors,
@@ -6942,8 +6942,8 @@ textarea {
   }
 
   .opd-reference-map {
-    --flow-column-gap: 1.2rem;
-    --flow-row-gap: 1rem;
+    --flow-column-gap: 1rem;
+    --flow-row-gap: 0.9rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--flow-row-gap) var(--flow-column-gap);
   }
@@ -6954,14 +6954,15 @@ textarea {
     top: auto;
     display: grid;
     width: 100%;
-    min-height: 5.2rem;
-    grid-template-columns: 2.65rem minmax(0, 1fr);
+    min-height: 4.45rem;
+    grid-template-columns: 2.45rem minmax(0, 1fr);
     align-items: center;
     align-content: center;
     justify-items: start;
-    gap: 0.75rem;
-    padding: 0.65rem;
+    gap: 0.68rem;
+    padding: 0.58rem 0.65rem;
     border-width: 1px;
+    border-radius: 0.68rem;
     text-align: left;
     transform: none;
     animation: none;
@@ -6969,7 +6970,7 @@ textarea {
 
   .opd-reference-node-wide {
     width: 100%;
-    min-height: 5.2rem;
+    min-height: 4.45rem;
   }
 
   .opd-reference-node:nth-of-type(1) { grid-column: 1; grid-row: 1; }
@@ -6995,7 +6996,7 @@ textarea {
     left: 100%;
     top: 50%;
     width: var(--flow-column-gap);
-    height: 2px;
+    height: 2.5px;
     background: var(--journey-accent);
   }
 
@@ -7012,7 +7013,7 @@ textarea {
     right: 100%;
     top: 50%;
     width: var(--flow-column-gap);
-    height: 2px;
+    height: 2.5px;
     background: var(--journey-accent);
   }
 
@@ -7029,7 +7030,7 @@ textarea {
   .opd-reference-node:nth-of-type(6)::after {
     left: 50%;
     top: 100%;
-    width: 2px;
+    width: 2.5px;
     height: var(--flow-row-gap);
     background: var(--journey-accent);
   }
@@ -7045,23 +7046,24 @@ textarea {
   }
 
   .opd-reference-symbol {
-    width: 2.65rem;
-    height: 2.65rem;
+    width: 2.45rem;
+    height: 2.45rem;
     border-radius: 0.45rem;
   }
 
   .opd-reference-symbol svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.15rem;
+    height: 1.15rem;
   }
 
   .opd-reference-node strong {
     max-width: none;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
+    line-height: 1.25;
   }
 
   .ipd-reference-map {
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .ipd-reference-group {
@@ -7076,7 +7078,7 @@ textarea {
   }
 
   .ipd-reference-group > header {
-    min-height: 2.8rem;
+    min-height: 2.65rem;
     padding: 0.45rem 0.65rem;
     border-radius: 0.6rem 0.6rem 0 0;
   }
@@ -7098,7 +7100,7 @@ textarea {
   }
 
   .ipd-reference-details > div {
-    min-height: 3.9rem;
+    min-height: 3.45rem;
     padding: 0.45rem;
   }
 
@@ -7115,13 +7117,13 @@ textarea {
     left: 1.55rem;
     top: 100%;
     width: 2px;
-    height: 1rem;
+    height: 0.85rem;
     background: var(--journey-accent);
   }
 
   .ipd-reference-group:not(:last-child)::before {
     left: calc(1.55rem - 0.25rem);
-    top: calc(100% + 0.62rem);
+    top: calc(100% + 0.47rem);
     border-top: 0.4rem solid var(--journey-accent);
     border-right: 0.28rem solid transparent;
     border-left: 0.28rem solid transparent;
@@ -7130,40 +7132,58 @@ textarea {
 
 @media (max-width: 767px) {
   .care-journey-stack {
-    gap: 1rem;
+    gap: 0.85rem;
+  }
+
+  .care-journey {
+    border-radius: 0.78rem;
+    box-shadow: 0 0.9rem 2.8rem rgba(0, 0, 0, 0.13);
   }
 
   .care-journey-heading {
     display: block;
-    padding: 0.8rem;
+    padding: 0.78rem 0.72rem;
   }
 
   .care-journey-heading h3 {
-    margin-top: 0.25rem;
-    font-size: 1.12rem;
+    margin-top: 0.2rem;
+    font-size: 1.05rem;
+  }
+
+  .care-journey-heading span {
+    font-size: 0.6rem;
+    letter-spacing: 0.13em;
   }
 
   .opd-reference-map,
   .ipd-reference-map {
-    padding: 0.75rem;
+    padding: 0.65rem;
   }
 
   .opd-reference-map {
-    --flow-row-gap: 0.7rem;
+    --flow-row-gap: 1.35rem;
     grid-template-columns: 1fr;
-    gap: var(--flow-row-gap);
+    gap: 0;
+    overflow: hidden;
   }
 
   .opd-reference-node,
   .opd-reference-node-wide {
     grid-column: 1 !important;
     grid-row: auto !important;
-    width: 100%;
-    min-height: 3.65rem;
-    grid-template-columns: 2.35rem minmax(0, 1fr);
+    width: calc(100% - 2.5rem);
+    min-height: 3.25rem;
+    grid-template-columns: 2.15rem minmax(0, 1fr);
     gap: 0.62rem;
-    padding: 0.55rem;
-    border-radius: 0.55rem;
+    margin-bottom: var(--flow-row-gap);
+    margin-inline: auto;
+    padding: 0.42rem 0.55rem;
+    border-radius: 0.68rem;
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--journey-accent) 13%, #080b09), #080b09 46%);
+    box-shadow:
+      inset 3px 0 0 var(--journey-accent),
+      0 0.45rem 1.15rem rgba(0, 0, 0, 0.12);
   }
 
   .opd-reference-node::after,
@@ -7173,12 +7193,17 @@ textarea {
   .opd-reference-node:nth-of-type(4)::after,
   .opd-reference-node:nth-of-type(5)::after,
   .opd-reference-node:nth-of-type(6)::after {
-    left: 1.72rem;
+    left: 100%;
     right: auto;
-    top: 100%;
-    width: 2px;
-    height: var(--flow-row-gap);
-    background: var(--journey-accent);
+    top: calc(100% - 0.55rem);
+    width: 1rem;
+    height: calc(var(--flow-row-gap) + 1.1rem);
+    border: 0;
+    border-top: 2.5px solid var(--journey-accent);
+    border-right: 2.5px solid var(--journey-accent);
+    border-bottom: 2.5px solid var(--journey-accent);
+    border-radius: 0 0.65rem 0.65rem 0;
+    background: transparent;
   }
 
   .opd-reference-node::before,
@@ -7188,13 +7213,28 @@ textarea {
   .opd-reference-node:nth-of-type(4)::before,
   .opd-reference-node:nth-of-type(5)::before,
   .opd-reference-node:nth-of-type(6)::before {
-    left: calc(1.72rem - 0.22rem);
+    left: calc(100% - 0.38rem);
     right: auto;
-    top: calc(100% + var(--flow-row-gap) - 0.34rem);
+    top: calc(100% + var(--flow-row-gap) + 0.27rem);
     border: 0;
-    border-top: 0.36rem solid var(--journey-accent);
-    border-right: 0.24rem solid transparent;
-    border-left: 0.24rem solid transparent;
+    border-top: 0.27rem solid transparent;
+    border-right: 0.4rem solid var(--journey-accent);
+    border-bottom: 0.27rem solid transparent;
+  }
+
+  .opd-reference-node:nth-of-type(even)::after {
+    left: auto;
+    right: 100%;
+    border-right: 0;
+    border-left: 2.5px solid var(--journey-accent);
+    border-radius: 0.65rem 0 0 0.65rem;
+  }
+
+  .opd-reference-node:nth-of-type(even)::before {
+    left: auto;
+    right: calc(100% - 0.38rem);
+    border-right: 0;
+    border-left: 0.4rem solid var(--journey-accent);
   }
 
   .opd-reference-node:last-child::before,
@@ -7202,71 +7242,140 @@ textarea {
     content: none;
   }
 
+  .opd-reference-node:last-child {
+    margin-bottom: 0;
+  }
+
   .opd-reference-symbol {
-    width: 2.35rem;
-    height: 2.35rem;
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 0.52rem;
+    box-shadow: 0 0.55rem 1.2rem color-mix(in srgb, var(--journey-accent) 20%, transparent);
   }
 
   .opd-reference-symbol svg {
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .opd-reference-node strong {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
+    line-height: 1.2;
   }
 
   .ipd-reference-map {
-    gap: 0.8rem;
+    display: block;
+    overflow: hidden;
+  }
+
+  .ipd-reference-group {
+    width: calc(100% - 2.5rem);
+    margin-right: auto;
+    margin-bottom: 1.4rem;
+    margin-left: auto;
+    border-radius: 0.7rem;
+    box-shadow: 0 0.5rem 1.3rem rgba(0, 0, 0, 0.11);
+  }
+
+  .ipd-reference-group:last-child {
+    margin-bottom: 0;
   }
 
   .ipd-reference-group > header {
-    min-height: 2.5rem;
+    min-height: 2.45rem;
     gap: 0.5rem;
-    padding: 0.4rem 0.55rem;
+    padding: 0.38rem 0.52rem;
   }
 
   .ipd-reference-group > header > span {
-    width: 1.65rem;
-    height: 1.65rem;
-    flex-basis: 1.65rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    flex-basis: 1.7rem;
+    border-radius: 0.45rem;
   }
 
   .ipd-reference-group > header strong {
-    font-size: 0.66rem;
+    font-size: 0.7rem;
+    line-height: 1.15;
   }
 
   .ipd-reference-details {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .ipd-reference-details > div {
-    min-height: 3.15rem;
-    gap: 0.3rem;
-    padding: 0.4rem;
+    min-height: 3rem;
+    flex: 1 1 calc(50% - 1px);
+    gap: 0.26rem;
+    padding: 0.38rem 0.32rem;
+  }
+
+  .ipd-reference-details > div:last-child:nth-child(odd) {
+    flex-basis: 100%;
   }
 
   .ipd-reference-details svg {
-    width: 0.95rem;
-    height: 0.95rem;
+    width: 0.92rem;
+    height: 0.92rem;
   }
 
   .ipd-reference-details span {
-    font-size: 0.55rem;
+    max-width: 10.5rem;
+    font-size: 0.58rem;
+    line-height: 1.18;
   }
 
   .ipd-reference-group:not(:last-child)::after {
-    left: 1.36rem;
-    height: 0.8rem;
+    left: 100%;
+    right: auto;
+    top: calc(100% - 0.55rem);
+    width: 1rem;
+    height: 2.5rem;
+    border: 0;
+    border-top: 2.5px solid var(--journey-accent);
+    border-right: 2.5px solid var(--journey-accent);
+    border-bottom: 2.5px solid var(--journey-accent);
+    border-radius: 0 0.65rem 0.65rem 0;
+    background: transparent;
   }
 
   .ipd-reference-group:not(:last-child)::before {
-    left: calc(1.36rem - 0.22rem);
-    top: calc(100% + 0.46rem);
-    border-top-width: 0.36rem;
-    border-right-width: 0.24rem;
-    border-left-width: 0.24rem;
+    left: calc(100% - 0.38rem);
+    right: auto;
+    top: calc(100% + 1.66rem);
+    border: 0;
+    border-top: 0.27rem solid transparent;
+    border-right: 0.4rem solid var(--journey-accent);
+    border-bottom: 0.27rem solid transparent;
   }
+
+  .ipd-reference-group:nth-child(even):not(:last-child)::after {
+    left: auto;
+    right: 100%;
+    border-right: 0;
+    border-left: 2.5px solid var(--journey-accent);
+    border-radius: 0.65rem 0 0 0.65rem;
+  }
+
+  .ipd-reference-group:nth-child(even):not(:last-child)::before {
+    left: auto;
+    right: calc(100% - 0.38rem);
+    border-right: 0;
+    border-left: 0.4rem solid var(--journey-accent);
+  }
+}
+
+.lab-journey-responsive-phone .lab-journey-responsive-node:nth-of-type(9) .lab-journey-responsive-copy {
+  top: 42%;
+}
+
+.lab-journey-responsive-phone .lab-journey-responsive-node:nth-of-type(10) .lab-journey-responsive-copy {
+  top: 56%;
+}
+
+.lab-journey-responsive-phone .lab-journey-responsive-node:nth-of-type(10) .lab-journey-responsive-destinations {
+  margin-top: 0.65rem;
 }
 
 /* MIMS clinical intelligence composition */
