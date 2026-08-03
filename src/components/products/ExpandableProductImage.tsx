@@ -12,6 +12,7 @@ type ExpandableProductImageProps = {
   frameClassName?: string;
   imageClassName?: string;
   objectPosition?: string;
+  deviceMockup?: boolean;
 };
 
 export default function ExpandableProductImage({
@@ -21,6 +22,7 @@ export default function ExpandableProductImage({
   frameClassName = '',
   imageClassName = '',
   objectPosition = 'center center',
+  deviceMockup = false,
 }: ExpandableProductImageProps) {
   const mediaId = useId().replace(/:/g, '');
   const [mounted, setMounted] = useState(false);
@@ -121,14 +123,37 @@ export default function ExpandableProductImage({
         aria-label={`Enlarge ${alt}`}
         title="Enlarge image"
       >
-        <img
-          className={imageClassName}
-          src={src}
-          alt={alt}
-          loading={eager ? 'eager' : 'lazy'}
-          decoding="async"
-          style={{ objectPosition }}
-        />
+        {deviceMockup ? (
+          <span className="product-device-showcase">
+            <span className="product-device-laptop">
+              <span className="product-device-camera" aria-hidden="true" />
+              <span className="product-device-laptop-screen">
+                <img
+                  className={imageClassName}
+                  src={src}
+                  alt={alt}
+                  loading={eager ? 'eager' : 'lazy'}
+                  decoding="async"
+                  style={{ objectPosition }}
+                />
+              </span>
+              <span className="product-device-laptop-base" aria-hidden="true" />
+            </span>
+            <span className="product-device-phone" aria-hidden="true">
+              <span className="product-device-phone-speaker" />
+              <img src={src} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" style={{ objectPosition }} />
+            </span>
+          </span>
+        ) : (
+          <img
+            className={imageClassName}
+            src={src}
+            alt={alt}
+            loading={eager ? 'eager' : 'lazy'}
+            decoding="async"
+            style={{ objectPosition }}
+          />
+        )}
         <span className="product-media-expand" aria-hidden="true"><Maximize2 /></span>
       </motion.button>
       {mounted ? createPortal(overlays, document.body) : null}

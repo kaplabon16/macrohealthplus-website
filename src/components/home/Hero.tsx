@@ -1,5 +1,5 @@
 import { useEffect, useRef, type CSSProperties, type Dispatch, type SetStateAction } from 'react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { products } from '../../data/products';
 import RevealWords from '../ui/RevealWords';
 import ProductShowcaseCardContent, { productPalette, showcaseProducts } from './ProductShowcaseCardContent';
@@ -22,7 +22,6 @@ export default function Hero({
   onVisibilityChange,
 }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
-  const isObservedHeroVisible = useInView(heroRef, { amount: 0.86, initial: true });
   const reduceMotion = Boolean(useReducedMotion());
 
   useEffect(() => {
@@ -34,8 +33,35 @@ export default function Hero({
   }, [enableProductHandoff, isHandoffActive, onActiveProductChange, reduceMotion]);
 
   useEffect(() => {
-    onVisibilityChange(isObservedHeroVisible);
-  }, [isObservedHeroVisible, onVisibilityChange]);
+    let frame = 0;
+    let previousVisibility: boolean | null = null;
+
+    const measureHero = () => {
+      frame = 0;
+      const hero = heroRef.current;
+      if (!hero) return;
+
+      const rect = hero.getBoundingClientRect();
+      const nextVisibility = rect.bottom > window.innerHeight * 0.72 && rect.top < window.innerHeight;
+      if (nextVisibility === previousVisibility) return;
+      previousVisibility = nextVisibility;
+      onVisibilityChange(nextVisibility);
+    };
+
+    const scheduleMeasurement = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(measureHero);
+    };
+
+    scheduleMeasurement();
+    window.addEventListener('scroll', scheduleMeasurement, { passive: true });
+    window.addEventListener('resize', scheduleMeasurement);
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', scheduleMeasurement);
+      window.removeEventListener('resize', scheduleMeasurement);
+    };
+  }, [onVisibilityChange]);
 
   return (
     <section

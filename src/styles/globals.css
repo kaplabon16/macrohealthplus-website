@@ -383,6 +383,7 @@ textarea {
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .apple-brand-button,
@@ -426,6 +427,7 @@ textarea {
 .apple-top-nav-link:hover,
 .apple-top-nav-link:focus-visible {
   color: #fff;
+  background: rgba(255, 255, 255, 0.085);
 }
 
 :root[data-theme="light"] .apple-top-nav-link {
@@ -435,6 +437,7 @@ textarea {
 :root[data-theme="light"] .apple-top-nav-link:hover,
 :root[data-theme="light"] .apple-top-nav-link:focus-visible {
   color: #000;
+  background: rgba(71, 85, 105, 0.09);
 }
 
 @supports (backdrop-filter: initial) {
@@ -580,12 +583,14 @@ textarea {
 .apple-mobile-link:hover,
 .apple-mobile-child:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.075);
 }
 
 :root[data-theme="light"] .apple-flyout-link:hover,
 :root[data-theme="light"] .apple-mobile-link:hover,
 :root[data-theme="light"] .apple-mobile-child:hover {
   color: #000;
+  background: rgba(71, 85, 105, 0.08);
 }
 
 .apple-theme-popover {
@@ -6440,6 +6445,123 @@ textarea {
   font: inherit;
   text-align: inherit;
   cursor: zoom-in;
+}
+
+.product-device-showcase {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: clamp(0.4rem, 1.5vw, 1rem) clamp(0.35rem, 2vw, 1.25rem) clamp(1.8rem, 4vw, 3rem) clamp(2.2rem, 8vw, 5.5rem);
+}
+
+.product-device-laptop {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: clamp(0.38rem, 0.9vw, 0.62rem);
+  border: 1px solid rgba(170, 170, 170, 0.5);
+  border-radius: clamp(0.7rem, 1.7vw, 1.15rem) clamp(0.7rem, 1.7vw, 1.15rem) 0.35rem 0.35rem;
+  background: linear-gradient(145deg, #242728, #080a0a 78%);
+  box-shadow: 0 1.8rem 4rem rgba(0, 0, 0, 0.34);
+}
+
+.product-device-camera {
+  position: absolute;
+  left: 50%;
+  top: 0.17rem;
+  z-index: 2;
+  width: 0.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #566069;
+  transform: translateX(-50%);
+}
+
+.product-device-laptop-screen {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: clamp(0.35rem, 0.8vw, 0.55rem) clamp(0.35rem, 0.8vw, 0.55rem) 0.12rem 0.12rem;
+  background: #fff;
+}
+
+.product-device-laptop-screen img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
+
+.product-device-laptop-base {
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  bottom: clamp(-0.78rem, -1.35vw, -0.5rem);
+  display: block;
+  height: clamp(0.65rem, 1.35vw, 0.9rem);
+  border-radius: 0.12rem 0.12rem 0.9rem 0.9rem;
+  background: linear-gradient(180deg, #d8dbdd, #73787b 74%, #292c2e);
+  box-shadow: 0 0.75rem 1.3rem rgba(0, 0, 0, 0.28);
+}
+
+.product-device-laptop-base::after {
+  content: "";
+  position: absolute;
+  left: 41%;
+  top: 0;
+  width: 18%;
+  height: 38%;
+  border-radius: 0 0 0.35rem 0.35rem;
+  background: rgba(66, 71, 74, 0.5);
+}
+
+.product-device-phone {
+  position: absolute;
+  left: 0;
+  bottom: 0.45rem;
+  display: block;
+  width: clamp(3.8rem, 17%, 7.2rem);
+  aspect-ratio: 9 / 18.5;
+  overflow: hidden;
+  padding: clamp(0.18rem, 0.45vw, 0.32rem);
+  border: 1px solid rgba(170, 170, 170, 0.62);
+  border-radius: clamp(0.75rem, 1.8vw, 1.3rem);
+  background: #080a0a;
+  box-shadow: 0 1.2rem 2.6rem rgba(0, 0, 0, 0.4);
+}
+
+.product-device-phone img {
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(0.58rem, 1.45vw, 1rem);
+  object-fit: cover;
+}
+
+.product-device-phone-speaker {
+  position: absolute;
+  left: 50%;
+  top: clamp(0.25rem, 0.6vw, 0.4rem);
+  z-index: 2;
+  width: 32%;
+  height: clamp(0.16rem, 0.35vw, 0.25rem);
+  border-radius: 999px;
+  background: #050606;
+  transform: translateX(-50%);
+}
+
+:root[data-theme="light"] .product-device-laptop {
+  border-color: rgba(71, 85, 105, 0.45);
+}
+
+@media (max-width: 639px) {
+  .product-device-showcase {
+    padding-left: 2.25rem;
+    padding-bottom: 1.7rem;
+  }
+
+  .product-device-phone {
+    bottom: 0.3rem;
+  }
 }
 
 .product-hero-frame {

@@ -14,12 +14,13 @@ type ProductPageTemplateProps = {
   description: string;
   image?: string;
   imagePosition?: string;
+  expandableImage?: boolean;
   features: string[];
   story?: ProductVisual[];
   placeholder?: boolean;
 };
 
-export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, features, story = [], placeholder = false }: ProductPageTemplateProps) {
+export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, expandableImage = true, features, story = [], placeholder = false }: ProductPageTemplateProps) {
   if (placeholder) {
     return (
       <Section className="min-h-[70svh] pt-24 sm:pt-28 lg:pt-32" eyebrow="MacroHealthPlus Solution" title={title}>
@@ -40,14 +41,27 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
           </motion.div>
           {image ? (
             <motion.div initial={{ opacity: 0, x: 38 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-              <ExpandableProductImage
-                frameClassName="product-hero-frame"
-                imageClassName="product-hero-image"
-                src={image}
-                alt={`${title} product interface`}
-                eager
-                objectPosition={imagePosition}
-              />
+              {expandableImage ? (
+                <ExpandableProductImage
+                  frameClassName="product-hero-frame"
+                  imageClassName="product-hero-image"
+                  src={image}
+                  alt={`${title} product interface`}
+                  eager
+                  objectPosition={imagePosition}
+                />
+              ) : (
+                <div className="product-hero-frame">
+                  <img
+                    className="product-hero-image"
+                    src={image}
+                    alt={`${title} product interface`}
+                    loading="eager"
+                    decoding="async"
+                    style={{ objectPosition: imagePosition ?? 'center center' }}
+                  />
+                </div>
+              )}
             </motion.div>
           ) : null}
         </div>

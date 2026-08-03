@@ -12,6 +12,7 @@ export type Product = {
   description: string;
   image?: string;
   imagePosition?: string;
+  expandableImage?: boolean;
   features: string[];
   story?: ProductVisual[];
   notes?: string;
@@ -107,25 +108,18 @@ export const products: Product[] = [
   {
     title: 'Telehealth',
     route: '/telehealth',
-    subtitle: 'Structured Care Beyond the Clinic',
-    description: 'Extend consultations beyond the physical practice with scheduled remote appointments, clinical advice, electronic prescriptions, investigation orders, and summaries that remain connected to the patient record.',
-    image: productImage('appointment'),
-    imagePosition: 'center top',
-    features: ['Setup your timing', 'Define payment', 'Send consultation summary', 'New consultation flow', 'Text message updates', 'Remote patient conversation'],
-    story: [
-      { title: 'The consultation remains part of the record', image: productImage('digi_patient'), description: 'Keep advice, orders, prescriptions, and follow-up connected to the patient’s broader history rather than leaving remote care in isolation.' },
-    ],
+    subtitle: 'Secure Technology for Virtual Care',
+    description: 'MacroHealthPlus is secure, cloud-based telemedicine software that connects clinicians and patients through live video from a computer or mobile device. Its straightforward interface can be adapted to the way a practice works and integrated with electronic health record systems.',
+    features: ['Setup Your Timing', 'Define Payment', 'Manage Video Appointment', 'Take Notes in GreatDoc', 'Order Investigations in GreatDoc'],
   },
   {
     title: 'Marketplace',
     route: '/marketplace',
     subtitle: 'A Digital Healthcare Marketplace',
     description: 'Create a coordinated online destination for medicine, professional services, healthcare assistance, and customer support while keeping catalogue and availability information tied to operational systems.',
-    image: productImage('great_pharma'),
+    image: '/assets/product_images/clean/marketplace-responsive.webp',
+    expandableImage: false,
     features: ['Add item', 'Payment tracking', 'Pharmacy marketplace', 'High quality', 'Best price', 'After sales services'],
-    story: [
-      { title: 'Availability customers can depend on', image: productImage('inventory_product'), description: 'Ground marketplace activity in current inventory information so online demand and operational supply remain aligned.' },
-    ],
   },
   {
     title: 'e-Pharmacy',
