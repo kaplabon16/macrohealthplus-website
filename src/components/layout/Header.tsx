@@ -195,9 +195,15 @@ export default function Header() {
             <p className="apple-flyout-label mb-4 text-xs">Explore {activeItem?.label}</p>
             <div className="grid grid-cols-3 gap-x-10 gap-y-1">
               {activeChildren.map((child) => (
-                <Link className="apple-flyout-link rounded-xl px-3 py-2 text-xl font-semibold leading-tight" key={child.href} href={child.href} onClick={() => setActiveDropdown(null)}>
-                  <span className="block">{child.label}</span>
-                </Link>
+                ('disabled' in child && child.disabled) ? (
+                  <span aria-disabled="true" className="apple-flyout-link apple-nav-link-disabled rounded-xl px-3 py-2 text-xl font-semibold leading-tight" key={child.href}>
+                    <span className="block">{child.label}</span>
+                  </span>
+                ) : (
+                  <Link className="apple-flyout-link rounded-xl px-3 py-2 text-xl font-semibold leading-tight" key={child.href} href={child.href} onClick={() => setActiveDropdown(null)}>
+                    <span className="block">{child.label}</span>
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -214,7 +220,11 @@ export default function Header() {
               <p className="apple-flyout-label mb-4 text-xs">{mobileItem?.label}</p>
               <div className="grid gap-3">
                 {mobileChildren.map((child) => (
-                  <Link className="apple-mobile-child text-xl font-semibold leading-tight" key={child.href} href={child.href} onClick={() => { setIsOpen(false); setMobileSubmenu(null); }}>{child.label}</Link>
+                  ('disabled' in child && child.disabled) ? (
+                    <span aria-disabled="true" className="apple-mobile-child apple-nav-link-disabled text-xl font-semibold leading-tight" key={child.href}>{child.label}</span>
+                  ) : (
+                    <Link className="apple-mobile-child text-xl font-semibold leading-tight" key={child.href} href={child.href} onClick={() => { setIsOpen(false); setMobileSubmenu(null); }}>{child.label}</Link>
+                  )
                 ))}
               </div>
             </>

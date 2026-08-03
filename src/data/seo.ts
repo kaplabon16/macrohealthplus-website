@@ -21,6 +21,7 @@ export const routeSeo: Record<string, { title: string; description: string }> = 
 };
 
 for (const product of products) {
+  if (product.placeholder) continue;
   routeSeo[product.route] = { title: product.title, description: product.description || product.title };
 }
 routeSeo['/e-pharmacy'] = routeSeo['/e-commerce-medicine'];

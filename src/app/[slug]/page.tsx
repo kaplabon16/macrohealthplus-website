@@ -31,7 +31,7 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
 
   const legalPage = getLegalPage(slug);
   const productSlug = slug === 'e-pharmacy' ? 'e-commerce-medicine' : slug;
-  const product = products.find((item) => item.route === `/${productSlug}`);
+  const product = products.find((item) => !item.placeholder && item.route === `/${productSlug}`);
 
   let content: React.ReactNode;
   if (legalPage) {

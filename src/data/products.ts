@@ -13,6 +13,7 @@ export type Product = {
   image?: string;
   imagePosition?: string;
   expandableImage?: boolean;
+  deviceMockup?: boolean;
   features: string[];
   story?: ProductVisual[];
   notes?: string;
@@ -173,5 +174,6 @@ export const products: Product[] = [
       'Post-surgery and wound care',
       'Mobility and strengthening support',
     ],
+    placeholder: true,
   },
 ];

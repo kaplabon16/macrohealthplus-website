@@ -171,6 +171,23 @@ export default function FacilitySolutions({
                   );
                 }
 
+                if (product.placeholder) {
+                  return (
+                    <motion.div
+                      aria-disabled="true"
+                      className="product-showcase-card product-showcase-card-disabled group"
+                      key={product.route}
+                      style={style}
+                      initial={{ opacity: 0.35, y: reduceMotion ? 0 : 32, scale: reduceMotion ? 1 : 0.94 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: true, amount: 0.18 }}
+                      transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <ProductShowcaseCardContent index={productIndex} product={product} />
+                    </motion.div>
+                  );
+                }
+
                 return (
                   <motion.a
                     className="product-showcase-card group"

@@ -2,7 +2,7 @@ import { routes } from '../utils/routes';
 import { products } from './products';
 
 export const navigation = [
-  { label: 'Solutions', href: routes.home, children: products.map((product) => ({ label: product.title, href: product.route })) },
+  { label: 'Solutions', href: routes.home, children: products.map((product) => ({ label: product.title, href: product.route, disabled: product.placeholder === true })) },
   { label: 'Resources', href: routes.news, children: [
     { label: 'News and Views', href: routes.news },
     { label: 'Help Centre', href: routes.helpCentre },

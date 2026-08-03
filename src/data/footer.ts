@@ -4,7 +4,7 @@ import { products } from './products';
 export const footerGroups = [
   {
     title: 'Solutions',
-    links: products.map((product) => ({ label: product.title, href: product.route })),
+    links: products.map((product) => ({ label: product.title, href: product.route, disabled: product.placeholder === true })),
   },
   {
     title: 'Support',

@@ -30,7 +30,9 @@ export default function Footer() {
               <h2 className="font-semibold text-white">{group.title}</h2>
               <div className="mt-2 space-y-1.5 text-[11px] sm:mt-3 sm:space-y-2.5 sm:text-[13px]">
                 {group.links.map((link) => (
-                  link.href.startsWith('http') ? (
+                  ('disabled' in link && link.disabled) ? (
+                    <span aria-disabled="true" className="block cursor-default leading-5 text-slate-500" key={link.href}>{link.label}</span>
+                  ) : link.href.startsWith('http') ? (
                     <a className="block leading-5 text-slate-400 transition hover:text-white hover:underline" href={link.href} key={link.href} target="_blank" rel="noreferrer">
                       {link.label}
                     </a>

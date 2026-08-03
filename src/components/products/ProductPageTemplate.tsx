@@ -7,6 +7,7 @@ import type { ProductVisual } from '../../data/products';
 import CapabilityNetwork from './CapabilityNetwork';
 import ExpandableProductImage from './ExpandableProductImage';
 import HospitalCareFlows from './HospitalCareFlows';
+import TelehealthWorkflow from './TelehealthWorkflow';
 
 type ProductPageTemplateProps = {
   title: string;
@@ -15,12 +16,13 @@ type ProductPageTemplateProps = {
   image?: string;
   imagePosition?: string;
   expandableImage?: boolean;
+  deviceMockup?: boolean;
   features: string[];
   story?: ProductVisual[];
   placeholder?: boolean;
 };
 
-export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, expandableImage = true, features, story = [], placeholder = false }: ProductPageTemplateProps) {
+export default function ProductPageTemplate({ title, subtitle, description, image, imagePosition, expandableImage = true, deviceMockup = false, features, story = [], placeholder = false }: ProductPageTemplateProps) {
   if (placeholder) {
     return (
       <Section className="min-h-[70svh] pt-24 sm:pt-28 lg:pt-32" eyebrow="MacroHealthPlus Solution" title={title}>
@@ -49,6 +51,7 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
                   alt={`${title} product interface`}
                   eager
                   objectPosition={imagePosition}
+                  deviceMockup={deviceMockup}
                 />
               ) : (
                 <div className="product-hero-frame">
@@ -97,6 +100,7 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
           </motion.div>
         </Section>
       ) : null}
+      {title === 'Telehealth' ? <TelehealthWorkflow /> : null}
       {title === 'Hospital' ? <HospitalCareFlows /> : null}
       <Section eyebrow="Core Capabilities" title={`Built into ${title}`} intro="Focused tools for the recurring tasks your team needs to complete accurately and on time.">
         <CapabilityNetwork product={title} features={features} />
