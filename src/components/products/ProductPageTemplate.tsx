@@ -36,7 +36,6 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
             <p className="text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">{description}</p>
             <div className="mt-4 flex flex-col gap-2.5 sm:mt-6 sm:flex-row lg:mt-8">
               <Button href="/request-demo" icon>Request a Demo</Button>
-              <Button href="/pricing" variant="secondary" icon>View Pricing</Button>
             </div>
           </motion.div>
           {image ? (

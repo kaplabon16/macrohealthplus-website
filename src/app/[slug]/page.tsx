@@ -12,7 +12,6 @@ import DeveloperInfo from '../../views/DeveloperInfo';
 import HelpCentre from '../../views/HelpCentre';
 import News from '../../views/News';
 import NotFound from '../../views/NotFound';
-import Pricing from '../../views/Pricing';
 import RequestDemo from '../../views/RequestDemo';
 import ResourceTitlePage from '../../views/ResourceTitlePage';
 import WhyChooseUs from '../../views/WhyChooseUs';
@@ -41,7 +40,6 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
     content = <ProductPageTemplate {...product} />;
   } else {
     switch (slug) {
-      case 'pricing': content = <Pricing />; break;
       case 'help-centre': content = <HelpCentre />; break;
       case 'news-and-views': content = <News />; break;
       case 'contact': content = <Contact />; break;

@@ -9,7 +9,6 @@ export const footerGroups = [
   {
     title: 'Support',
     links: [
-      { label: 'Pricing', href: routes.pricing },
       { label: 'Help Centre', href: routes.helpCentre },
       { label: 'News and Views', href: routes.news },
       { label: 'Request Demo', href: routes.requestDemo },

@@ -3,7 +3,6 @@ import { products } from './products';
 
 export const routeSeo: Record<string, { title: string; description: string }> = {
   '/': { title: 'Healthcare Management Software', description: 'MacroHealthPlus connects appointments, clinical records, diagnostics, pharmacy operations, billing, telehealth, and patient follow-up.' },
-  '/pricing': { title: 'Pricing', description: 'Compare MacroHealthPlus plans for doctors, clinics, diagnostic centres, pharmacies, hospitals, and telehealth teams.' },
   '/help-centre': { title: 'Help Centre', description: 'Answers about MacroHealthPlus products, implementation, pricing, access, and support.' },
   '/news-and-views': { title: 'News & Views', description: 'MacroHealthPlus product developments, company news, releases, and healthcare software updates.' },
   '/contact': { title: 'Contact', description: 'Contact MacroHealthPlus about healthcare software, product demonstrations, implementation requirements, pricing, and support.' },

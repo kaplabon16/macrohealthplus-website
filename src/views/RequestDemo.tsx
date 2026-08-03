@@ -44,7 +44,7 @@ export default function RequestDemo() {
       view: 'cm',
       fs: '1',
       to: 'info@macrohealthplus.org',
-      cc: 'mizanur@macrohealthplus.org,kaushikplabon45@gmail.com',
+      cc: 'mizanur@macrohealthplus.org',
       su: subject,
       body,
     }).toString();

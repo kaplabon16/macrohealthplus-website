@@ -18,7 +18,7 @@ const implementationImages = [
   },
   {
     src: '/assets/implementation_images/4dac747b-dc9e-48e7-80e4-c32638928e7e.webp',
-    alt: 'MacroHealthPlus representative with a healthcare professional during implementation',
+    alt: 'MacroHealthPlus representatives completing a healthcare software implementation handover',
   },
 ];
 

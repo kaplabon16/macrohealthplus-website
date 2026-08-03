@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${siteUrl}/${slug}`,
         lastModified: now,
         changeFrequency: slug === 'news-and-views' ? 'weekly' as const : 'monthly' as const,
-        priority: slug === 'pricing' || slug === 'contact' || slug === 'who-we-are' ? 0.8 : 0.7,
+        priority: slug === 'contact' || slug === 'who-we-are' ? 0.8 : 0.7,
       })),
   ];
 }
