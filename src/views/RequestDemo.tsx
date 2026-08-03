@@ -15,7 +15,33 @@ export default function RequestDemo() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (event.currentTarget.checkValidity()) setSubmitted(true);
+    const form = event.currentTarget;
+    if (!form.checkValidity()) return;
+
+    const data = new FormData(form);
+    const solution = String(data.get('solution') ?? '');
+    const firstName = String(data.get('firstName') ?? '');
+    const lastName = String(data.get('lastName') ?? '');
+    const email = String(data.get('email') ?? '');
+    const contactNumber = String(data.get('contactNumber') ?? '');
+    const message = String(data.get('message') ?? '');
+    const subject = `MacroHealthPlus demo request: ${solution}`;
+    const body = [
+      'MacroHealthPlus Demo Request',
+      '',
+      `Selected solution: ${solution}`,
+      `Name: ${firstName} ${lastName}`,
+      `Email: ${email}`,
+      `Contact number: ${contactNumber}`,
+      '',
+      'Message:',
+      message,
+      '',
+      'Consent: Accepted',
+    ].join('\n');
+
+    setSubmitted(true);
+    window.location.href = `mailto:info@macrohealthplus.org?cc=${encodeURIComponent('mizanur@macrohealthplus.org,kaushikplabon45@gmail.com')}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -24,24 +50,25 @@ export default function RequestDemo() {
         <GlassCard>
           {submitted ? (
             <div className="rounded-3xl border border-[#01D439]/25 bg-[#01D439]/10 p-5 text-sm text-[#01D439]">
-              Thank you. Our team will review your organization, selected solution, and message before following up with a relevant product conversation.
+              Your email application has been opened with the request prepared. Review the details and press Send to deliver it to MacroHealthPlus.
             </div>
           ) : null}
           <form className="mt-2 grid gap-4" onSubmit={handleSubmit}>
             <label className="grid gap-2 text-sm text-slate-300">Solution
-              <select required className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm">
+              <select required name="solution" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm">
                 <option value="">Select a solution</option>
                 {requestDemoSolutions.map((solution) => <option key={solution}>{solution}</option>)}
               </select>
             </label>
             <div className="grid gap-4 md:grid-cols-2">
-              <label className="grid gap-2 text-sm text-slate-300">First Name<input required className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
-              <label className="grid gap-2 text-sm text-slate-300">Last Name<input required className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
+              <label className="grid gap-2 text-sm text-slate-300">First Name<input required name="firstName" autoComplete="given-name" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
+              <label className="grid gap-2 text-sm text-slate-300">Last Name<input required name="lastName" autoComplete="family-name" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
             </div>
-            <label className="grid gap-2 text-sm text-slate-300">Email<input required type="email" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
-            <label className="grid gap-2 text-sm text-slate-300">Contact Number<input required type="tel" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
-            <label className="grid gap-2 text-sm text-slate-300">Message<textarea required rows={4} className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
-            <label className="flex gap-3 text-sm text-slate-300"><input required type="checkbox" className="mt-1" /> I agree to be contacted about MacroHealthPlus and acknowledge the Privacy Policy and Terms.</label>
+            <label className="grid gap-2 text-sm text-slate-300">Email<input required name="email" autoComplete="email" type="email" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
+            <label className="grid gap-2 text-sm text-slate-300">Contact Number<input required name="contactNumber" autoComplete="tel" type="tel" className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
+            <label className="grid gap-2 text-sm text-slate-300">Message<textarea required name="message" rows={4} className="rounded-2xl border border-white/15 bg-black px-4 py-3 text-white shadow-sm" /></label>
+            <input className="absolute -left-[9999px] h-px w-px opacity-0" name="companyWebsite" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            <label className="flex gap-3 text-sm text-slate-300"><input required name="consent" value="accepted" type="checkbox" className="mt-1" /> I agree to be contacted about MacroHealthPlus and acknowledge the Privacy Policy and Terms.</label>
             <button className="brand-primary-button min-h-12 rounded-full bg-[#01D439] px-5 text-sm font-semibold text-white transition" type="submit">Request Demo</button>
           </form>
         </GlassCard>
