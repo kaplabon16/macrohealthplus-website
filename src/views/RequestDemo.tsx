@@ -39,9 +39,20 @@ export default function RequestDemo() {
       '',
       'Consent: Accepted',
     ].join('\n');
+    const composeUrl = new URL('https://mail.google.com/mail/');
+    composeUrl.search = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: 'info@macrohealthplus.org',
+      cc: 'mizanur@macrohealthplus.org,kaushikplabon45@gmail.com',
+      su: subject,
+      body,
+    }).toString();
 
     setSubmitted(true);
-    window.location.href = `mailto:info@macrohealthplus.org?cc=${encodeURIComponent('mizanur@macrohealthplus.org,kaushikplabon45@gmail.com')}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const composeWindow = window.open(composeUrl.toString(), '_blank');
+    if (composeWindow) composeWindow.opener = null;
+    else window.location.href = composeUrl.toString();
   }
 
   return (
@@ -50,7 +61,7 @@ export default function RequestDemo() {
         <GlassCard>
           {submitted ? (
             <div className="rounded-3xl border border-[#01D439]/25 bg-[#01D439]/10 p-5 text-sm text-[#01D439]">
-              Your email application has been opened with the request prepared. Review the details and press Send to deliver it to MacroHealthPlus.
+              Gmail compose has been opened with the request prepared. Review the details and press Send to deliver it to MacroHealthPlus.
             </div>
           ) : null}
           <form className="mt-2 grid gap-4" onSubmit={handleSubmit}>
