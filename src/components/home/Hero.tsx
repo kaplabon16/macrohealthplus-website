@@ -162,7 +162,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           >
-            Take Healthcare Operations Further
+            Take Healthcare Operations Move Forward
           </motion.h1>
           <RevealWords
             className="hero-intro mt-3.5 max-w-2xl text-sm leading-[1.375rem] sm:mt-5 sm:text-[15px] sm:leading-6 md:text-base md:leading-7 xl:mt-7 xl:text-xl xl:leading-8"
