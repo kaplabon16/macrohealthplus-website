@@ -13,7 +13,6 @@ import HelpCentre from '../../views/HelpCentre';
 import News from '../../views/News';
 import NotFound from '../../views/NotFound';
 import RequestDemo from '../../views/RequestDemo';
-import ResourceTitlePage from '../../views/ResourceTitlePage';
 import WhyChooseUs from '../../views/WhyChooseUs';
 
 export function generateStaticParams() {
@@ -47,8 +46,6 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
       case 'request-demo': content = <RequestDemo />; break;
       case 'who-we-are': content = <About />; break;
       case 'why-choose-us': content = <WhyChooseUs />; break;
-      case 'research-reports': content = <ResourceTitlePage title="Medical Education" />; break;
-      case 'webinars': content = <ResourceTitlePage title="Webinars" />; break;
       case '404': content = <NotFound />; break;
       default: notFound();
     }

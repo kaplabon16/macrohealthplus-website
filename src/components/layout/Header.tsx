@@ -142,20 +142,40 @@ export default function Header() {
         </Link>
 
         <div className="hidden items-center gap-1 xl:flex">
-          {navigation.map((item, index) => (
-            <div className="relative" key={item.href}>
-              <Link
-                className="apple-top-nav-link desktop-nav-link relative flex items-center gap-1 rounded-full px-3 py-2 transition"
-                href={item.href}
-                onMouseEnter={() => openDropdown('children' in item && item.children ? index : null)}
-                onMouseMove={() => openDropdown('children' in item && item.children ? index : null)}
-                onPointerEnter={() => openDropdown('children' in item && item.children ? index : null)}
-                onFocus={() => openDropdown('children' in item && item.children ? index : null)}
-              >
-                {item.label}
-              </Link>
-            </div>
-          ))}
+          {navigation.map((item, index) => {
+            const hasChildren = 'children' in item && Boolean(item.children);
+
+            return (
+              <div className="relative" key={item.href}>
+                {hasChildren ? (
+                  <button
+                    className="apple-top-nav-link desktop-nav-link relative flex items-center gap-1 rounded-full px-3 py-2 transition"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded={activeDropdown === index}
+                    onClick={() => openDropdown(index)}
+                    onMouseEnter={() => openDropdown(index)}
+                    onMouseMove={() => openDropdown(index)}
+                    onPointerEnter={() => openDropdown(index)}
+                    onFocus={() => openDropdown(index)}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    className="apple-top-nav-link desktop-nav-link relative flex items-center gap-1 rounded-full px-3 py-2 transition"
+                    href={item.href}
+                    onMouseEnter={() => openDropdown(null)}
+                    onMouseMove={() => openDropdown(null)}
+                    onPointerEnter={() => openDropdown(null)}
+                    onFocus={() => openDropdown(null)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         <div className="apple-nav-actions hidden items-center gap-2 xl:flex">

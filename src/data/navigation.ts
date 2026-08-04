@@ -6,8 +6,6 @@ export const navigation = [
   { label: 'Resources', href: routes.news, children: [
     { label: 'News and Views', href: routes.news },
     { label: 'Help Centre', href: routes.helpCentre },
-    { label: 'Medical Education', href: '/research-reports' },
-    { label: 'Webinars', href: '/webinars' },
   ] },
   { label: 'About Us', href: '/who-we-are', children: [
     { label: 'Who We Are', href: '/who-we-are' },
