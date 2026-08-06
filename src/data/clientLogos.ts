@@ -30,6 +30,7 @@ export const clientLogos: ClientLogo[] = [
   { clientName: 'Aura Healthcare', logoPath: '/assets/clients/processed/022-aura-healthcare.webp', sourceType: 'image', originalFile: 'Aura Healthcare.webp', altText: 'Aura Healthcare logo', notes: 'Supplied logo normalized to the shared client-logo canvas.' },
   { clientName: 'Healthcare Lab Rangpur', logoPath: '/assets/clients/processed/023-healthcare-lab-rangpur.webp', sourceType: 'image', originalFile: 'Healthcare Lab Rangpur.jpeg', altText: 'Healthcare Lab Rangpur logo', notes: 'Supplied logo converted to WebP and normalized to the shared client-logo canvas.' },
   { clientName: 'NINH - Neuro Surgery Department', logoPath: '/assets/clients/processed/024-ninh-neuro-surgery-department.webp', sourceType: 'image', originalFile: 'NINH - Neuro Surgery Department.jpeg', altText: 'NINH Neuro Surgery Department logo', notes: 'Supplied logo converted to WebP and normalized to the shared client-logo canvas.' },
+  { clientName: 'Minerva', logoPath: '/assets/clients/processed/025-minerva.webp', sourceType: 'image', originalFile: 'Minverva.jpeg', altText: 'Minerva logo', notes: 'Supplied logo converted to WebP, isolated from its textured background, and normalized to the shared client-logo canvas.' },
 ];
 
 export const skippedClientLogos: Array<{ clientName: string; reason: string }> = [];

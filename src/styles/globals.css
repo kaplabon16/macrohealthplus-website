@@ -3740,7 +3740,7 @@ textarea {
   width: max-content;
   gap: 0;
   padding: 0;
-  animation: client-marquee 34s linear infinite;
+  animation: client-marquee 40s linear infinite;
 }
 
 .client-logo-group {
