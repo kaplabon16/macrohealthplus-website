@@ -26,6 +26,7 @@ type TeamMember = {
   role: string;
   image: string;
   imageClassName: string;
+  cardImageClassName?: string;
   biography: string[];
 };
 
@@ -42,6 +43,21 @@ const leadershipTeam: TeamMember[] = [
       "Under Dr. Rahman's leadership, MacroHealthPlus Software has become a leading provider of healthcare technology, with a strong focus on developing solutions that integrate seamlessly with existing systems and processes. The company has earned a reputation for delivering high-quality, reliable software that makes a real difference in the lives of healthcare providers and patients.",
       'Dr. Rahman is a visionary leader who is always looking for new and innovative ways to improve healthcare outcomes through technology. He is a strong advocate for the power of technology to make a positive impact in the world and is dedicated to using his expertise to help make this a reality.',
       'With his passion, drive, and commitment to excellence, Dr. Md Aminur Rahman is a leader who is poised to make a lasting impact on the healthcare industry.',
+    ],
+  },
+  {
+    id: 'mizanur-rahman',
+    name: 'Mizanur Rahman',
+    role: 'Chief Operating Officer (COO)',
+    image: '/assets/about_us/team_white/mizanur-rahman.webp',
+    imageClassName: 'object-center',
+    cardImageClassName: 'scale-[1.12] object-center group-hover:scale-[1.145]',
+    biography: [
+      'Mizanur Rahman is a seasoned business leader with more than 25 years of international experience in strategic management, enterprise risk management, business transformation, and digital health. His career spans Bangladesh, Malaysia, Africa, and Afghanistan, where he has led large-scale organizational transformation, operational excellence, business continuity, and digital innovation initiatives.',
+      'Currently serving as the Chief Operating Officer (COO) of MacroHealthPlus, an Australian health technology company, Mizanur is leading the development and implementation of next-generation digital healthcare solutions aimed at transforming healthcare delivery through integrated Hospital Information Management Systems (HIMS), telemedicine, electronic medical records, and AI-enabled health platforms.',
+      'Prior to joining MacroHealthPlus, he held several senior leadership positions, including Head of Risk Management & Control at BRAC and BRAC International, General Manager of Corporate Strategy at Robi Axiata, and Senior Specialist at Axiata Group Berhad, Malaysia. Throughout his career, he has successfully led major projects in enterprise risk management, business continuity planning, business process reengineering, operational excellence, and digital transformation.',
+      'Mizanur holds an M.Sc. in Entrepreneur Economics from the University of Dhaka, an MBA in Digital Technology Management from Royal Roads University, Canada, and a B.Sc. in Engineering from Bangladesh University of Engineering and Technology (BUET). He is also professionally certified in Business Continuity, Risk Management, ISO 27001 Information Security, and ISO 22301 Business Continuity Management.',
+      'He is a Fellow of the Institution of Engineers, Bangladesh (IEB) and an active member of the Project Management Institute (PMI) and ISACA. His passion lies in leveraging technology, strategic leadership, and innovation to build resilient organizations and improve healthcare systems across emerging markets.',
     ],
   },
   {
@@ -110,7 +126,7 @@ function TeamRoster({ members, onSelect }: { members: TeamMember[]; onSelect: (m
         >
           <motion.div className="aspect-[4/3] overflow-hidden rounded-lg bg-white" layoutId={`team-portrait-${member.id}`}>
             <img
-              className={`h-full w-full object-cover transition duration-300 group-hover:scale-[1.025] ${member.imageClassName}`}
+              className={`h-full w-full object-cover transition duration-300 ${member.cardImageClassName ?? 'group-hover:scale-[1.025]'} ${member.imageClassName}`}
               src={member.image}
               alt={member.name}
               loading="lazy"

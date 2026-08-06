@@ -28,9 +28,8 @@ export const productCategories: Record<string, string> = {
   Marketplace: 'Digital marketplace',
   'e-Pharmacy': 'Online pharmacy',
   LabAgent: 'Laboratory network',
-  'Medical Home Service Management': 'Home service management',
-  'Hospital CRM Management': 'Hospital relationship management',
-  Aura: 'Home healthcare',
+  'Caregiver Management': 'Home care operations',
+  'Healthcare CRM': 'Patient relationship management',
 };
 
 export const featuredProductTitles = ['GreatClinic', 'GreatDoc', 'Hospital', 'GreatPharma'];

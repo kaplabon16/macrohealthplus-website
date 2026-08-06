@@ -9,8 +9,6 @@ export const routeSeo: Record<string, { title: string; description: string }> = 
   '/request-demo': { title: 'Request a Demo', description: 'Request a guided MacroHealthPlus demonstration tailored to your healthcare organization and operational workflows.' },
   '/who-we-are': { title: 'Who We Are', description: 'Learn about the MacroHealthPlus mission, vision, leadership, advisors, corporate development, and healthcare technology strategy.' },
   '/why-choose-us': { title: 'Why Choose MacroHealthPlus', description: 'Explore MacroHealthPlus workflow continuity, role-based access, data protection, prescribing intelligence, and operational control.' },
-  '/research-reports': { title: 'Medical Education', description: 'Medical education resources from MacroHealthPlus.' },
-  '/webinars': { title: 'Webinars', description: 'Webinars and professional resources from MacroHealthPlus.' },
   '/terms': { title: 'Terms & Conditions', description: 'Terms and conditions governing use of MacroHealthPlus websites, products, and services.' },
   '/privacy': { title: 'Privacy Policy', description: 'How MacroHealthPlus handles personal information and protects privacy.' },
   '/security': { title: 'Security Policy', description: 'Security practices and responsibilities for MacroHealthPlus products and services.' },
