@@ -95,8 +95,6 @@ export default function Hero({
         </motion.div>
       </div>
       <div className="hero-glass-field absolute inset-0" aria-hidden="true">
-        <span className="hero-glass-pane hero-glass-pane-a" />
-        <span className="hero-glass-pane hero-glass-pane-b" />
         <span className="hero-glass-sheen" />
         <span className="hero-glass-spark hero-glass-spark-a" />
         <span className="hero-glass-spark hero-glass-spark-b" />

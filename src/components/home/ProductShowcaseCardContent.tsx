@@ -29,7 +29,7 @@ export const productCategories: Record<string, string> = {
   'e-Pharmacy': 'Online pharmacy',
   LabAgent: 'Laboratory network',
   'Caregiver Management': 'Home care operations',
-  'Hospital CRM': 'Hospital relationship management',
+  'Healthcare CRM': 'Patient relationship management',
 };
 
 export const featuredProductTitles = ['GreatClinic', 'GreatDoc', 'Hospital', 'GreatPharma'];

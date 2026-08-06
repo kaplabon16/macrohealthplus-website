@@ -149,14 +149,14 @@ export const products: Product[] = [
     title: 'Caregiver Management',
     route: '/caregiver-management',
     subtitle: '',
-    description: '',
+    description: 'Manage caregivers with confidence through a centralized platform for scheduling, shift planning, client assignments, attendance, payroll, compliance, training, performance tracking, and care documentation. Streamline home care and community care operations by managing caregiver profiles, availability, scheduling, electronic care plans, visit tracking, medication support, timesheets, payroll, and quality assurance—all from a single platform.',
     features: [],
   },
   {
-    title: 'Hospital CRM',
+    title: 'Healthcare CRM',
     route: '/hospital-crm',
     subtitle: '',
-    description: '',
+    description: 'Strengthen patient relationships and streamline engagement with MacroHealthPlus Healthcare CRM. Manage patient inquiries, appointments, referrals, follow-ups, marketing campaigns, customer support, and communication from a single platform. Improve patient satisfaction, increase retention, and build lasting relationships through personalized, data-driven engagement.',
     features: [],
   },
 ];

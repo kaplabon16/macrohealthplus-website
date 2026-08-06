@@ -39,7 +39,7 @@ const marks: Record<string, MarkConfig> = {
   'e-Pharmacy': { icon: ShoppingCart, accent: '#01D439', wash: 'rgba(1, 212, 57, 0.22)' },
   LabAgent: { icon: Microscope, accent: '#76b9ff', wash: 'rgba(118, 185, 255, 0.22)' },
   'Caregiver Management': { icon: House, accent: '#66d6bd', wash: 'rgba(102, 214, 189, 0.22)' },
-  'Hospital CRM': { icon: Handshake, accent: '#ff9e72', wash: 'rgba(255, 158, 114, 0.22)' },
+  'Healthcare CRM': { icon: Handshake, accent: '#ff9e72', wash: 'rgba(255, 158, 114, 0.22)' },
 };
 
 const fallbackMark: MarkConfig = { icon: HeartPulse, accent: '#01D439', wash: 'rgba(1, 212, 57, 0.22)' };

@@ -18,5 +18,5 @@ export const requestDemoSolutions = [
   'e-Pharmacy',
   'LabAgent',
   'Caregiver Management',
-  'Hospital CRM',
+  'Healthcare CRM',
 ];

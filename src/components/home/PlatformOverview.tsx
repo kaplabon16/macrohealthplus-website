@@ -18,7 +18,7 @@ export default function PlatformOverview() {
   return (
     <Section className="platform-overview-section"
       title="One operational foundation, shaped around your organization"
-      intro="MacroHealthPlus replaces fragmented handoffs with a shared digital foundation. Teams can work within focused modules while patient, service, and business information remains available across the wider organization."
+      intro="MacroHealthPlus eliminates disconnected workflows by providing a unified digital platform that connects every department."
     >
       <div className="platform-operating-grid">
         <motion.div

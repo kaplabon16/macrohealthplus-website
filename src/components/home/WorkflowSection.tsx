@@ -16,7 +16,7 @@ export default function WorkflowSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section disableAnimation className="workflow-home-section" title={'Better work at the desk. Better continuity across the organization.'} intro="Digital transformation matters when it improves the ordinary moments that shape care: finding the right record, completing an order, collecting payment, publishing a result, or knowing what must happen next.">
+    <Section disableAnimation className="workflow-home-section" title="Better work at the desk. Better continuity across the organization." intro="Digital transformation matters when it improves the ordinary moments that shape care: finding the right record, completing an order, collecting payment, publishing a result, or knowing what must happen next.">
       <div className="space-y-7 sm:space-y-8 lg:space-y-10">
         <motion.div
           className="workflow-principles"
