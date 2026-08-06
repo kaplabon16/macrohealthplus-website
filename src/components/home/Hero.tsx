@@ -164,12 +164,12 @@ export default function Hero({
           <motion.h1
             className="hero-title mt-3 max-w-4xl text-3xl font-semibold leading-[1.02] sm:mt-4 sm:text-5xl sm:leading-[0.98] md:text-6xl xl:mt-5 xl:text-8xl xl:leading-[0.95]"
           >
-            Take Healthcare Operations Move Forward
+            Take Healthcare Operations Forward
           </motion.h1>
           <p
             className="hero-intro mt-3.5 max-w-2xl text-sm leading-[1.375rem] sm:mt-5 sm:text-[15px] sm:leading-6 md:text-base md:leading-7 xl:mt-7 xl:text-xl xl:leading-8"
           >
-            From the first appointment to the final report, MacroHealthPlus gives care teams a clearer way to coordinate clinical records, diagnostics, pharmacy operations, billing, and patient follow-up.
+            From the first appointment to the final report, MacroHealthPlus gives care teams a clearer way to coordinate clinical records, diagnostics, pharmacy operations, billing, and patient follow-ups.
           </p>
         </motion.div>
       </div>
