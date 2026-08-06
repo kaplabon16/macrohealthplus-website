@@ -36,8 +36,8 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
       <Section className="pt-24 sm:pt-28 lg:pt-32" eyebrow="MacroHealthPlus Solution" title={title} intro={subtitle}>
         <div className="grid items-center gap-5 sm:gap-6 md:grid-cols-[1fr_0.9fr] lg:gap-8">
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-            <p className="text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">{description}</p>
-            <div className="mt-4 flex flex-col gap-2.5 sm:mt-6 sm:flex-row lg:mt-8">
+            {description ? <p className="text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">{description}</p> : null}
+            <div className={`${description ? 'mt-4 sm:mt-6 lg:mt-8' : ''} flex flex-col gap-2.5 sm:flex-row`}>
               <Button href="/request-demo" icon>Request a Demo</Button>
             </div>
           </motion.div>
@@ -102,9 +102,11 @@ export default function ProductPageTemplate({ title, subtitle, description, imag
       ) : null}
       {title === 'Telehealth' ? <TelehealthWorkflow /> : null}
       {title === 'Hospital' ? <HospitalCareFlows /> : null}
-      <Section eyebrow="Core Capabilities" title={`Built into ${title}`} intro="Focused tools for the recurring tasks your team needs to complete accurately and on time.">
-        <CapabilityNetwork product={title} features={features} />
-      </Section>
+      {features.length ? (
+        <Section eyebrow="Core Capabilities" title={`Built into ${title}`} intro="Focused tools for the recurring tasks your team needs to complete accurately and on time.">
+          <CapabilityNetwork product={title} features={features} />
+        </Section>
+      ) : null}
     </>
   );
 }

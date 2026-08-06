@@ -11,7 +11,6 @@ import {
   Pill,
   ShoppingBag,
   ShoppingCart,
-  Sparkles,
   Stethoscope,
   UsersRound,
   Video,
@@ -39,9 +38,8 @@ const marks: Record<string, MarkConfig> = {
   Marketplace: { icon: ShoppingBag, accent: '#ff93c8', wash: 'rgba(255, 147, 200, 0.22)' },
   'e-Pharmacy': { icon: ShoppingCart, accent: '#01D439', wash: 'rgba(1, 212, 57, 0.22)' },
   LabAgent: { icon: Microscope, accent: '#76b9ff', wash: 'rgba(118, 185, 255, 0.22)' },
-  'Medical Home Service Management': { icon: House, accent: '#66d6bd', wash: 'rgba(102, 214, 189, 0.22)' },
-  'Hospital CRM Management': { icon: Handshake, accent: '#ff9e72', wash: 'rgba(255, 158, 114, 0.22)' },
-  Aura: { icon: Sparkles, accent: '#d9a4ff', wash: 'rgba(217, 164, 255, 0.22)' },
+  'Caregiver Management': { icon: House, accent: '#66d6bd', wash: 'rgba(102, 214, 189, 0.22)' },
+  'Hospital CRM': { icon: Handshake, accent: '#ff9e72', wash: 'rgba(255, 158, 114, 0.22)' },
 };
 
 const fallbackMark: MarkConfig = { icon: HeartPulse, accent: '#01D439', wash: 'rgba(1, 212, 57, 0.22)' };

@@ -1,7 +1,6 @@
 import { useEffect, useRef, type CSSProperties, type Dispatch, type SetStateAction } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { products } from '../../data/products';
-import RevealWords from '../ui/RevealWords';
 import ProductShowcaseCardContent, { productPalette, showcaseProducts } from './ProductShowcaseCardContent';
 
 const featuredProducts = showcaseProducts.slice(0, 4);
@@ -68,27 +67,41 @@ export default function Hero({
       className="hero-section relative min-h-[68svh] overflow-visible px-4 pb-6 pt-24 sm:min-h-[66svh] sm:px-6 sm:pb-8 sm:pt-28 md:min-h-[62svh] xl:min-h-[88svh] xl:pb-14 xl:pt-36"
       ref={heroRef}
     >
-      <motion.div
-        className="absolute inset-0"
-        role="img"
-        aria-label="MacroHealthPlus products across desktop, laptop, tablet, and mobile devices"
-        initial={{ opacity: 0.58, scale: 1.035 }}
-        animate={{ opacity: 1, scale: [1.02, 1, 1.012] }}
-        transition={{ opacity: { duration: 0.5 }, scale: { duration: 16, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' } }}
-      >
-        <img
-          className="hero-theme-image hero-theme-image-dark"
-          src="/assets/generated/health-tech-hero-products.webp"
-          alt=""
-          decoding="async"
-        />
-        <img
-          className="hero-theme-image hero-theme-image-light"
-          src="/assets/generated/health-tech-hero-products-light.webp"
-          alt=""
-          decoding="async"
-        />
-      </motion.div>
+      <div className="hero-media-clip absolute inset-0" aria-hidden="true">
+        <motion.div
+          className="hero-media absolute inset-0"
+          initial={{ opacity: 0.58, scale: 1.035 }}
+          animate={{ opacity: 1, scale: [1.02, 1, 1.012] }}
+          transition={{ opacity: { duration: 0.5 }, scale: { duration: 16, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' } }}
+        >
+          <video className="hero-video" autoPlay loop muted playsInline preload="metadata">
+            <source src="/hero_section_video/cinematic_hero_section.mp4" type="video/mp4" />
+          </video>
+
+          {/* Previous generated theme images are retained as a backup for the hero media.
+          <img
+            className="hero-theme-image hero-theme-image-dark"
+            src="/assets/generated/health-tech-hero-products.webp"
+            alt=""
+            decoding="async"
+          />
+          <img
+            className="hero-theme-image hero-theme-image-light"
+            src="/assets/generated/health-tech-hero-products-light.webp"
+            alt=""
+            decoding="async"
+          />
+          */}
+        </motion.div>
+      </div>
+      <div className="hero-glass-field absolute inset-0" aria-hidden="true">
+        <span className="hero-glass-pane hero-glass-pane-a" />
+        <span className="hero-glass-pane hero-glass-pane-b" />
+        <span className="hero-glass-sheen" />
+        <span className="hero-glass-spark hero-glass-spark-a" />
+        <span className="hero-glass-spark hero-glass-spark-b" />
+        <span className="hero-glass-spark hero-glass-spark-c" />
+      </div>
       <div className="hero-contrast-overlay absolute inset-0" aria-hidden="true" />
       <div className="hero-depth-overlay absolute inset-0" aria-hidden="true" />
 
@@ -144,30 +157,22 @@ export default function Hero({
       <div className="hero-content-shell relative z-[6] mx-auto flex min-h-[calc(68svh-7.5rem)] max-w-7xl items-start pb-2 sm:min-h-[calc(66svh-9rem)] sm:pb-0 md:min-h-[calc(62svh-9rem)] md:items-start xl:min-h-[calc(88svh-12.5rem)] xl:items-center">
         <motion.div
           className="hero-copy-panel w-full max-w-4xl px-4 py-4 sm:px-6 sm:py-6 xl:px-10 xl:py-10"
-          initial={{ opacity: 0.68, y: 30, filter: 'blur(7px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
             className="hero-kicker text-xs font-semibold uppercase tracking-[0.28em]"
-            initial={{ opacity: 0.64, x: -14 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             Healthcare Management Software
           </motion.p>
           <motion.h1
             className="hero-title mt-3 max-w-4xl text-3xl font-semibold leading-[1.02] sm:mt-4 sm:text-5xl sm:leading-[0.98] md:text-6xl xl:mt-5 xl:text-8xl xl:leading-[0.95]"
-            initial={{ opacity: 0.68, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           >
             Take Healthcare Operations Move Forward
           </motion.h1>
-          <RevealWords
+          <p
             className="hero-intro mt-3.5 max-w-2xl text-sm leading-[1.375rem] sm:mt-5 sm:text-[15px] sm:leading-6 md:text-base md:leading-7 xl:mt-7 xl:text-xl xl:leading-8"
-            text="From the first appointment to the final report, MacroHealthPlus gives care teams a clearer way to coordinate clinical records, diagnostics, pharmacy operations, billing, and patient follow-up."
-          />
+          >
+            From the first appointment to the final report, MacroHealthPlus gives care teams a clearer way to coordinate clinical records, diagnostics, pharmacy operations, billing, and patient follow-up.
+          </p>
         </motion.div>
       </div>
     </section>
