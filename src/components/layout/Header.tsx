@@ -140,7 +140,7 @@ export default function Header() {
     : (theme === 'light' ? Sun : Moon);
 
   return (
-    <header className="apple-nav-typography fixed left-0 right-0 top-2 z-50 px-2 sm:top-4 sm:px-4">
+    <header className={`apple-nav-typography fixed left-0 right-0 top-2 z-50 px-2 sm:top-4 sm:px-4 ${isOverHero ? 'header-over-hero' : ''}`}>
       <div className={`apple-nav-curtain ${activeChildren || isOpen ? 'apple-nav-curtain-visible' : ''}`} aria-hidden="true" />
       <div className="relative z-[3] mx-auto max-w-7xl" onMouseEnter={cancelDropdownClose} onMouseLeave={scheduleDropdownClose}>
       <nav className={`glass nav-glass ${isOverHero ? 'nav-glass-over-hero' : ''} relative z-[3] mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
