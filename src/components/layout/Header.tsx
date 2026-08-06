@@ -2,6 +2,7 @@
 
 import { ChevronLeft, Menu, Moon, Sun, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { navigation } from '../../data/navigation';
 import { routes } from '../../utils/routes';
@@ -32,11 +33,13 @@ function getServerThemeSnapshot() {
 }
 
 export default function Header() {
+  const pathname = usePathname();
   const themeMenuCloseTimer = useRef<number | null>(null);
   const dropdownCloseTimer = useRef<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isOverHero, setIsOverHero] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<number | null>(null);
   const [theme, setTheme] = useState<ThemePreference>('system');
@@ -54,6 +57,8 @@ export default function Header() {
 
   const openThemeMenu = () => {
     cancelThemeMenuClose();
+    cancelDropdownClose();
+    setActiveDropdown(null);
     setIsThemeMenuOpen(true);
   };
 
@@ -74,6 +79,8 @@ export default function Header() {
 
   const openDropdown = (index: number | null) => {
     cancelDropdownClose();
+    cancelThemeMenuClose();
+    setIsThemeMenuOpen(false);
     setActiveDropdown(index);
   };
 
@@ -108,13 +115,15 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
+      const hero = document.querySelector<HTMLElement>('.hero-section');
+      setIsOverHero(Boolean(hero && hero.getBoundingClientRect().bottom > 88));
       setActiveDropdown(null);
       setIsThemeMenuOpen(false);
     };
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (!themeReady) return;
@@ -134,7 +143,7 @@ export default function Header() {
     <header className="apple-nav-typography fixed left-0 right-0 top-2 z-50 px-2 sm:top-4 sm:px-4">
       <div className={`apple-nav-curtain ${activeChildren || isOpen ? 'apple-nav-curtain-visible' : ''}`} aria-hidden="true" />
       <div className="relative z-[3] mx-auto max-w-7xl" onMouseEnter={cancelDropdownClose} onMouseLeave={scheduleDropdownClose}>
-      <nav className={`glass nav-glass relative z-[3] mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
+      <nav className={`glass nav-glass ${isOverHero ? 'nav-glass-over-hero' : ''} relative z-[3] mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 transition duration-[250ms] sm:px-4 ${scrolled ? 'py-2 shadow-glow' : 'py-2.5 sm:py-3'}`}>
         <Link className="apple-brand-button flex items-center" href={routes.home} onClick={() => setIsOpen(false)}>
           <span className={`${scrolled ? 'h-8 w-[9.75rem] sm:w-[10.75rem]' : 'h-9 w-[10.5rem] sm:h-10 sm:w-[11.5rem]'} official-brand-motion relative block shrink-0 transition-all`}>
             <img className="h-full w-full object-contain object-left" src="/assets/macrohealthplus/official-logos/MHP-Logo-horizontal.webp" alt="MacroHealthPlus - Systems Thinking" />
