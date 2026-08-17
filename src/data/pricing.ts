@@ -7,7 +7,7 @@ export type PricingPlan = {
   billingYear?: string;
   serviceTitle: string;
   buttonText: string;
-  redirectLink: string;
+  redirectLink?: string;
   services: string[];
   everyThing?: string;
 };
@@ -32,7 +32,6 @@ export const pricingCategories: PricingCategory[] = [
         billingYear: 'Billing on Quarterly/ Yearly',
         serviceTitle: 'Start pharmacy operations with a reliable cloud POS foundation',
         buttonText: 'Get Started',
-        redirectLink: 'https://app.greatclinic.org/register',
         services: ['Fast counter invoicing', 'Real-time stock control', 'Return and adjustment workflow', 'Purchase and vendor management', 'Multi-channel communication', 'Patient feedback collection', 'Barcode scan support', 'Rack-level organization', 'Management reports and MIS', 'Web and mobile access'],
       },
       {
@@ -44,7 +43,6 @@ export const pricingCategories: PricingCategory[] = [
         billingYear: 'Billing on Quarterly/ Yearly',
         serviceTitle: 'Expand pharmacy management with more users and customer communication',
         buttonText: 'Get Started',
-        redirectLink: 'https://app.greatclinic.org/register',
         services: ['Fast counter invoicing', 'Real-time stock control', 'Return and adjustment workflow', 'Purchase and vendor management', 'Multi-channel communication', 'Patient feedback collection', 'Barcode scan support', 'Rack-level organization', 'Management reports and MIS', 'Web and mobile access', 'SMS notification support'],
       },
       {
@@ -52,7 +50,6 @@ export const pricingCategories: PricingCategory[] = [
         everyThing: 'Let’s talk Tailored to fit your business',
         serviceTitle: 'Build a tailored pharmacy operation for larger business needs',
         buttonText: 'Get Started',
-        redirectLink: 'https://app.greatclinic.org/register',
         services: ['Tailored implementation scope', 'Advanced operational configuration', 'Workflow planning with MacroHealthPlus'],
       },
     ],
@@ -68,7 +65,6 @@ export const pricingCategories: PricingCategory[] = [
         billingYear: 'Billing on Yearly',
         serviceTitle: 'Digitize appointments, records, prescriptions, and patient communication',
         buttonText: 'Get Started',
-        redirectLink: 'https://gd-app.macrohealthplus.org/register',
         services: ['Online appointment booking', 'Structured patient records', 'Template-based consultation notes', 'Referral letters and prescriptions', 'Multi-channel communication', 'Reminders, greetings, and offers', 'Web and mobile access', 'Tele-consulting workflow', 'Criteria-based bulk SMS support', 'Appointment SMS notification'],
       },
       {
@@ -76,7 +72,6 @@ export const pricingCategories: PricingCategory[] = [
         everyThing: 'Let’s talk Tailored to fit your business',
         serviceTitle: 'Design a premium doctor workflow around your practice model',
         buttonText: 'Get Started',
-        redirectLink: 'https://gd-app.macrohealthplus.org/register',
         services: ['Tailored implementation scope', 'Advanced clinical workflow configuration', 'Practice growth consultation'],
       },
     ],
@@ -91,7 +86,6 @@ export const pricingCategories: PricingCategory[] = [
         billingYear: 'Billing on Yearly',
         serviceTitle: 'A strong diagnostic lab foundation for registration, billing, and reporting',
         buttonText: 'Get Started',
-        redirectLink: 'https://gd-app.macrohealthplus.org/register',
         services: ['Patient registration', 'Billing management', 'Unlimited users', 'Limited invoice volume', 'QR code system', '5 users or collectors', '5 franchise locations', 'Integrated MIS reports', 'Web and mobile access', 'Multi-channel communication'],
       },
       {
